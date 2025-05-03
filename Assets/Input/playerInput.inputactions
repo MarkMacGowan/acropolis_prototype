@@ -1,0 +1,74 @@
+{
+    "name": "playerInput",
+    "maps": [
+        {
+            "name": "Gamplay",
+            "id": "2e6c7973-e909-41aa-9a7c-5be607f81333",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "b7ad20e7-007f-45eb-a857-78d5bc2dc397",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Escape",
+                    "type": "Button",
+                    "id": "1b123a19-a4ff-4728-94ee-6de7271376f9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Right-Click",
+                    "type": "Button",
+                    "id": "069473e3-09ac-46f0-82e7-67f885281db0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "137b22c4-38c1-4627-afd8-99268cd1a393",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "026d0949-d0cd-4653-99ae-d39ce00a8757",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6659ac89-b1d8-4c33-b27e-8780b8662fff",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Right-Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
