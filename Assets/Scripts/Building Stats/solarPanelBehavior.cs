@@ -84,7 +84,7 @@ public class solarPanelBehavior : MonoBehaviour
        checkTimeOfDay();
        if (isDaytime==true)
         {
-            energyProduce = 0.00000002f;
+            energyProduce = 1f;
             Debug.Log("Producing Energy!");
         }
         else if(isDaytime==false)

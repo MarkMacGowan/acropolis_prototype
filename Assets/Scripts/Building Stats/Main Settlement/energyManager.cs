@@ -5,8 +5,9 @@ using UnityEngine;
 public class energyManager : MonoBehaviour
 {
     public float energyLevel = 0;
+    public float finalEnergyLevel;
     // maximum energy level of mainDome
-    private float maxEnergyLevel = 1000f;
+    private float maxEnergyLevel = 100f;
     // minimum energy level of mainDome
     private float minEnergyLevel = 0f;
     // rate at which energyLevel regenerates
@@ -23,6 +24,28 @@ public class energyManager : MonoBehaviour
     private float totSolarPanelEnergy;
     private float totSolarProduce;
     private float tot_energy_produce;
+
+    // variables that deal with overall energy consumption
+    private float energyDeficit;
+    private float oxygenEnergyDeficit;
+    private float hydroponicsEnergyDeficit;
+    private float waterExtractorEnergyDeficit;
+    private float landingpadEnergyDeficit;
+
+    // variables to represent each building object that requires energy;
+    private GameObject oxy_processor;
+    private GameObject hydro_build;
+    private GameObject water_extract;
+    private GameObject land_pad;
+
+    // variables to represent number of each building object instaniated into game
+    private int noOxyGen;
+    private int noHydro;
+    private int noWaterExractor;
+    private int noLandPad;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,18 +58,58 @@ public class energyManager : MonoBehaviour
         
     }
     public float energyInfo()
-    {
+    {   
         solar_pan = GameObject.FindWithTag("solarPan");
         totSolarPanelEnergy = solar_pan.GetComponent<solarPanelBehavior>().solarEnergy;
         totSolarProduce = solar_pan.GetComponent<solarPanelBehavior>().energyProduce;
         noSolarPanels = GameObject.FindGameObjectsWithTag("solarPan").Length;
         energyProduceRate = totSolarPanelEnergy;
         //energyUsageRate = (solar_pan.GetComponent<solarPanelBehavior>()).energyUsage;
+
+        oxy_processor = GameObject.FindWithTag("oxyGen");
+        noOxyGen = GameObject.FindGameObjectsWithTag("oxyGen").Length;
+
+        hydro_build = GameObject.FindWithTag("hydroPonics");
+        noHydro = GameObject.FindGameObjectsWithTag("hydroPonics").Length;
+
+        water_extract = GameObject.FindWithTag("waterExtract");
+        noWaterExractor = GameObject.FindGameObjectsWithTag("waterExtract").Length;
+
+        land_pad = GameObject.FindWithTag("landingPad");
+        noLandPad = GameObject.FindGameObjectsWithTag("landingPad").Length;
+        //calculateEnergyUsage();
+        energyDeficit =3f;
         energyLevel = energyLevel + energyProduceRate;
+
+        
+
         if (energyLevel > maxEnergyLevel)
         {
             energyLevel = maxEnergyLevel;
         }
+        //finalEnergyLevel=energyLevel-energyDeficit;
         return energyLevel;
+    }
+    private float calculateEnergyUsage()
+    {
+        // 02 Gen
+        oxygenEnergyDeficit = noOxyGen * 2f;
+        
+        // hydroponics
+        hydroponicsEnergyDeficit = noHydro * 0.2f;
+
+        // water extractor
+        waterExtractorEnergyDeficit = noWaterExractor * 0.4f;
+
+        // landing pad
+        landingpadEnergyDeficit = noLandPad * 0.2f;
+
+
+        // overall deficit
+
+        //energyDeficit = oxygenEnergyDeficit + hydroponicsEnergyDeficit + waterExtractorEnergyDeficit + landingpadEnergyDeficit;
+        
+        return energyDeficit;
+       
     }
 }
