@@ -13,6 +13,7 @@ TagManager:
   - landingPad
   - hydroPonics
   - waterExtract
+  - dayNight
   layers:
   - Default
   - TransparentFX

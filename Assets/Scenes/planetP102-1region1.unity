@@ -5656,6 +5656,201 @@ MonoBehaviour:
   panel_ref: {fileID: 0}
   panelToClose: {fileID: 0}
   isPlaced: 0
+--- !u!1 &652138159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 652138161}
+  - component: {fileID: 652138160}
+  m_Layer: 0
+  m_Name: Light Probe Group
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!220 &652138160
+LightProbeGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652138159}
+  m_Enabled: 1
+  m_SourcePositions:
+  - {x: 1, y: 1, z: 0}
+  - {x: 1, y: 1, z: -2}
+  - {x: 1, y: -1, z: 0}
+  - {x: 1, y: -1, z: -2}
+  - {x: -1, y: 1, z: 0}
+  - {x: -1, y: 1, z: -2}
+  - {x: -1, y: -1, z: 0}
+  - {x: -1, y: -1, z: -2}
+  - {x: 0.75, y: 0, z: -1}
+  - {x: -1, y: 0, z: -1}
+  - {x: 0.25, y: 0, z: -1}
+  - {x: 0.5, y: 0, z: -1}
+  - {x: 1, y: 0, z: -1}
+  - {x: 0, y: 0, z: -1}
+  - {x: -0.25, y: 0, z: -1}
+  - {x: -0.5, y: 0, z: -1}
+  - {x: -0.75, y: 0, z: -1}
+  - {x: 1, y: 1, z: 1}
+  - {x: 1, y: 1, z: -1}
+  - {x: 1, y: -1, z: 1}
+  - {x: 1, y: -1, z: -1}
+  - {x: -1, y: 1, z: 1}
+  - {x: -1, y: 1, z: -1}
+  - {x: -1, y: -1, z: 1}
+  - {x: -1, y: -1, z: -1}
+  - {x: 0.75, y: 0, z: 0}
+  - {x: -1, y: 0, z: 0}
+  - {x: 0.25, y: 0, z: 0}
+  - {x: 0.5, y: 0, z: 0}
+  - {x: 1, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: -0.25, y: 0, z: 0}
+  - {x: -0.5, y: 0, z: 0}
+  - {x: -0.75, y: 0, z: 0}
+  - {x: 1, y: 1, z: 1.25}
+  - {x: 1, y: 1, z: -0.75}
+  - {x: 1, y: -1, z: 1.25}
+  - {x: 1, y: -1, z: -0.75}
+  - {x: -1, y: 1, z: 1.25}
+  - {x: -1, y: 1, z: -0.75}
+  - {x: -1, y: -1, z: 1.25}
+  - {x: -1, y: -1, z: -0.75}
+  - {x: 0.75, y: 0, z: 0.25}
+  - {x: -1, y: 0, z: 0.25}
+  - {x: 0.25, y: 0, z: 0.25}
+  - {x: 0.5, y: 0, z: 0.25}
+  - {x: 1, y: 0, z: 0.25}
+  - {x: 0, y: 0, z: 0.25}
+  - {x: -0.25, y: 0, z: 0.25}
+  - {x: -0.5, y: 0, z: 0.25}
+  - {x: -0.75, y: 0, z: 0.25}
+  - {x: 1, y: 1, z: 1.5}
+  - {x: 1, y: 1, z: -0.5}
+  - {x: 1, y: -1, z: 1.5}
+  - {x: 1, y: -1, z: -0.5}
+  - {x: -1, y: 1, z: 1.5}
+  - {x: -1, y: 1, z: -0.5}
+  - {x: -1, y: -1, z: 1.5}
+  - {x: -1, y: -1, z: -0.5}
+  - {x: 0.75, y: 0, z: 0.5}
+  - {x: -1, y: 0, z: 0.5}
+  - {x: 0.25, y: 0, z: 0.5}
+  - {x: 0.5, y: 0, z: 0.5}
+  - {x: 1, y: 0, z: 0.5}
+  - {x: 0, y: 0, z: 0.5}
+  - {x: -0.25, y: 0, z: 0.5}
+  - {x: -0.5, y: 0, z: 0.5}
+  - {x: -0.75, y: 0, z: 0.5}
+  - {x: 1, y: 1, z: 1.75}
+  - {x: 1, y: 1, z: -0.25}
+  - {x: 1, y: -1, z: 1.75}
+  - {x: 1, y: -1, z: -0.25}
+  - {x: -1, y: 1, z: 1.75}
+  - {x: -1, y: 1, z: -0.25}
+  - {x: -1, y: -1, z: 1.75}
+  - {x: -1, y: -1, z: -0.25}
+  - {x: 0.75, y: 0, z: 0.75}
+  - {x: -1, y: 0, z: 0.75}
+  - {x: 0.25, y: 0, z: 0.75}
+  - {x: 0.5, y: 0, z: 0.75}
+  - {x: 1, y: 0, z: 0.75}
+  - {x: 0, y: 0, z: 0.75}
+  - {x: -0.25, y: 0, z: 0.75}
+  - {x: -0.5, y: 0, z: 0.75}
+  - {x: -0.75, y: 0, z: 0.75}
+  - {x: 1, y: 1, z: 2}
+  - {x: 1, y: 1, z: 0}
+  - {x: 1, y: -1, z: 2}
+  - {x: 1, y: -1, z: 0}
+  - {x: -1, y: 1, z: 2}
+  - {x: -1, y: 1, z: 0}
+  - {x: -1, y: -1, z: 2}
+  - {x: -1, y: -1, z: 0}
+  - {x: 0.75, y: 0, z: 1}
+  - {x: -1, y: 0, z: 1}
+  - {x: 0.25, y: 0, z: 1}
+  - {x: 0.5, y: 0, z: 1}
+  - {x: 1, y: 0, z: 1}
+  - {x: 0, y: 0, z: 1}
+  - {x: -0.25, y: 0, z: 1}
+  - {x: -0.5, y: 0, z: 1}
+  - {x: -0.75, y: 0, z: 1}
+  - {x: 1, y: 1, z: 0.75}
+  - {x: 1, y: 1, z: -1.25}
+  - {x: 1, y: -1, z: 0.75}
+  - {x: 1, y: -1, z: -1.25}
+  - {x: -1, y: 1, z: 0.75}
+  - {x: -1, y: 1, z: -1.25}
+  - {x: -1, y: -1, z: 0.75}
+  - {x: -1, y: -1, z: -1.25}
+  - {x: 0.75, y: 0, z: -0.25}
+  - {x: -1, y: 0, z: -0.25}
+  - {x: 0.25, y: 0, z: -0.25}
+  - {x: 0.5, y: 0, z: -0.25}
+  - {x: 1, y: 0, z: -0.25}
+  - {x: 0, y: 0, z: -0.25}
+  - {x: -0.25, y: 0, z: -0.25}
+  - {x: -0.5, y: 0, z: -0.25}
+  - {x: -0.75, y: 0, z: -0.25}
+  - {x: 1, y: 1, z: 0.5}
+  - {x: 1, y: 1, z: -1.5}
+  - {x: 1, y: -1, z: 0.5}
+  - {x: 1, y: -1, z: -1.5}
+  - {x: -1, y: 1, z: 0.5}
+  - {x: -1, y: 1, z: -1.5}
+  - {x: -1, y: -1, z: 0.5}
+  - {x: -1, y: -1, z: -1.5}
+  - {x: 0.75, y: 0, z: -0.5}
+  - {x: -1, y: 0, z: -0.5}
+  - {x: 0.25, y: 0, z: -0.5}
+  - {x: 0.5, y: 0, z: -0.5}
+  - {x: 1, y: 0, z: -0.5}
+  - {x: 0, y: 0, z: -0.5}
+  - {x: -0.25, y: 0, z: -0.5}
+  - {x: -0.5, y: 0, z: -0.5}
+  - {x: -0.75, y: 0, z: -0.5}
+  - {x: 1, y: 1, z: 0.25}
+  - {x: 1, y: 1, z: -1.75}
+  - {x: 1, y: -1, z: 0.25}
+  - {x: 1, y: -1, z: -1.75}
+  - {x: -1, y: 1, z: 0.25}
+  - {x: -1, y: 1, z: -1.75}
+  - {x: -1, y: -1, z: 0.25}
+  - {x: -1, y: -1, z: -1.75}
+  - {x: 0.75, y: 0, z: -0.75}
+  - {x: -1, y: 0, z: -0.75}
+  - {x: 0.25, y: 0, z: -0.75}
+  - {x: 0.5, y: 0, z: -0.75}
+  - {x: 1, y: 0, z: -0.75}
+  - {x: 0, y: 0, z: -0.75}
+  - {x: -0.25, y: 0, z: -0.75}
+  - {x: -0.5, y: 0, z: -0.75}
+  - {x: -0.75, y: 0, z: -0.75}
+  m_Dering: 1
+--- !u!4 &652138161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652138159}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 17, z: 0}
+  m_LocalScale: {x: 19.76, y: 19.76, z: 19.76}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &770682157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6135,13 +6330,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1233818753}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 12.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1305644102}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1303322112 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4118401950645055632, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
@@ -6159,11 +6354,11 @@ GameObject:
   - component: {fileID: 1305644101}
   m_Layer: 0
   m_Name: dayNightCycleObject
-  m_TagString: Untagged
+  m_TagString: dayNight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1305644101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8030,3 +8225,4 @@ SceneRoots:
   - {fileID: 1743417968}
   - {fileID: 77349595}
   - {fileID: 1305644102}
+  - {fileID: 652138161}
