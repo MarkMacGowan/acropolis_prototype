@@ -66,23 +66,33 @@ public class energyManager : MonoBehaviour
         energyProduceRate = totSolarPanelEnergy;
         //energyUsageRate = (solar_pan.GetComponent<solarPanelBehavior>()).energyUsage;
 
-        oxy_processor = GameObject.FindWithTag("oxyGen");
-        noOxyGen = GameObject.FindGameObjectsWithTag("oxyGen").Length;
+        //oxy_processor = GameObject.FindWithTag("oxyGen");
+        //noOxyGen = GameObject.FindGameObjectsWithTag("oxyGen").Length;
 
-        hydro_build = GameObject.FindWithTag("hydroPonics");
-        noHydro = GameObject.FindGameObjectsWithTag("hydroPonics").Length;
+        // hydro_build = GameObject.FindWithTag("hydroPonics");
+        // noHydro = GameObject.FindGameObjectsWithTag("hydroPonics").Length;
 
-        water_extract = GameObject.FindWithTag("waterExtract");
-        noWaterExractor = GameObject.FindGameObjectsWithTag("waterExtract").Length;
+        //water_extract = GameObject.FindWithTag("waterExtract");
+        // noWaterExractor = GameObject.FindGameObjectsWithTag("waterExtract").Length;
 
-        land_pad = GameObject.FindWithTag("landingPad");
-        noLandPad = GameObject.FindGameObjectsWithTag("landingPad").Length;
+        //land_pad = GameObject.FindWithTag("landingPad");
+        //noLandPad = GameObject.FindGameObjectsWithTag("landingPad").Length;
         //calculateEnergyUsage();
-        energyDeficit =3f;
-        energyLevel = energyLevel + energyProduceRate;
 
+        finalEnergyLevel = energyAddition()-energySubtract();
+        if (finalEnergyLevel < minEnergyLevel)
+        {
+            finalEnergyLevel = minEnergyLevel;
+        }
+            //-energySubtract();
+        return finalEnergyLevel;
+
+    }
+    // method to add energy 
+    private float energyAddition()
+    {
         
-
+        energyLevel = energyLevel + energyProduceRate;
         if (energyLevel > maxEnergyLevel)
         {
             energyLevel = maxEnergyLevel;
@@ -90,26 +100,33 @@ public class energyManager : MonoBehaviour
         //finalEnergyLevel=energyLevel-energyDeficit;
         return energyLevel;
     }
-    private float calculateEnergyUsage()
+    //method to subtract energy
+    private float energySubtract()
     {
-        // 02 Gen
-        oxygenEnergyDeficit = noOxyGen * 2f;
-        
-        // hydroponics
-        hydroponicsEnergyDeficit = noHydro * 0.2f;
-
-        // water extractor
-        waterExtractorEnergyDeficit = noWaterExractor * 0.4f;
-
-        // landing pad
-        landingpadEnergyDeficit = noLandPad * 0.2f;
-
-
-        // overall deficit
-
-        //energyDeficit = oxygenEnergyDeficit + hydroponicsEnergyDeficit + waterExtractorEnergyDeficit + landingpadEnergyDeficit;
-        
+        energyDeficit = energyDeficit + 1f;
         return energyDeficit;
-       
     }
+
+    //  private float calculateEnergyUsage()
+    // {
+    // 02 Gen
+    //oxygenEnergyDeficit = noOxyGen * 2f;
+
+    // hydroponics
+    //hydroponicsEnergyDeficit = noHydro * 0.2f;
+
+    // water extractor
+    //waterExtractorEnergyDeficit = noWaterExractor * 0.4f;
+
+    // landing pad
+    //landingpadEnergyDeficit = noLandPad * 0.2f;
+
+
+    // overall deficit
+
+    //energyDeficit = oxygenEnergyDeficit + hydroponicsEnergyDeficit + waterExtractorEnergyDeficit + landingpadEnergyDeficit;
+
+    //return energyDeficit;
+
+    // }
 }
