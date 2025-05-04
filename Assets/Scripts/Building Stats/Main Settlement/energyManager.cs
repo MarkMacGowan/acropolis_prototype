@@ -21,12 +21,14 @@ public class energyManager : MonoBehaviour
     private GameObject solar_pan;
 
     // total energy gathered from each solar panel instance
-    private float totSolarPanelEnergy;
+    public float totSolarPanelEnergy;
     public float totSolarProduce;
     private float tot_energy_produce;
 
     // variables that deal with overall energy consumption
     public float energyDeficit;
+    private float energy_deficit;
+    private float acropolisEnergyDeficit;
     private float oxygenEnergyDeficit;
     private float hydroponicsEnergyDeficit;
     private float waterExtractorEnergyDeficit;
@@ -72,8 +74,8 @@ public class energyManager : MonoBehaviour
         noSolarPanels = GameObject.FindGameObjectsWithTag("solarPan").Length;
 
         energyProduceRate = totSolarPanelEnergy;
-        energyDeficit = 1f;
-        energyPlusMinus = totSolarProduce - energyDeficit;
+        energy_deficit = calculateDeficit();
+        energyPlusMinus = totSolarProduce - energy_deficit;
 
         
         //energy_subtract = energySubtract();
@@ -123,6 +125,28 @@ public class energyManager : MonoBehaviour
 
         return energyLevel;
 
+    }
+
+    private float calculateDeficit()
+    {
+        acropolisEnergyDeficit = 0.06f;
+
+        Debug.Log("No Oxygen Processor: "+ noOxyGen);
+        oxygenEnergyDeficit = 0.001f * noOxyGen;
+
+        Debug.Log("No Hydro ponic: " + noHydro);
+        hydroponicsEnergyDeficit = 0.009f * noHydro;
+
+        Debug.Log("No Water Extractor: " + noWaterExractor);
+        waterExtractorEnergyDeficit = 0.009f * noWaterExractor;
+
+        Debug.Log("No Landing Pads: " + noLandPad);
+        landingpadEnergyDeficit = 0.005f * noLandPad;
+
+        energyDeficit = acropolisEnergyDeficit + oxygenEnergyDeficit + hydroponicsEnergyDeficit + waterExtractorEnergyDeficit + landingpadEnergyDeficit;
+
+
+        return energyDeficit;
     }
     //public float energySum()
     //{
