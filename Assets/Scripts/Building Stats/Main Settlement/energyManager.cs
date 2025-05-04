@@ -44,9 +44,14 @@ public class energyManager : MonoBehaviour
     private int noWaterExractor;
     private int noLandPad;
 
-    private float energy_addition;
-    private float energy_subtraction;
-    
+
+
+    private float energyPlusMinus;
+    //private float energy_addition;
+    //private float energy_subtraction;
+    //private float energy_add;
+    //private float energy_subtract;
+    //private float energyPlus;
 
     // Start is called before the first frame update
     void Start()
@@ -67,8 +72,12 @@ public class energyManager : MonoBehaviour
         noSolarPanels = GameObject.FindGameObjectsWithTag("solarPan").Length;
 
         energyProduceRate = totSolarPanelEnergy;
-        energyLevel = energyLevel + totSolarProduce;
         energyDeficit = 1f;
+        energyPlusMinus = energyProduceRate - energyDeficit;
+
+        
+        //energy_subtract = energySubtract();
+        //energyDeficit = 1f;
         //energyUsageRate = (solar_pan.GetComponent<solarPanelBehavior>()).energyUsage;
 
         //oxy_processor = GameObject.FindWithTag("oxyGen");
@@ -86,12 +95,15 @@ public class energyManager : MonoBehaviour
         //energy_addition = energyAddition();
         //energy_subtraction = energySubtract();
 
+        //energyLevel = energyLevel + totSolarPanelEnergy;
         if (energyLevel > maxEnergyLevel)
         {
             energyLevel = maxEnergyLevel;
         }
-        finalEnergyLevel = energyLevel - (energyDeficit);
+        //finalEnergyLevel = energyLevel;
         //energy_addition-energy_subtraction;
+
+        //finalEnergyLevel = energyLevel + (energy_subtract);
         if (finalEnergyLevel < minEnergyLevel)
         {
             finalEnergyLevel = minEnergyLevel;
@@ -99,10 +111,39 @@ public class energyManager : MonoBehaviour
         {
             finalEnergyLevel = maxEnergyLevel;
         }
-            //-energySubtract();
-        return finalEnergyLevel;
+        //-energySubtract();
+        energyLevel = energyLevel +- (energyPlusMinus);
+        return energyLevel;
 
     }
+    //public float energySum()
+    //{
+
+    //   // energy_add = energySurplus();
+
+
+    //    //energy_subtract = energySubtract();
+    //    finalEnergyLevel = energyLevel + (energy_add);
+    //    return finalEnergyLevel;
+    //    //finalEnergyLevel = energy_add - (energy_subtract);
+    //    //return finalEnergyLevel;
+    //}
+    //private float energySurplus()
+    //{
+    //    energyPlus = energyLevel + totSolarPanelEnergy;
+    //    return energyPlus;
+    //}
+    //private float energySubtract()
+    //{
+    //    energyDeficit = energyDeficit + 1;
+    //    return energyDeficit;
+    //}
+    //private float energyCal()
+    //{
+
+    //    finalEnergyLevel = energyLevel - (energyDeficit);
+    //    return finalEnergyLevel;
+    //}
     //private float energyCal()
     //{
 
@@ -110,8 +151,8 @@ public class energyManager : MonoBehaviour
     // method to add energy 
     //private float energyAddition()
     //{
-      
-        
+
+
 
     //    //finalEnergyLevel=energyLevel-energyDeficit;
     //    return energyLevel;

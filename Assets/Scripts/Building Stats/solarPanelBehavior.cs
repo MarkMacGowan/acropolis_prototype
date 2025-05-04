@@ -80,17 +80,17 @@ public class solarPanelBehavior : MonoBehaviour
     {
         
        sunAngle=dayNight_CycleObject.transform.rotation.eulerAngles.z;
-       Debug.Log("Is Day Time: "+checkTimeOfDay()+" Angle: "+sunAngle);
+       //Debug.Log("Is Day Time: "+checkTimeOfDay()+" Angle: "+sunAngle);
        checkTimeOfDay();
        if (isDaytime==true)
         {
             energyProduce = 2f;
-            Debug.Log("Producing Energy!");
+            //Debug.Log("Producing Energy!");
         }
         else if(isDaytime==false)
         {   
             energyProduce = 0;
-            Debug.Log("No Energy To Be Found");
+            //Debug.Log("No Energy To Be Found");
         }
         return energyProduce;
     }
