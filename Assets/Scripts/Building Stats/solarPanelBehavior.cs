@@ -15,7 +15,7 @@ public class solarPanelBehavior : MonoBehaviour
     // how much this object consumes energy
     //public float energyUsage=0.00001f;
     public float energyProduce;// = 0.00000002f;
-    public float maxEnergyProduce = 1f;
+    public float maxEnergyProduce;
 
 
     
@@ -84,7 +84,7 @@ public class solarPanelBehavior : MonoBehaviour
        checkTimeOfDay();
        if (isDaytime==true)
         {
-            energyProduce = 1f;
+            energyProduce = 2f;
             Debug.Log("Producing Energy!");
         }
         else if(isDaytime==false)

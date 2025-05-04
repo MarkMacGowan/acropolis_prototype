@@ -26,7 +26,7 @@ public class energyManager : MonoBehaviour
     private float tot_energy_produce;
 
     // variables that deal with overall energy consumption
-    private float energyDeficit;
+    public float energyDeficit;
     private float oxygenEnergyDeficit;
     private float hydroponicsEnergyDeficit;
     private float waterExtractorEnergyDeficit;
@@ -44,7 +44,9 @@ public class energyManager : MonoBehaviour
     private int noWaterExractor;
     private int noLandPad;
 
-
+    private float energy_addition;
+    private float energy_subtraction;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -63,7 +65,10 @@ public class energyManager : MonoBehaviour
         totSolarPanelEnergy = solar_pan.GetComponent<solarPanelBehavior>().solarEnergy;
         totSolarProduce = solar_pan.GetComponent<solarPanelBehavior>().energyProduce;
         noSolarPanels = GameObject.FindGameObjectsWithTag("solarPan").Length;
+
         energyProduceRate = totSolarPanelEnergy;
+        energyLevel = energyLevel + totSolarProduce;
+        energyDeficit = 1f;
         //energyUsageRate = (solar_pan.GetComponent<solarPanelBehavior>()).energyUsage;
 
         //oxy_processor = GameObject.FindWithTag("oxyGen");
@@ -78,34 +83,45 @@ public class energyManager : MonoBehaviour
         //land_pad = GameObject.FindWithTag("landingPad");
         //noLandPad = GameObject.FindGameObjectsWithTag("landingPad").Length;
         //calculateEnergyUsage();
+        //energy_addition = energyAddition();
+        //energy_subtraction = energySubtract();
 
-        finalEnergyLevel = energyAddition()-energySubtract();
+        if (energyLevel > maxEnergyLevel)
+        {
+            energyLevel = maxEnergyLevel;
+        }
+        finalEnergyLevel = energyLevel - (energyDeficit);
+        //energy_addition-energy_subtraction;
         if (finalEnergyLevel < minEnergyLevel)
         {
             finalEnergyLevel = minEnergyLevel;
+        }else if (finalEnergyLevel > maxEnergyLevel)
+        {
+            finalEnergyLevel = maxEnergyLevel;
         }
             //-energySubtract();
         return finalEnergyLevel;
 
     }
+    //private float energyCal()
+    //{
+
+    //}
     // method to add energy 
-    private float energyAddition()
-    {
+    //private float energyAddition()
+    //{
+      
         
-        energyLevel = energyLevel + energyProduceRate;
-        if (energyLevel > maxEnergyLevel)
-        {
-            energyLevel = maxEnergyLevel;
-        }
-        //finalEnergyLevel=energyLevel-energyDeficit;
-        return energyLevel;
-    }
-    //method to subtract energy
-    private float energySubtract()
-    {
-        energyDeficit = energyDeficit + 1f;
-        return energyDeficit;
-    }
+
+    //    //finalEnergyLevel=energyLevel-energyDeficit;
+    //    return energyLevel;
+    //}
+    ////method to subtract energy
+    //private float energySubtract()
+    //{
+    //    energyDeficit = energyDeficit + 1f;
+    //    return energyDeficit;
+    //}
 
     //  private float calculateEnergyUsage()
     // {
