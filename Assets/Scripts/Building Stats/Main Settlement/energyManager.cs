@@ -16,13 +16,13 @@ public class energyManager : MonoBehaviour
     private float energyUsageRate;
     // counts number of solar panels placed in level
     // solar panels provide energy from sun during daytime;
-    public int noSolarPanels;
+    private int noSolarPanels;
     // variable that stores each solar panel instance
     private GameObject solar_pan;
 
     // total energy gathered from each solar panel instance
     private float totSolarPanelEnergy;
-    private float totSolarProduce;
+    public float totSolarProduce;
     private float tot_energy_produce;
 
     // variables that deal with overall energy consumption
@@ -46,7 +46,7 @@ public class energyManager : MonoBehaviour
 
 
 
-    private float energyPlusMinus;
+    public float energyPlusMinus;
     //private float energy_addition;
     //private float energy_subtraction;
     //private float energy_add;
@@ -73,7 +73,7 @@ public class energyManager : MonoBehaviour
 
         energyProduceRate = totSolarPanelEnergy;
         energyDeficit = 1f;
-        energyPlusMinus = energyProduceRate - energyDeficit;
+        energyPlusMinus = totSolarProduce - energyDeficit;
 
         
         //energy_subtract = energySubtract();
@@ -96,23 +96,31 @@ public class energyManager : MonoBehaviour
         //energy_subtraction = energySubtract();
 
         //energyLevel = energyLevel + totSolarPanelEnergy;
-        if (energyLevel > maxEnergyLevel)
-        {
-            energyLevel = maxEnergyLevel;
-        }
+      
         //finalEnergyLevel = energyLevel;
         //energy_addition-energy_subtraction;
 
         //finalEnergyLevel = energyLevel + (energy_subtract);
         if (finalEnergyLevel < minEnergyLevel)
-        {
+            {
             finalEnergyLevel = minEnergyLevel;
-        }else if (finalEnergyLevel > maxEnergyLevel)
-        {
+            }
+        else if (finalEnergyLevel > maxEnergyLevel)
+            {
             finalEnergyLevel = maxEnergyLevel;
-        }
+            }
         //-energySubtract();
-        energyLevel = energyLevel +- (energyPlusMinus);
+        energyLevel = energyLevel + (energyPlusMinus);
+
+        if (energyLevel > maxEnergyLevel)
+            {
+            energyLevel = maxEnergyLevel;
+            }
+        if (energyLevel<minEnergyLevel)
+        {
+            energyLevel = minEnergyLevel;
+        }
+
         return energyLevel;
 
     }
