@@ -16,7 +16,7 @@ public class energyManager : MonoBehaviour
     private float energyUsageRate;
     // counts number of solar panels placed in level
     // solar panels provide energy from sun during daytime;
-    private int noSolarPanels;
+    public int noSolarPanels;
     // variable that stores each solar panel instance
     private GameObject solar_pan;
 
@@ -24,6 +24,7 @@ public class energyManager : MonoBehaviour
     public float totSolarPanelEnergy;
     public float totSolarProduce;
     private float tot_energy_produce;
+    public float tot_solar_produce;
 
     // variables that deal with overall energy consumption
     public float energyDeficit;
@@ -49,6 +50,7 @@ public class energyManager : MonoBehaviour
 
 
     public float energyPlusMinus;
+    public float solar_produce;
     //private float energy_addition;
     //private float energy_subtraction;
     //private float energy_add;
@@ -70,12 +72,14 @@ public class energyManager : MonoBehaviour
     {   
         solar_pan = GameObject.FindWithTag("solarPan");
         totSolarPanelEnergy = solar_pan.GetComponent<solarPanelBehavior>().solarEnergy;
-        totSolarProduce = solar_pan.GetComponent<solarPanelBehavior>().energyProduce;
+        solar_produce = solar_pan.GetComponent<solarPanelBehavior>().energyProduce;
         noSolarPanels = GameObject.FindGameObjectsWithTag("solarPan").Length;
 
+
+        tot_solar_produce = solar_produce * noSolarPanels;
         energyProduceRate = totSolarPanelEnergy;
         energy_deficit = calculateDeficit();
-        energyPlusMinus = totSolarProduce - energy_deficit;
+        energyPlusMinus = tot_solar_produce - energy_deficit;
 
         
         //energy_subtract = energySubtract();
@@ -83,16 +87,16 @@ public class energyManager : MonoBehaviour
         //energyUsageRate = (solar_pan.GetComponent<solarPanelBehavior>()).energyUsage;
 
         //oxy_processor = GameObject.FindWithTag("oxyGen");
-        //noOxyGen = GameObject.FindGameObjectsWithTag("oxyGen").Length;
+        noOxyGen = GameObject.FindGameObjectsWithTag("oxyGen").Length;
 
         // hydro_build = GameObject.FindWithTag("hydroPonics");
-        // noHydro = GameObject.FindGameObjectsWithTag("hydroPonics").Length;
+        noHydro = GameObject.FindGameObjectsWithTag("hydroPonics").Length;
 
         //water_extract = GameObject.FindWithTag("waterExtract");
-        // noWaterExractor = GameObject.FindGameObjectsWithTag("waterExtract").Length;
+        noWaterExractor = GameObject.FindGameObjectsWithTag("waterExtract").Length;
 
         //land_pad = GameObject.FindWithTag("landingPad");
-        //noLandPad = GameObject.FindGameObjectsWithTag("landingPad").Length;
+        noLandPad = GameObject.FindGameObjectsWithTag("landingPad").Length;
         //calculateEnergyUsage();
         //energy_addition = energyAddition();
         //energy_subtraction = energySubtract();
@@ -132,16 +136,16 @@ public class energyManager : MonoBehaviour
         acropolisEnergyDeficit = 0.06f;
 
         Debug.Log("No Oxygen Processor: "+ noOxyGen);
-        oxygenEnergyDeficit = 0.001f * noOxyGen;
+        oxygenEnergyDeficit = 0.01f * noOxyGen;
 
         Debug.Log("No Hydro ponic: " + noHydro);
-        hydroponicsEnergyDeficit = 0.009f * noHydro;
+        hydroponicsEnergyDeficit = 0.09f * noHydro;
 
         Debug.Log("No Water Extractor: " + noWaterExractor);
-        waterExtractorEnergyDeficit = 0.009f * noWaterExractor;
+        waterExtractorEnergyDeficit = 0.09f * noWaterExractor;
 
         Debug.Log("No Landing Pads: " + noLandPad);
-        landingpadEnergyDeficit = 0.005f * noLandPad;
+        landingpadEnergyDeficit = 1f * noLandPad;
 
         energyDeficit = acropolisEnergyDeficit + oxygenEnergyDeficit + hydroponicsEnergyDeficit + waterExtractorEnergyDeficit + landingpadEnergyDeficit;
 
