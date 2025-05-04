@@ -6146,6 +6146,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 712e99fc498157a4492bf911c2075f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  environmentEvent:
+  - {fileID: 5782751003103857085, guid: 2f58ffe239f397f48af918a1bb24ce82, type: 3}
+  - {fileID: 6541691070243089037, guid: d29578d1d66b8ba4db5f51fbe19ec02a, type: 3}
+  - {fileID: 884225228844985445, guid: 4d37ea2f41675cc429a3ea8df97bb67a, type: 3}
 --- !u!1 &1120925633 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4553188425204224764, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
