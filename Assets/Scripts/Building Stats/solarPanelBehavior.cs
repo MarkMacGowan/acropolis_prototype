@@ -20,7 +20,10 @@ public class solarPanelBehavior : MonoBehaviour
 
     
     private GameObject dayNight_CycleObject;
-    private float sunAngle;
+
+    private float sunAngleX;
+    private float sunAngleY;
+    private float sunAngleZ;
     private bool isDaytime;
 
  
@@ -78,8 +81,11 @@ public class solarPanelBehavior : MonoBehaviour
 
     private float calculateEnergyProduction()
     {
-        
-       sunAngle=dayNight_CycleObject.transform.rotation.eulerAngles.z;
+       sunAngleX= dayNight_CycleObject.transform.rotation.eulerAngles.x;
+       sunAngleY= dayNight_CycleObject.transform.rotation.eulerAngles.y;
+       sunAngleZ =dayNight_CycleObject.transform.rotation.eulerAngles.z;
+       
+       Debug.Log("AngleX: "+sunAngleX+" SunAngleY: "+sunAngleY+" Angle: "+sunAngleZ);
        //Debug.Log("Is Day Time: "+checkTimeOfDay()+" Angle: "+sunAngle);
        checkTimeOfDay();
        if (isDaytime==true)
@@ -98,11 +104,11 @@ public class solarPanelBehavior : MonoBehaviour
     {   
         
        
-       if (sunAngle <= 90)
+       if (sunAngleZ <= 90)
         {
             isDaytime = true;
         }
-        else if (sunAngle>=270)
+        else if (sunAngleZ>=270)
         {
             isDaytime = true;
         }
