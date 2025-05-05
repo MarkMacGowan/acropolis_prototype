@@ -10,11 +10,11 @@ public class suppliesManager : MonoBehaviour
 
     private float maxSupplyLevel=1000;
 
-    private float minSupplyLevel = 0f;
+   // private float minSupplyLevel = 0f;
 
     private float supplyDeliveryRate;
 
-    private float supplyUsageRate;
+  //  private float supplyUsageRate;
 
 
 

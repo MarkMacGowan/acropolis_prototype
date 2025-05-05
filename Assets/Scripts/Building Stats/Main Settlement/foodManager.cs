@@ -10,7 +10,7 @@ public class foodManager : MonoBehaviour
     // maximum food level of mainDome
     private float maxFoodLevel=100f;
     // minimum food level of mainDome
-    private float minFoodLevel=0f;
+    //private float minFoodLevel=0f;
     // rate at which food level is regenerated
     private float foodProduceRate;
     // rate at which food is consumed

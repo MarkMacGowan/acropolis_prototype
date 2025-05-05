@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class saveLoadManager : MonoBehaviour
 {
+    private static string path = Application.persistentDataPath + "/save.json";
     private gameData game_data;
 
     public void NewGame()
@@ -39,8 +41,11 @@ public class saveLoadManager : MonoBehaviour
         // z angle 
         game_data.dayNightAngle[2] = 0f;
         
-        // instance of gameData class called game_data is written to a json file
+        // instance of gameData class called game_data is added to a variable of type string called json
         string json = JsonUtility.ToJson(game_data);
+        // json file created and written
+        File.WriteAllText(path, json);
+
     }
     public void LoadGame()
     {

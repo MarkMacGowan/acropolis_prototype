@@ -6,7 +6,7 @@ public class waterManager : MonoBehaviour
 {
     public float waterLevel = 0;
     private float maxWaterLevel = 100f;
-    private float minWaterLevel = 0f;
+    //private float minWaterLevel = 0f;
     private float waterProductRate;
     private float waterUsageRate;
 

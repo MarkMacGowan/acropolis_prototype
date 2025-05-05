@@ -438,34 +438,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4013df41fd200454885f8aa2a5fad3b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stat_manager: {fileID: 368663996}
+  stat_manager: {fileID: 0}
   health_level: 0
   oxygen_level: 0
   energy_level: 0
   food_level: 0
   water_level: 0
   supply_level: 0
---- !u!114 &368663996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 368663980}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e360faa6b3db8cd40ad5c1cd1087468c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  oxygen_manager: {fileID: 368664000}
-  oxygenLvl: 0
-  healthLevel: 0
-  waterLevel: 0
-  waterProduceRate: 0
-  noWaterPurifers: 0
-  supplyLevel: 0
-  noLandingPads: 0
-  noStorageBuildings: 0
 --- !u!114 &368664000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6481,6 +6460,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1738fb6cddb89f488a31b5809f06de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1321016038 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3193772127914010889, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
+  m_PrefabInstance: {fileID: 191782503716639573}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321016031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1738fb6cddb89f488a31b5809f06de4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1393410661 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4938252346471502613, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
@@ -6714,9 +6704,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: de2847d9db729f3449fbc5a3852095d2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 368663992}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: de2847d9db729f3449fbc5a3852095d2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 368663996}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: de2847d9db729f3449fbc5a3852095d2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 368664000}
@@ -7325,7 +7312,7 @@ PrefabInstance:
     - target: {fileID: 1106703601230878400, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
       propertyPath: stat_manager
       value: 
-      objectReference: {fileID: 368663996}
+      objectReference: {fileID: 0}
     - target: {fileID: 1106703601230878400, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
       propertyPath: oxygen_manager
       value: 
@@ -7949,7 +7936,7 @@ PrefabInstance:
     - target: {fileID: 6831554965044123109, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
       propertyPath: stat_manager
       value: 
-      objectReference: {fileID: 368663996}
+      objectReference: {fileID: 0}
     - target: {fileID: 6831554965044123109, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
       propertyPath: energy_manager
       value: 
@@ -8061,10 +8048,22 @@ PrefabInstance:
     - target: {fileID: 7582765864154490766, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1321016031}
+      objectReference: {fileID: 1321016038}
     - target: {fileID: 7582765864154490766, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582765864154490766, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SaveGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582765864154490766, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: saveLoadManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582765864154490766, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7609722949446816925, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
       propertyPath: m_Color.a

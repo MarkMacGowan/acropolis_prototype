@@ -10,11 +10,11 @@ public class oxygenManager : MonoBehaviour
     // maximum oxygen level of mainDome
     private float maxOxygenLevel = 1000f;
     // minimum oxygen level of mainDome
-    private float minOxygenLevel = 0f;
+   // private float minOxygenLevel = 0f;
     // rate at which oxygenLevel regenerates
     private float oxygenProduceRate;
     // rate at which oxygen is used up
-    private float oxygenUsageRate;
+   // private float oxygenUsageRate;
     // counts number of oxygen generators placed in level
     // oxygen generator produce oxygen from the thin atmosphere around it
     // during clear weather

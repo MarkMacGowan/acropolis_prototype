@@ -5,21 +5,21 @@ using UnityEngine;
 public class statManager : MonoBehaviour
 {
     //public oxygenManager oxygen_manager;
-   [SerializeField] private oxygenManager oxygen_manager;
+   //[SerializeField] private oxygenManager oxygen_manager;
    //[SerializeField] private energyManager energy_manager;
-   public float oxygenLvl;
+   //public float oxygenLvl;
    //public float energyLvl;
     //[SerializeField] private UnityEngine.UI.Slider oxygenSlider;
 
     // HEALTH
     // healthLevel of mainDome
-    public float healthLevel;
+    //public float healthLevel;
     // maximum health level of mainDome
-    private float maxHealthLevel = 100f;
+    //private float maxHealthLevel = 100f;
     // minimum health level of mainDome
-    private float minHealthLevel = 0f;
+   // private float minHealthLevel = 0f;
     // rate at which the healthLevel regenerates
-    private float healthRechargeRate;
+   // private float healthRechargeRate;
 
     // OXYGEN
     //// oxygen level of mainDome
@@ -93,22 +93,22 @@ public class statManager : MonoBehaviour
 
     // WATER
     // water level of mainDome
-    public float waterLevel;
+    //public float waterLevel;
     // maximum water level of mainDome
-    private float maxWaterLevel = 100f;
+    //private float maxWaterLevel = 100f;
     // minimum water level of mainDome
-    private float minWaterLevel = 0f;
+   // private float minWaterLevel = 0f;
     // rate at which water level is regenerated
-    public float waterProduceRate;
+   // public float waterProduceRate;
     // rate at which water is used up
-    private float waterUsageRate;
+   // private float waterUsageRate;
     // counts number of water purifers placed in level
     // water purifers purify water from ice
-    public int noWaterPurifers;
+   // public int noWaterPurifers;
 
     // SUPPLIES (currency)
     // supply level of mainDome
-    public float supplyLevel;
+    //public float supplyLevel;
     // maximum supply level of mainDome
     // private float maxSupplyLevel;
     // minimum supply level of mainDome
@@ -119,10 +119,10 @@ public class statManager : MonoBehaviour
     //private float supplyUsageRate;
     // counts number of landing pads placed in level
     // landing pads import supplies when weather is clear
-    public int noLandingPads;
+    //public int noLandingPads;
     // counts number of storage buildings placed in level
     // storage buildings store food, water, oxygen or supplies
-    public int noStorageBuildings;
+   // public int noStorageBuildings;
     // Start is called before the first frame update
     void Start()
     {
@@ -132,12 +132,12 @@ public class statManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        resourceManager();
+       // resourceManager();
     }
     public void resourceManager()
     {
-        healthManager();
-        oxygenLvl =oxygen_manager.oxygenInfo();
+       // healthManager();
+        //oxygenLvl =oxygen_manager.oxygenInfo();
         //energyLvl =energy_manager.energyInfo();
         //oxygenManager();
        // energyManager();
