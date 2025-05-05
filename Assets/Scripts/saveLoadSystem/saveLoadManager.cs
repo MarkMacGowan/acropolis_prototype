@@ -45,6 +45,7 @@ public class saveLoadManager : MonoBehaviour
         string json = JsonUtility.ToJson(game_data);
         // json file created and written
         File.WriteAllText(path, json);
+        Debug.Log("Saving to: " + path);
 
     }
     public void LoadGame()
