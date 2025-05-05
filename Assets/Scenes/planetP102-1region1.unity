@@ -6128,7 +6128,7 @@ Transform:
   m_GameObject: {fileID: 1000612699}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -19.9, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6150,6 +6150,7 @@ MonoBehaviour:
   - {fileID: 5782751003103857085, guid: 2f58ffe239f397f48af918a1bb24ce82, type: 3}
   - {fileID: 6541691070243089037, guid: d29578d1d66b8ba4db5f51fbe19ec02a, type: 3}
   - {fileID: 884225228844985445, guid: 4d37ea2f41675cc429a3ea8df97bb67a, type: 3}
+  - {fileID: 741759680122134382, guid: b544c1e297b64df4f985442e3139c854, type: 3}
 --- !u!1 &1120925633 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4553188425204224764, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
@@ -7088,7 +7089,7 @@ GameObject:
   - component: {fileID: 2145974811}
   - component: {fileID: 2145974810}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
