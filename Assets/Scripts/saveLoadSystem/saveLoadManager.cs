@@ -5,15 +5,21 @@ using System.IO;
 
 public class saveLoadManager : MonoBehaviour
 {
-    private static string path = Application.persistentDataPath + "/save.json";
+    private static string path ;
     private gameData game_data;
 
+    public void Awake()
+    {
+        path = Application.persistentDataPath + "/save.json";
+        game_data = new gameData();
+    }
     public void NewGame()
     {
         game_data = new gameData();
     }
     public void SaveGame()
-    {   
+    {
+        Debug.Log("Save Method Acessed");
         // all stats set to experiment levels
         game_data.healthLevelCurrent = 100f;
         game_data.oxygenLevelCurrent = 100f;
