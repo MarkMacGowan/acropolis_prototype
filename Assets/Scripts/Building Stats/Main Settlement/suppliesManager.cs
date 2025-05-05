@@ -8,7 +8,7 @@ public class suppliesManager : MonoBehaviour
 
     public float supplyLevel = 0;
 
-    private float maxSupplyLevel = 100f;
+    private float maxSupplyLevel=1000;
 
     private float minSupplyLevel = 0f;
 
@@ -47,7 +47,7 @@ public class suppliesManager : MonoBehaviour
         noLandingPads = GameObject.FindGameObjectsWithTag("landingPad").Length;
         supplyDeliveryRate = totSuppliesAmount;
         supplyLevel = supplyLevel + supplyDeliveryRate;
-        if (supplyLevel>maxSupplyLevel)
+        if (supplyLevel > maxSupplyLevel)
         {
             supplyLevel = maxSupplyLevel;
         }
