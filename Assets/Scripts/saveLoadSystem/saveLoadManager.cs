@@ -7,7 +7,10 @@ using System;
 
 public class saveLoadManager : MonoBehaviour
 {
-    private static string path ;
+
+    [SerializeField] GameObject mSettlement;
+    [SerializeField] GameObject dNCycleObject;
+    private static string path;
     private gameData game_data;
     private string myJson;
     private DateTime localDate; 
@@ -27,13 +30,13 @@ public class saveLoadManager : MonoBehaviour
     {   
         Debug.Log("Save Method Acessed");
         // all stats set to experiment levels
-        game_data.healthLevelCurrent = 100f;
-        game_data.oxygenLevelCurrent = 100f;
-        game_data.energyLevelCurrent = 100f;
-        game_data.foodLevelCurrent = 100f;
-        game_data.waterLevelCurrent = 100f;
-        game_data.daysPassed = 3;
-        game_data.supplyLevelCurrent = 50;
+        game_data.healthLevelCurrent = mSettlement.gameObject.GetComponent<healthManager>().healthInfo();
+        game_data.oxygenLevelCurrent = mSettlement.gameObject.GetComponent<oxygenManager>().oxygenInfo();
+        game_data.energyLevelCurrent = mSettlement.gameObject.GetComponent<energyManager>().energyInfo();
+        game_data.foodLevelCurrent = mSettlement.gameObject.GetComponent<foodManager>().foodInfo();
+        game_data.waterLevelCurrent = mSettlement.gameObject.GetComponent<waterManager>().waterInfo();
+        game_data.daysPassed = dNCycleObject.gameObject.GetComponent<dayNightCycle>().dayNumConvert;
+        game_data.supplyLevelCurrent = ((int)mSettlement.gameObject.GetComponent<suppliesManager>().suppliesInfo());
 
         // x coordinate
         game_data.buildingPosition[0] = 3f;
@@ -44,6 +47,7 @@ public class saveLoadManager : MonoBehaviour
         // index of scene set to 1
         game_data.sceneIndex = 1;
         // day status set to night time
+        // to do: to get status dynamically get solarPanelmanager script and read status boolean there 
         game_data.dayStatus = false;
 
         // x angle

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class healthManager : MonoBehaviour
 {
+    public float healthLevel;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,9 @@ public class healthManager : MonoBehaviour
     void Update()
     {
         
+    }
+    public float healthInfo()
+    {
+        return healthLevel;
     }
 }
