@@ -2,15 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using System.Globalization;
+using System;
 
 public class saveLoadManager : MonoBehaviour
 {
     private static string path ;
     private gameData game_data;
+    private string myJson;
+    private DateTime localDate; 
+    private string fileName;
 
     public void Awake()
     {
-        path = Application.persistentDataPath + "/save.json";
+        
+        
         game_data = new gameData();
     }
     public void NewGame()
@@ -18,7 +24,7 @@ public class saveLoadManager : MonoBehaviour
         game_data = new gameData();
     }
     public void SaveGame()
-    {
+    {   
         Debug.Log("Save Method Acessed");
         // all stats set to experiment levels
         game_data.healthLevelCurrent = 100f;
@@ -47,10 +53,18 @@ public class saveLoadManager : MonoBehaviour
         // z angle 
         game_data.dayNightAngle[2] = 0f;
         
-        // instance of gameData class called game_data is added to a variable of type string called json
-        string json = JsonUtility.ToJson(game_data);
-        // json file created and written
-        File.WriteAllText(path, json);
+
+        // instance of gameData class called game_data is added to a variable of type string called dataJson
+        myJson = JsonUtility.ToJson(game_data);
+        
+        // date and time at present
+        localDate = DateTime.Now;
+        // fileName takes in localDate, turns it into a string and concatenates it with with
+        // first and last strings in fileName
+        fileName = "save-" +localDate.ToString("yyyy-MM-dd_HH-mm-ss") +".json";
+        path = Application.persistentDataPath + "/"+fileName;
+        // json file created and written using path variable and dataJson string variable
+        File.WriteAllText(path, myJson);
         Debug.Log("Saving to: " + path);
 
     }
@@ -60,6 +74,7 @@ public class saveLoadManager : MonoBehaviour
         {
             NewGame();
         }
-
+        gameData saveObject = JsonUtility.FromJson<gameData>(myJson);
+        Debug.Log("Data loaded: "+saveObject);
     }
 }
