@@ -33,7 +33,7 @@ public class buildingCounter : MonoBehaviour
         numTotal = numOxy + numSolar + numHydro + numWaterExt + numLanding;
         if (numTotal==0)
         {
-            Debug.Log("There are no builings");
+            Debug.Log("There are no buildings");
         }
         return numTotal;
     }
