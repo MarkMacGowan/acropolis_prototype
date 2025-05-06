@@ -8,13 +8,16 @@ public class dayNightCycle : MonoBehaviour
     public float timeRate=.01f;
 
     // how many degress per second the object rotates
-    private float rotationalNumZ;
+    public float rotationalNumZ;
 
     // number of days passed in float datatype
     public float dayNum;
 
     // number of days passed in int datatype
     public int dayNumConvert;
+
+    // bool variable that stores day or night
+    public bool dayTime;
 
     // Start is called before the first frame update
     void Start()
@@ -31,5 +34,22 @@ public class dayNightCycle : MonoBehaviour
         dayNum += rotationalNumZ / 360;
         dayNumConvert = ((int)dayNum);
 
+    }
+
+    public bool TimeOfDay()
+    {
+        if (rotationalNumZ <= 90)
+        {
+            dayTime = true;
+        }
+        else if (rotationalNumZ >= 270)
+        {
+            dayTime = true;
+        }
+        else
+        {
+            dayTime = false;
+        }
+        return dayTime;
     }
 }

@@ -20,8 +20,9 @@ public class dayStat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {    
-        day_txt.GetComponent<TMPro.TextMeshProUGUI>().text = dayNumCon;
+        
         day_Num = day_night.GetComponent<dayNightCycle>().dayNumConvert;
         dayNumCon = day_Num.ToString();
+        day_txt.GetComponent<TMPro.TextMeshProUGUI>().text = dayNumCon;
     }
 }

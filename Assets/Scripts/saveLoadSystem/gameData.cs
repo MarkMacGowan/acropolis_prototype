@@ -27,6 +27,9 @@ public class gameData
     // how much supplies there are
     public int supplyLevelCurrent;
 
+    // building object
+    //public GameObject buildingObject;
+
     // position of any building placed
     public float [] buildingPosition;
     // position of buildings in x, y, z coordinates
@@ -66,6 +69,7 @@ public class gameData
 
         this.sceneIndex = 1;
 
+        //this.buildingObject = new GameObject();
         this.buildingPosition =new float [3];
 
         this.dayNightAngle = new float[3];

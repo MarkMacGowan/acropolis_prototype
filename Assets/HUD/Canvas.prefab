@@ -650,7 +650,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 459934583858902519}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de4077842a8b5734081425d0a3d66b27, type: 3}
   m_Name: 
@@ -1967,6 +1967,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1738fb6cddb89f488a31b5809f06de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mSettlement: {fileID: 0}
+  dNCycleObject: {fileID: 0}
+  building_counter_object: {fileID: 0}
+  inbuilding_storage: {fileID: 0}
+  totAllBuildings: 0
 --- !u!1 &2343456078314576650
 GameObject:
   m_ObjectHideFlags: 0
