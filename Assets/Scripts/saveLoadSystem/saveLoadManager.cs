@@ -174,10 +174,18 @@ public class saveLoadManager : MonoBehaviour
     }
     public void LoadGame()
     {
-        if (this.environment_Data == null&&this.building_Data==null&&this.stat_Data==null)
+        path = Application.persistentDataPath + "/" + fileName;
+        List<string> saveFileNames = new List<string>();
+        string[] files = Directory.GetFiles(path, "*.json");
+        foreach (string file in files)
         {
-            NewGame();
+            Debug.Log("Save Files: "+Path.GetFileName(file));
         }
+
+        //if (this.environment_Data == null&&this.building_Data==null&&this.stat_Data==null)
+        //{
+        //    NewGame();
+        //}
         //gameData saveObject = JsonUtility.FromJson<gameData>(myJson);
         //Debug.Log("Data loaded: "+saveObject);
     }
