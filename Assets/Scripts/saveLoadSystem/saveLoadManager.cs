@@ -18,9 +18,10 @@ public class saveLoadManager : MonoBehaviour
     //private GameObject iBuilding;
     //private GameObject aBuilding;
     [SerializeField] private int totAllBuildings;
-
-    private List<BuildingData> everyBuilding;
-    private List<GameObject> all_buildings;
+    // list of type BuildingData
+    
+    // List of type GameObject which hold all buildings instansiated 
+    //private List<GameObject> all_buildings;
 
       
     //private List<GameObject> oxyGenExtractors;
@@ -38,7 +39,7 @@ public class saveLoadManager : MonoBehaviour
     private string myEnvironmentData;
     private string myBuildingData;
     private string myStatData;
-    private string allBuildingStates;
+    //private string allBuildingStates;
 
     //private string myJson;
     private DateTime localDate; 
@@ -65,7 +66,7 @@ public class saveLoadManager : MonoBehaviour
     public void SaveGame()
     {   
         Debug.Log("Save Method Acessed");
-        all_buildings=RetrieveAllActiveBuildings();
+        List<GameObject> all_buildings =RetrieveAllActiveBuildings();
         // all stats 
         //stat_Data.healthLevelCurrent = mSettlement.gameObject.GetComponent<healthManager>().healthInfo();
         stat_Data.oxygenLevelCurrent = mSettlement.gameObject.GetComponent<oxygenManager>().oxygenInfo();
@@ -76,13 +77,21 @@ public class saveLoadManager : MonoBehaviour
         
         // all environment information
         environment_Data.daysPassed = dNCycleObject.gameObject.GetComponent<dayNightCycle>().dayNumConvert;
-
-
+        Debug.Log("All Buildings List Length: "+all_buildings.Count);
+        List<BuildingData> everyBuilding=new List<BuildingData>();
+        Debug.Log("EveryBuilding Length: "+everyBuilding.Count);
         //building object
         //building_Data.buildingHealth=
-        for (int i=0;i<all_buildings.Count;i++)
+        int count = Mathf.Min(everyBuilding.Count, all_buildings.Count);
+        for (int i=0;i<count; i++)
         {
+            
+            Debug.Log("Index: " + i);
             Debug.Log("Instance ID: " + all_buildings[i].GetInstanceID());
+            Debug.Log("Buildings Count: "+all_buildings.Count);
+            int tempID;
+            tempID= all_buildings[i].GetInstanceID();
+            Debug.Log("TempID: " + tempID);
             everyBuilding[i].buildingId = all_buildings[i].GetInstanceID();
             
             everyBuilding[i].buildingTag = all_buildings[i].gameObject.tag;
@@ -93,7 +102,8 @@ public class saveLoadManager : MonoBehaviour
             everyBuilding[i].buildingEn = all_buildings[i].gameObject.GetComponent<BuildingBehavior>().buildingEnergy;
             everyBuilding[i].buildingOx = all_buildings[i].gameObject.GetComponent<BuildingBehavior>().buildingOxygen;
         }
-       ;
+        Debug.Log("EveryBuilding List Size: "+everyBuilding.Count);
+       
         // building position
         // x coordinate
         //building_Data.buildingPosition[0] = 3f;
@@ -123,7 +133,9 @@ public class saveLoadManager : MonoBehaviour
         //}
         // game_data.currentBuildings[0]
         // instance of gameData class called game_data is added to a variable of type string called dataJson
-        allBuildingStates = everyBuilding.ToString();
+        BuildingSaveData saveData = new BuildingSaveData();
+        saveData.allBuildings = everyBuilding;
+        string allBuildingStates = JsonUtility.ToJson(saveData);
         myEnvironmentData = JsonUtility.ToJson(environment_Data);
         myBuildingData = JsonUtility.ToJson(allBuildingStates);
         myStatData = JsonUtility.ToJson(stat_Data);
@@ -136,7 +148,7 @@ public class saveLoadManager : MonoBehaviour
         fileName = "save-" +localDate.ToString("yyyy-MM-dd_HH-mm-ss") +".json";
         path = Application.persistentDataPath + "/"+fileName;
         // json file created and written using path variable and dataJson string variable
-        File.WriteAllText(path, myEnvironmentData+myBuildingData+myStatData);
+        File.WriteAllText(path, myEnvironmentData+myBuildingData+myStatData+allBuildingStates);
         Debug.Log("Saving to: " + path);
 
     }
@@ -159,37 +171,38 @@ public class saveLoadManager : MonoBehaviour
         Debug.Log("All Oxygen Objects added to List");
         //int solarPanelArrayLength = GameObject.FindGameObjectsWithTag("solarPan").Length;
         GameObject[] solarPanelArray= GameObject.FindGameObjectsWithTag("solarPan");
+        
         List<GameObject> solarPanels = GameObject.FindGameObjectsWithTag("solarPan").ToList();
-
+        Debug.Log("All Solar arrays added to List");
 
         GameObject[] hydroArray = GameObject.FindGameObjectsWithTag("hydroPonics");
         List<GameObject> hydroPonics= GameObject.FindGameObjectsWithTag("hydroPonics").ToList();
-
+        Debug.Log("All HydroPonicsArrays added to List");
         GameObject[] waterArray = GameObject.FindGameObjectsWithTag("waterExtract");
         List<GameObject> waterExtractors = GameObject.FindGameObjectsWithTag("waterExtract").ToList();
-
+        Debug.Log("All Water ExtractorsArrays added to List");
         GameObject[] supplyArray = GameObject.FindGameObjectsWithTag("landingPad");
         List <GameObject> supplyPads= GameObject.FindGameObjectsWithTag("landingPad").ToList();
-
+        Debug.Log("All Supply pad Arrays added to List");
 
         //GameObject[] buildingArray;
-   // private GameObject myBuilding;
+        // private GameObject myBuilding;
 
 
         //int hydroPonicsArrayLength= GameObject.FindGameObjectsWithTag("hydroPonics").Length;
-        
-        
-        
 
-       // int waterExtractArrayLength= GameObject.FindGameObjectsWithTag("waterExtract").Length;
-        
-        
-        
+
+
+
+        // int waterExtractArrayLength= GameObject.FindGameObjectsWithTag("waterExtract").Length;
+
+
+
 
         //int landingPadArrayLength= GameObject.FindGameObjectsWithTag("landingPad").Length;
-        
+
         //supplyPads.AddRange(GameObject.FindGameObjectsWithTag("landingPad"));
-        
+
 
 
 

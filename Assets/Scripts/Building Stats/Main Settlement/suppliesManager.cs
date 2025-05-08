@@ -42,7 +42,7 @@ public class suppliesManager : MonoBehaviour
     public float suppliesInfo()
     {
         land_pad = GameObject.FindWithTag("landingPad");
-        totSuppliesAmount = land_pad.GetComponent<landingPadBehavior>().suppliesAmount;
+       //totSuppliesAmount = land_pad.GetComponent<landingPadBehavior>().suppliesAmount;
         totSuppliesDelivery = land_pad.GetComponent<landingPadBehavior>().suppliesProduce;
         noLandingPads = GameObject.FindGameObjectsWithTag("landingPad").Length;
         supplyDeliveryRate = totSuppliesAmount;

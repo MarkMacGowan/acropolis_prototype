@@ -44,7 +44,7 @@ public class solarPanelBehavior : BuildingBehavior
        
 
         energyProduce=calculateEnergyProduction();
-        Debug.Log("Energy Production: "+energyProduce);
+        //Debug.Log("Energy Production: "+energyProduce);
         //is_placed = key_board_input.isPlaced;
         solarEnergy = solarEnergy + energyProduce;
         //solarRate = solarRate + Time.deltaTime * 1;
@@ -85,7 +85,7 @@ public class solarPanelBehavior : BuildingBehavior
        sunAngleY= dayNight_CycleObject.transform.rotation.eulerAngles.y;
        sunAngleZ =dayNight_CycleObject.transform.rotation.eulerAngles.z;
        
-       Debug.Log("AngleX: "+sunAngleX+" SunAngleY: "+sunAngleY+" Angle: "+sunAngleZ);
+       //Debug.Log("AngleX: "+sunAngleX+" SunAngleY: "+sunAngleY+" Angle: "+sunAngleZ);
        //Debug.Log("Is Day Time: "+checkTimeOfDay()+" Angle: "+sunAngle);
        checkTimeOfDay();
        if (isDaytime==true)
