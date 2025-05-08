@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class oxygenGeneratorBehavior : MonoBehaviour
 {   
+    [SerializeField]public GameObject main_dome;
+    private float mainDomeEnergy;
     public float maxOxygenGenHealth=100f;
     public float oxygenGenHealth = 100f;
 
@@ -15,20 +17,25 @@ public class oxygenGeneratorBehavior : MonoBehaviour
     // the maximum amount of oxygen that can produced
     // by a generator in a given time 
     public float maxOxygenProduce = 1f;
+    //variable that takes in energy of main 
+    public bool isMainDomeEnergy = true;
     
 
 
-    public int noOxygenGens;
+    //public int noOxygenGens;
 
     // Start is called before the first frame update
     void Start()
     {
+        main_dome = GameObject.FindGameObjectWithTag("mainSettle");
+        
         oxygenAmount=0f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        mainDomeEnergy = main_dome.gameObject.GetComponent<energyManager>().energyLevel;
         oxygenAmount = oxygenAmount + oxygenProduce;
 
         if (oxygenProduce > maxOxygenProduce)
@@ -41,5 +48,12 @@ public class oxygenGeneratorBehavior : MonoBehaviour
         {
             oxygenAmount = maxOxygenAmount;
         }
+    }
+    private void continueProcess()
+    {
+        //if (mainDomeEnergy <= 0)
+        //{
+            
+        //}
     }
 }

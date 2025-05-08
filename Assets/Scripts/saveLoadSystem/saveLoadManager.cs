@@ -11,8 +11,16 @@ public class saveLoadManager : MonoBehaviour
     [SerializeField] GameObject mSettlement;
     [SerializeField] GameObject dNCycleObject;
     [SerializeField] GameObject building_counter_object;
-    [SerializeField] GameObject inbuilding_storage;
+
+
+    // [SerializeField] GameObject inbuilding_storage;
+    private GameObject iBuilding;
+    private GameObject aBuilding;
     [SerializeField] private int totAllBuildings;
+    private List<GameObject> solarList;
+    private GameObject[] buildingArray;
+   // private GameObject myBuilding;
+
     private static string path;
 
     //private gameData game_data;
@@ -35,6 +43,7 @@ public class saveLoadManager : MonoBehaviour
         building_Data = new BuildingData();
         stat_Data = new StatData();
        
+
         //game_data = new gameData();
         totAllBuildings = 0;
     }
@@ -61,7 +70,7 @@ public class saveLoadManager : MonoBehaviour
         
         
         //building object
-
+        //building_Data.buildingHealth=
 
         // building position
         // x coordinate
@@ -117,5 +126,25 @@ public class saveLoadManager : MonoBehaviour
         }
         //gameData saveObject = JsonUtility.FromJson<gameData>(myJson);
         //Debug.Log("Data loaded: "+saveObject);
+    }
+    private void retrieveAllActiveBuildings()
+    {
+        buildingArray = GameObject.FindGameObjectsWithTag("solarPan");
+        foreach (GameObject iBuilding in buildingArray)
+        {
+            //solarPan aB = iBuilding.GetComponent<>();
+            //building_Data
+        }
+        
+           //solarList[i] = GameObject.FindGameObjectsWithTag("solarPan");
+        
+    }
+    private void buildingLoop()
+    {
+        //int i = 0;
+        //foreach (var building in buildList)
+            
+            //i++;
+            //buildList=GameObject.FindGameObjectsWithTag("solarPan")).
     }
 }

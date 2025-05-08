@@ -14,6 +14,7 @@ TagManager:
   - hydroPonics
   - waterExtract
   - dayNight
+  - mainSettle
   layers:
   - Default
   - TransparentFX
