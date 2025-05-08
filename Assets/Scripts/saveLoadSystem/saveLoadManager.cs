@@ -22,16 +22,12 @@ public class saveLoadManager : MonoBehaviour
     private List<BuildingData> everyBuilding;
     private List<GameObject> all_buildings;
 
-    private List<GameObject> oxyGenExtractors;
-    private List<GameObject> solarPanels;
-    private List<GameObject> hydroPonics;
-    private List<GameObject> waterExtractors;
-    private List<GameObject> supplyPads;
+      
+    //private List<GameObject> oxyGenExtractors;
 
+    
 
-    private GameObject[] buildingArray;
-   // private GameObject myBuilding;
-
+  
     private static string path;
 
     //private gameData game_data;
@@ -86,7 +82,8 @@ public class saveLoadManager : MonoBehaviour
         //building_Data.buildingHealth=
         for (int i=0;i<all_buildings.Count;i++)
         {
-            everyBuilding[i].buildingId = all_buildings[i].gameObject.GetInstanceID();
+            Debug.Log("Instance ID: " + all_buildings[i].GetInstanceID());
+            everyBuilding[i].buildingId = all_buildings[i].GetInstanceID();
             
             everyBuilding[i].buildingTag = all_buildings[i].gameObject.tag;
             everyBuilding[i].buildingPosition[0] = all_buildings[i].transform.position.x;
@@ -153,37 +150,46 @@ public class saveLoadManager : MonoBehaviour
         //Debug.Log("Data loaded: "+saveObject);
     }
     private List<GameObject> RetrieveAllActiveBuildings()
-    {   
+    {
+        Debug.Log("Retrieve Buildings Accessed");
+       
+        GameObject[] oxygenArray = GameObject.FindGameObjectsWithTag("oxyGen");
+        //int oxygenArrayLength= GameObject.FindGameObjectsWithTag("oxyGen").Length;
+        List <GameObject>oxyGenExtractors= GameObject.FindGameObjectsWithTag("oxyGen").ToList();
+        Debug.Log("All Oxygen Objects added to List");
+        //int solarPanelArrayLength = GameObject.FindGameObjectsWithTag("solarPan").Length;
+        GameObject[] solarPanelArray= GameObject.FindGameObjectsWithTag("solarPan");
+        List<GameObject> solarPanels = GameObject.FindGameObjectsWithTag("solarPan").ToList();
 
-        int oxygenArrayLength= GameObject.FindGameObjectsWithTag("oxyGen").Length;
-        for (int i = 0; i < oxygenArrayLength; i++)
-        {
-            oxyGenExtractors[i] = GameObject.FindGameObjectsWithTag("oxyGen")[i];
-        }
+
+        GameObject[] hydroArray = GameObject.FindGameObjectsWithTag("hydroPonics");
+        List<GameObject> hydroPonics= GameObject.FindGameObjectsWithTag("hydroPonics").ToList();
+
+        GameObject[] waterArray = GameObject.FindGameObjectsWithTag("waterExtract");
+        List<GameObject> waterExtractors = GameObject.FindGameObjectsWithTag("waterExtract").ToList();
+
+        GameObject[] supplyArray = GameObject.FindGameObjectsWithTag("landingPad");
+        List <GameObject> supplyPads= GameObject.FindGameObjectsWithTag("landingPad").ToList();
+
+
+        //GameObject[] buildingArray;
+   // private GameObject myBuilding;
+
+
+        //int hydroPonicsArrayLength= GameObject.FindGameObjectsWithTag("hydroPonics").Length;
         
-        int solarPanelArrayLength = GameObject.FindGameObjectsWithTag("solarPan").Length;
-        for (int i = 0; i < solarPanelArrayLength; i++)
-        {
-            solarPanels[i] = GameObject.FindGameObjectsWithTag("solarPanel")[i];
-        }
+        
+        
 
-        int hydroPonicsArrayLength= GameObject.FindGameObjectsWithTag("hydroPonics").Length;
-        for (int i = 0; i < hydroPonicsArrayLength; i++)
-        {
-            hydroPonics[i] = GameObject.FindGameObjectsWithTag("hydroPonics")[i];
-        }
+       // int waterExtractArrayLength= GameObject.FindGameObjectsWithTag("waterExtract").Length;
+        
+        
+        
 
-        int waterExtractArrayLength= GameObject.FindGameObjectsWithTag("waterExtract").Length;
-        for (int i = 0; i < waterExtractArrayLength; i++)
-        {
-            waterExtractors[i] = GameObject.FindGameObjectsWithTag("waterExtract")[i];
-        }
-
-        int landingPadArrayLength= GameObject.FindGameObjectsWithTag("landingPad").Length;
-        for (int i = 0; i < landingPadArrayLength; i++)
-        {
-            supplyPads[i] = GameObject.FindGameObjectsWithTag("landingPad")[i];
-        }
+        //int landingPadArrayLength= GameObject.FindGameObjectsWithTag("landingPad").Length;
+        
+        //supplyPads.AddRange(GameObject.FindGameObjectsWithTag("landingPad"));
+        
 
 
 
