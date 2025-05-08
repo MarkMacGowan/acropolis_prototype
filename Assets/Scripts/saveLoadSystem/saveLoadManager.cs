@@ -35,7 +35,7 @@ public class saveLoadManager : MonoBehaviour
     private EnvironmentData environment_Data;
     private BuildingData building_Data;
     private StatData stat_Data;
-
+    private string allBuildingStates;
     private string myEnvironmentData;
     private string myBuildingData;
     private string myStatData;
@@ -83,24 +83,44 @@ public class saveLoadManager : MonoBehaviour
         //building object
         //building_Data.buildingHealth=
         int count = Mathf.Min(everyBuilding.Count, all_buildings.Count);
-        for (int i=0;i<count; i++)
+        for (int i=0;i<all_buildings.Count; i++)
         {
             
-            Debug.Log("Index: " + i);
-            Debug.Log("Instance ID: " + all_buildings[i].GetInstanceID());
-            Debug.Log("Buildings Count: "+all_buildings.Count);
-            int tempID;
-            tempID= all_buildings[i].GetInstanceID();
-            Debug.Log("TempID: " + tempID);
-            everyBuilding[i].buildingId = all_buildings[i].GetInstanceID();
+            GameObject gObject = all_buildings[i];
+            BuildingBehavior b = gObject.GetComponent<BuildingBehavior>();
+            if (b == null) continue;
+            BuildingData myData = new BuildingData
+            {
+
+                buildingId = gObject.GetInstanceID(),
+                buildingTag = gObject.tag,
+                buildingPosition = new float[]
+                {
+                    gObject.transform.position.x,
+                    gObject.transform.position.y,
+                    gObject.transform.position.z
+                },
+                bHealth=b.buildingHealth,
+                bEnergy=b.buildingEnergy,
+                bOxygen=b.buildingOxygen
             
-            everyBuilding[i].buildingTag = all_buildings[i].gameObject.tag;
-            everyBuilding[i].buildingPosition[0] = all_buildings[i].transform.position.x;
-            everyBuilding[i].buildingPosition[1] = all_buildings[i].transform.position.y;
-            everyBuilding[i].buildingPosition[2] = all_buildings[i].transform.position.z;
-            everyBuilding[i].buildingH = all_buildings[i].gameObject.GetComponent<BuildingBehavior>().buildingHealth;
-            everyBuilding[i].buildingEn = all_buildings[i].gameObject.GetComponent<BuildingBehavior>().buildingEnergy;
-            everyBuilding[i].buildingOx = all_buildings[i].gameObject.GetComponent<BuildingBehavior>().buildingOxygen;
+            };
+            everyBuilding.Add(myData);
+            //Debug.Log("Index: " + i);
+            //Debug.Log("Instance ID: " + all_buildings[i].GetInstanceID());
+            //Debug.Log("Buildings Count: "+all_buildings.Count);
+            //int tempID;
+            //tempID= all_buildings[i].GetInstanceID();
+            //Debug.Log("TempID: " + tempID);
+            //everyBuilding[i].buildingId = all_buildings[i].GetInstanceID();
+            
+            //everyBuilding[i].buildingTag = all_buildings[i].gameObject.tag;
+            //everyBuilding[i].buildingPosition[0] = all_buildings[i].transform.position.x;
+            //everyBuilding[i].buildingPosition[1] = all_buildings[i].transform.position.y;
+            //everyBuilding[i].buildingPosition[2] = all_buildings[i].transform.position.z;
+            //everyBuilding[i].buildingH = all_buildings[i].gameObject.GetComponent<BuildingBehavior>().buildingHealth;
+            //everyBuilding[i].buildingEn = all_buildings[i].gameObject.GetComponent<BuildingBehavior>().buildingEnergy;
+            //everyBuilding[i].buildingOx = all_buildings[i].gameObject.GetComponent<BuildingBehavior>().buildingOxygen;
         }
         Debug.Log("EveryBuilding List Size: "+everyBuilding.Count);
        
@@ -135,7 +155,7 @@ public class saveLoadManager : MonoBehaviour
         // instance of gameData class called game_data is added to a variable of type string called dataJson
         BuildingSaveData saveData = new BuildingSaveData();
         saveData.allBuildings = everyBuilding;
-        string allBuildingStates = JsonUtility.ToJson(saveData);
+        allBuildingStates = JsonUtility.ToJson(saveData,true);
         myEnvironmentData = JsonUtility.ToJson(environment_Data);
         myBuildingData = JsonUtility.ToJson(allBuildingStates);
         myStatData = JsonUtility.ToJson(stat_Data);
