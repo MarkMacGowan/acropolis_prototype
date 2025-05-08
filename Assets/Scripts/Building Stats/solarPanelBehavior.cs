@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
-public class solarPanelBehavior : MonoBehaviour
+public class solarPanelBehavior : BuildingBehavior
 {
     //public keyboardInput key_board_input;
     //public bool is_placed;

@@ -254,13 +254,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf22976b825af57458f364cefbd66152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildingType: Oxygen Generator
+  health: 
+  main_dome: {fileID: 0}
   maxOxygenGenHealth: 100
   oxygenGenHealth: 100
   maxOxygenAmount: 100
   oxygenAmount: 0
   oxygenProduce: 0.2
   maxOxygenProduce: 1
-  noOxygenGens: 0
+  isMainDomeEnergy: 1
 --- !u!114 &-3606896224432847395
 MonoBehaviour:
   m_ObjectHideFlags: 0

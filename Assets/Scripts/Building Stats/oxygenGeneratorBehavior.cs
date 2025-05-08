@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class oxygenGeneratorBehavior : MonoBehaviour
+public class oxygenGeneratorBehavior : BuildingBehavior
 {   
     [SerializeField]public GameObject main_dome;
     private float mainDomeEnergy;

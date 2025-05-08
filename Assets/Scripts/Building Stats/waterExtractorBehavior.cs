@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class waterExtractorBehavior : MonoBehaviour
+public class waterExtractorBehavior :BuildingBehavior 
 {
     public float maxWaterExtractorHealth=100f;
     public float waterExtractorHealth=100f;

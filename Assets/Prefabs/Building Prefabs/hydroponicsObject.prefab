@@ -450,6 +450,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 382ccaab3baecc14b84eb4ca7c6fe36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildingType: HydroPonics
+  health: 
   maxHydroponicHealth: 100
   hydroponicHealth: 100
   maxFoodAmount: 100

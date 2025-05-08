@@ -9,9 +9,9 @@ public class BuildingData
     public int buildingId;
     public string buildingTag;
     public float [] buildingPosition;
-    public float buildingHealth;
-    public float buildingEnergy;
-    public float buildingOxygen;
+    public float buildingH;
+    public float buildingEn;
+    public float buildingOx;
 
  public BuildingData()
     {
@@ -19,8 +19,8 @@ public class BuildingData
         this.buildingId = 0;
         this.buildingTag = "";
         this.buildingPosition = new float[3];
-        this.buildingHealth = 100f;
-        this.buildingEnergy = 100f;
-        this.buildingOxygen = 100f;
+        this.buildingH = 100f;
+        this.buildingEn = 100f;
+        this.buildingOx = 100f;
     }
 }

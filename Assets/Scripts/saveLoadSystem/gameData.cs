@@ -7,7 +7,7 @@ using System.IO;
 
 public class gameData 
 {
-    public List<BuildingData> myBuilding = new List<BuildingData>();
+    //public List<BuildingData> myBuilding = new List<BuildingData>();
     // the health level of the main settlement
     //public float healthLevelCurrent;
 

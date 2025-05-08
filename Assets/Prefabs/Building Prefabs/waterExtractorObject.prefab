@@ -71,6 +71,7 @@ MonoBehaviour:
   object_movement_behavior: {fileID: -1931124597078814195}
   object_transparency: {fileID: 0}
   panel_ref: {fileID: 0}
+  panelToClose: {fileID: 0}
   isPlaced: 0
 --- !u!114 &5133948980221566699
 MonoBehaviour:
@@ -97,6 +98,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c14a0815e3d011641b92d3aebb0b8b70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildingType: Water Extractor
+  health: 
+  maxWaterExtractorHealth: 100
+  waterExtractorHealth: 100
+  maxWaterAmount: 100
+  waterAmount: 0
+  waterProduce: 0.2
+  maxWaterProduce: 1
+  noWaterExtractors: 0
 --- !u!1001 &1304356047010757865
 PrefabInstance:
   m_ObjectHideFlags: 0

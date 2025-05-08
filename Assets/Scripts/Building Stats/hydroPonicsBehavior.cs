@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class hydroPonicsBehavior : MonoBehaviour
+public class hydroPonicsBehavior : BuildingBehavior
 {
     public float maxHydroponicHealth = 100f;
     public float hydroponicHealth = 100f;

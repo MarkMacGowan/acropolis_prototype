@@ -70,6 +70,7 @@ MonoBehaviour:
   object_movement_behavior: {fileID: 2409989166902883210}
   object_transparency: {fileID: 0}
   panel_ref: {fileID: 0}
+  panelToClose: {fileID: 0}
   isPlaced: 0
 --- !u!114 &-2691876855146413162
 MonoBehaviour:
@@ -83,8 +84,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9d866d34228be44b7e5bca93a6bc84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key_board_input: {fileID: 92157055149257740}
-  is_placed: 0
+  buildingType: Solar Panel
+  health: 
   maxSolarHealth: 100
   solarHealth: 100
   maxSolarEnergy: 2

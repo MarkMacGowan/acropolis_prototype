@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class landingPadBehavior : MonoBehaviour
+public class landingPadBehavior : BuildingBehavior
+
 {
     public float maxLandingPadHealth = 100f;
     public float landingPadHealth = 100f;
