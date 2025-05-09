@@ -36,10 +36,15 @@ public class saveLoadManager : MonoBehaviour
     private EnvironmentData environment_Data;
     private BuildingData building_Data;
     private StatData stat_Data;
+    private AllData all_data;
+
     private string allBuildingStates;
     private string myEnvironmentData;
     private string myBuildingData;
     private string myStatData;
+    private string myAllData;
+
+
     private string myCombinedData;
     //private string allBuildingStates;
 
@@ -155,14 +160,24 @@ public class saveLoadManager : MonoBehaviour
         //}
         // game_data.currentBuildings[0]
         // instance of gameData class called game_data is added to a variable of type string called dataJson
-        BuildingSaveData saveData = new BuildingSaveData();
-        saveData.allBuildings = everyBuilding;
-        allBuildingStates = JsonUtility.ToJson(saveData,true);
-        myEnvironmentData = JsonUtility.ToJson(environment_Data,true);
-        myBuildingData = JsonUtility.ToJson(allBuildingStates,true);
-        myStatData = JsonUtility.ToJson(stat_Data,true);
-        //myJson = JsonUtility.ToJson(game_data);
+        BuildingSaveData buildingSaveData = new BuildingSaveData();
+        buildingSaveData.allBuildings = everyBuilding;
+
+        GameSaveData gameData = new GameSaveData {
+          environment = environment_Data,
+          sData = stat_Data,
+          building = building_Data
+            
         
+        };
+
+        String allData = JsonUtility.ToJson(gameData, true);
+        //allBuildingStates = JsonUtility.ToJson(saveData,true);
+        //myEnvironmentData = JsonUtility.ToJson(environment_Data,true);
+        //myBuildingData = JsonUtility.ToJson(allBuildingStates,true);
+        //myStatData = JsonUtility.ToJson(stat_Data,true);
+        //myJson = JsonUtility.ToJson(game_data);
+        //gameData.environment=
         // date and time at present
         localDate = DateTime.Now;
         // fileName takes in localDate, turns it into a string and concatenates it with with
@@ -170,14 +185,15 @@ public class saveLoadManager : MonoBehaviour
         fileName = "save-" +localDate.ToString("yyyy-MM-dd_HH-mm-ss") +".json";
         path = Application.persistentDataPath + "/"+fileName;
         // json file created and written using path variable and dataJson string variable
-        File.WriteAllText(path, myEnvironmentData+myBuildingData+myStatData+allBuildingStates);
-        Debug.Log("Saving to: " + path);
         myCombinedData = myEnvironmentData + myBuildingData + myStatData + allBuildingStates;
+        File.WriteAllText(path, allData);
+        Debug.Log("Saving to: " + path);
+        
     }
     public void LoadGame()
     {
 
-        AllData myAllData;
+        AllData all_data =new AllData();
 
         // stores int value of index of latest item
         int indexOfLatestFile;
@@ -240,7 +256,11 @@ public class saveLoadManager : MonoBehaviour
         newPath = Application.persistentDataPath + "/" + myFile;
         string retrievedData = System.IO.File.ReadAllText(newPath);
 
-        myAllData = JsonUtility.FromJson<AllData>(fileName);
+        // myAllData[1] = JsonUtility.FromJson<AllData>(fileName).allBuildings;
+        //foreach (char line in myAllData)
+        //{
+        //    Debug.Log(myAllData);
+        //}
         //angleSun=myAllData.iDayNightAngle[3];
        // Debug.Log("Angle Of Sun: "+angleSun);
         //myEnvironmentData = JsonUtility.FromJson<EnvironmentData>(myFile.);

@@ -7,7 +7,7 @@ public class AllData
 {
     
    
-        public List <EnData> allData;
+        public List <EnData> AllEnvironment;
         public List<LvlData> allLevels;
         public List<BuildData> allBuildings;
     
