@@ -43,7 +43,8 @@ public class saveLoadManager : MonoBehaviour
     private string myBuildingData;
     private string myStatData;
     private string myAllData;
-
+    GameSaveData gameData;
+    private string allData;
 
     private string myCombinedData;
     //private string allBuildingStates;
@@ -58,7 +59,7 @@ public class saveLoadManager : MonoBehaviour
         environment_Data = new EnvironmentData();
         building_Data = new BuildingData();
         stat_Data = new StatData();
-
+        gameData = new GameSaveData();
         mSettlement = GameObject.FindGameObjectWithTag("mainSettle");
         //game_data = new gameData();
         totAllBuildings = 0;
@@ -163,15 +164,15 @@ public class saveLoadManager : MonoBehaviour
         BuildingSaveData buildingSaveData = new BuildingSaveData();
         buildingSaveData.allBuildings = everyBuilding;
 
-        GameSaveData gameData = new GameSaveData {
-          environment = environment_Data,
-          sData = stat_Data,
-          building = building_Data
-            
         
-        };
+        gameData.environment = environment_Data;
+        gameData.sData = stat_Data;
+        //gameData.building = building_Data;
+        gameData.buildingStates = buildingSaveData;
+        
+        
 
-        String allData = JsonUtility.ToJson(gameData, true);
+        allData = JsonUtility.ToJson(gameData, true);
         //allBuildingStates = JsonUtility.ToJson(saveData,true);
         //myEnvironmentData = JsonUtility.ToJson(environment_Data,true);
         //myBuildingData = JsonUtility.ToJson(allBuildingStates,true);
@@ -255,14 +256,15 @@ public class saveLoadManager : MonoBehaviour
 
         newPath = Application.persistentDataPath + "/" + myFile;
         string retrievedData = System.IO.File.ReadAllText(newPath);
-
-        // myAllData[1] = JsonUtility.FromJson<AllData>(fileName).allBuildings;
-        //foreach (char line in myAllData)
+        //string myGameData;
+        gameData = JsonUtility.FromJson<GameSaveData>(retrievedData);
+        Debug.Log(gameData.buildingStates.allBuildings[1].buildingTag);
+        //foreach (string line in gameData)
         //{
         //    Debug.Log(myAllData);
         //}
         //angleSun=myAllData.iDayNightAngle[3];
-       // Debug.Log("Angle Of Sun: "+angleSun);
+        // Debug.Log("Angle Of Sun: "+angleSun);
         //myEnvironmentData = JsonUtility.FromJson<EnvironmentData>(myFile.);
 
 

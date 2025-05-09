@@ -7,8 +7,8 @@ public class GameSaveData
 {
     public EnvironmentData environment;
     public StatData sData;
-    public BuildingData building;
-    public List<BuildingSaveData> buildingStates;
+    //public BuildingData building;
+    public BuildingSaveData buildingStates;
 
 
 
