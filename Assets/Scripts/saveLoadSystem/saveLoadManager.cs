@@ -174,14 +174,21 @@ public class saveLoadManager : MonoBehaviour
     }
     public void LoadGame()
     {
+        string latestFile;
         path = Application.persistentDataPath + "/" + fileName;
         List<string> saveFileNames = new List<string>();
         string[] files = Directory.GetFiles(path, "*.json");
+        List<DateTime> fileDates = new List<DateTime>();
+        DateTime fileCreationTime;
         foreach (string file in files)
         {
             Debug.Log("Save Files: "+Path.GetFileName(file));
+            fileCreationTime = File.GetCreationTime(file).AddSeconds(1);
+            fileDates.Add(fileCreationTime);
         }
 
+        latestFile = fileDates.Max().ToString();
+        Debug.Log("Latest File: "+latestFile);
         //if (this.environment_Data == null&&this.building_Data==null&&this.stat_Data==null)
         //{
         //    NewGame();
