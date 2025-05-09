@@ -7808,6 +7808,10 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2753456080484216454, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753456080484216454, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
       propertyPath: parentOfButton
       value: 
       objectReference: {fileID: 1746984683}

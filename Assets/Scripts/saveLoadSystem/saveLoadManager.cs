@@ -30,6 +30,7 @@ public class saveLoadManager : MonoBehaviour
 
   
     private static string path;
+    private static string newPath;
 
     //private gameData game_data;
     private EnvironmentData environment_Data;
@@ -39,6 +40,7 @@ public class saveLoadManager : MonoBehaviour
     private string myEnvironmentData;
     private string myBuildingData;
     private string myStatData;
+    private string myCombinedData;
     //private string allBuildingStates;
 
     //private string myJson;
@@ -156,9 +158,9 @@ public class saveLoadManager : MonoBehaviour
         BuildingSaveData saveData = new BuildingSaveData();
         saveData.allBuildings = everyBuilding;
         allBuildingStates = JsonUtility.ToJson(saveData,true);
-        myEnvironmentData = JsonUtility.ToJson(environment_Data);
-        myBuildingData = JsonUtility.ToJson(allBuildingStates);
-        myStatData = JsonUtility.ToJson(stat_Data);
+        myEnvironmentData = JsonUtility.ToJson(environment_Data,true);
+        myBuildingData = JsonUtility.ToJson(allBuildingStates,true);
+        myStatData = JsonUtility.ToJson(stat_Data,true);
         //myJson = JsonUtility.ToJson(game_data);
         
         // date and time at present
@@ -170,25 +172,80 @@ public class saveLoadManager : MonoBehaviour
         // json file created and written using path variable and dataJson string variable
         File.WriteAllText(path, myEnvironmentData+myBuildingData+myStatData+allBuildingStates);
         Debug.Log("Saving to: " + path);
-
+        myCombinedData = myEnvironmentData + myBuildingData + myStatData + allBuildingStates;
     }
     public void LoadGame()
     {
-        string latestFile;
+
+        AllData myAllData;
+
+        // stores int value of index of latest item
+        int indexOfLatestFile;
+
+
+        string myFileName;
+
+
+        string myFile;
+
+
+        string latestFileDate;
+
+
         path = Application.persistentDataPath + "/" + fileName;
+
+
         List<string> saveFileNames = new List<string>();
+
+
         string[] files = Directory.GetFiles(path, "*.json");
+
+
+        List<string> saveFile = new List<string>();
+
+
         List<DateTime> fileDates = new List<DateTime>();
+
+
+
         DateTime fileCreationTime;
+
+
+
+
+        //float angleSun;
+
         foreach (string file in files)
         {
             Debug.Log("Save Files: "+Path.GetFileName(file));
             fileCreationTime = File.GetCreationTime(file).AddSeconds(1);
             fileDates.Add(fileCreationTime);
+            myFileName=Path.GetFileName(file);
+            saveFileNames.Add(myFileName);
         }
 
-        latestFile = fileDates.Max().ToString();
-        Debug.Log("Latest File: "+latestFile);
+
+
+        latestFileDate = fileDates.Max().ToString();
+
+
+        indexOfLatestFile = fileDates.IndexOf(fileDates.Max());
+
+        
+        myFile =saveFileNames[indexOfLatestFile];
+        Debug.Log("Latest File: "+latestFileDate);
+        Debug.Log("Latest File Name: "+ myFile);
+
+
+        newPath = Application.persistentDataPath + "/" + myFile;
+        string retrievedData = System.IO.File.ReadAllText(newPath);
+
+        myAllData = JsonUtility.FromJson<AllData>(fileName);
+        //angleSun=myAllData.iDayNightAngle[3];
+       // Debug.Log("Angle Of Sun: "+angleSun);
+        //myEnvironmentData = JsonUtility.FromJson<EnvironmentData>(myFile.);
+
+
         //if (this.environment_Data == null&&this.building_Data==null&&this.stat_Data==null)
         //{
         //    NewGame();
