@@ -9,7 +9,7 @@ using System.Linq;
 public class saveLoadManager : MonoBehaviour
 {
 
-    [SerializeField] GameObject mSettlement;
+    [SerializeField] private GameObject mSettlement;
     [SerializeField] GameObject dNCycleObject;
     [SerializeField] GameObject building_counter_object;
 
@@ -51,8 +51,8 @@ public class saveLoadManager : MonoBehaviour
         environment_Data = new EnvironmentData();
         building_Data = new BuildingData();
         stat_Data = new StatData();
-       
 
+        mSettlement = GameObject.FindGameObjectWithTag("mainSettle");
         //game_data = new gameData();
         totAllBuildings = 0;
     }

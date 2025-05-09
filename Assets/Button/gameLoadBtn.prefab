@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 1643921719349779659}
   - component: {fileID: 1778124575595680529}
   - component: {fileID: 2166665557876154650}
-  - component: {fileID: 3619191161983108959}
+  - component: {fileID: -4125658541345133716}
+  - component: {fileID: 5831462588713375517}
   m_Layer: 0
   m_Name: gameLoadBtn
   m_TagString: Untagged
@@ -122,7 +123,23 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3619191161983108959
+--- !u!114 &-4125658541345133716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607890105182955799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1738fb6cddb89f488a31b5809f06de4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mSettlement: {fileID: 0}
+  dNCycleObject: {fileID: 0}
+  building_counter_object: {fileID: 0}
+  totAllBuildings: 0
+--- !u!114 &5831462588713375517
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   game_load_text: {fileID: 0}
+  load_Button_Label: {fileID: 8701731815039706534}
 --- !u!1 &8701731815039706534
 GameObject:
   m_ObjectHideFlags: 0
