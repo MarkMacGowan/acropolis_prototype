@@ -20,6 +20,7 @@ public class pauseMenuHandler : MonoBehaviour
         
             if (Input.GetKeyDown(KeyCode.Escape))
             {
+            Debug.Log("Escape Button Pressed");
                     pauseMenuAppear();
                    
             }
