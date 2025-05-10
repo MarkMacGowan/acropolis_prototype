@@ -408,7 +408,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7568134987311285139}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36bfe1316f905304c9da3cea4c10f010, type: 3}
   m_Name: 
@@ -451,7 +451,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingType: HydroPonics
-  health: 
+  buildingHealth: 0
+  buildingEnergy: 0
+  buildingOxygen: 0
   maxHydroponicHealth: 100
   hydroponicHealth: 100
   maxFoodAmount: 100

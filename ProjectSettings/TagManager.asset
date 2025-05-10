@@ -15,6 +15,7 @@ TagManager:
   - waterExtract
   - dayNight
   - mainSettle
+  - buildSpawn
   layers:
   - Default
   - TransparentFX

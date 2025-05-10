@@ -34,7 +34,7 @@ public class buildingManager : MonoBehaviour
     private GameObject handlerObj;
     private InputHandler refHandler;
     private bool yesNoClick;
-   
+    public int buildingsListSize;
     //public GameObject targetObject;
     
 
@@ -66,6 +66,7 @@ public class buildingManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        buildingsListSize = buildings.Count;
         //uiIntersect = raycastPlane.uiIntersect;
         placementCoord = raycastPlane.gamePosition;
       

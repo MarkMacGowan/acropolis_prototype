@@ -8,11 +8,13 @@ using System.Linq;
 
 public class saveLoadManager : MonoBehaviour
 {
-
+    
     [SerializeField] private GameObject mSettlement;
+    [SerializeField] private GameObject bSpawner;
     [SerializeField] GameObject dNCycleObject;
     [SerializeField] GameObject building_counter_object;
-
+    [SerializeField] buildingManager myBuildingManager;
+    //private GameObject chosenBuilding;
 
     // [SerializeField] GameObject inbuilding_storage;
     //private GameObject iBuilding;
@@ -61,6 +63,7 @@ public class saveLoadManager : MonoBehaviour
         stat_Data = new StatData();
         gameData = new GameSaveData();
         mSettlement = GameObject.FindGameObjectWithTag("mainSettle");
+        bSpawner = GameObject.FindGameObjectWithTag("buildSpawn");
         //game_data = new gameData();
         totAllBuildings = 0;
     }
@@ -283,6 +286,7 @@ public class saveLoadManager : MonoBehaviour
         // load building data
 
         //List<GameObject> myIBuildingObject = new List<GameObject>();
+        List<BuildingData> everyBuilding = new List<BuildingData>();
         int allBuildingsLength= gameData.buildingStates.allBuildings.Count;
         for (int i = 0; i < allBuildingsLength; i++)
         {       
@@ -297,24 +301,32 @@ public class saveLoadManager : MonoBehaviour
             Vector3 mylBuildingPositon = new Vector3(lBuildingPosition[0],lBuildingPosition[1],lBuildingPosition[2]);
             Quaternion lBuildingAngles = new Quaternion(0,0,0,0);
             float lBHealth = gameData.buildingStates.allBuildings[i].bHealth;
-            float iBEnergry = gameData.buildingStates.allBuildings[i].bEnergy;
-            float iBOxygen = gameData.buildingStates.allBuildings[i].bOxygen;
+            float lBEnergy = gameData.buildingStates.allBuildings[i].bEnergy;
+            float lBOxygen = gameData.buildingStates.allBuildings[i].bOxygen;
 
             GameObject lBuildingObject = gameData.buildingStates.allBuildings[i].buildingObject;
-            BuildingBehavior b = lBuildingObject.GetComponent<BuildingBehavior>();
-            if (b == null) continue;
+            //BuildingBehavior b = lBuildingObject.GetComponent<BuildingBehavior>();
+            //if (b == null) continue;
             BuildingData lData = new BuildingData
             {
+                buildingObject = lBuildingObject,
                 buildingId = lBuildingID,
                 buildingTag = lBuildingTag,
                 buildingPosition = new float[]
                 {
-                    //lBuildingObject.transform.position.x(iBuilding);
+                    lBuildingPosition[0],
+                    lBuildingPosition[1],
+                    lBuildingPosition[2]
+
+                    //lBuildingObject[0]=lBuildingPosition[0];
                     //lBuildingObject.transform.position.y=lBuildingPosition[1],
                     //lBuildingObject.transform.position.z=lBuildingPosition[2],
                 },
+                bHealth=lBHealth,
+                bEnergy=lBEnergy,
+                bOxygen=lBHealth
             };
-       
+            everyBuilding.Add(lData);
 
            // myIBuildingObject.AddRange()
         }
@@ -325,7 +337,7 @@ public class saveLoadManager : MonoBehaviour
         dayNightCycle dnScript= dNCycleObject.gameObject.GetComponent<dayNightCycle>();
 
         dnScript.dayTime = lDayStatus;
-        dnScript.rotationalNumZ = lDayNightAngle[3];
+        dnScript.rotationalNumZ = lDayNightAngle[2];
         dnScript.dayNumConvert = lDaysPassed;
         
 
@@ -357,8 +369,38 @@ public class saveLoadManager : MonoBehaviour
         //stat_Data.waterLevelCurrent = mSettlement.gameObject.GetComponent<waterManager>().waterInfo();
         //stat_Data.supplyLevelCurrent = ((int)mSettlement.gameObject.GetComponent<suppliesManager>().suppliesInfo());
 
-        // buildings
+        // buildings (instansiate)
 
+        Debug.Log("Length of everyBuildingList: "+everyBuilding.Count);
+        int buildingsListLength = bSpawner.GetComponent<buildingManager>().buildingsListSize;
+        for (int i=0;i< everyBuilding.Count; i++) {
+            float xPosition = everyBuilding[i].buildingPosition[0];
+            float yPositon = everyBuilding[i].buildingPosition[1];
+            float zPosition = everyBuilding[i].buildingPosition[2];
+            Vector3 loadedObjectPosition = new Vector3(xPosition,yPositon,zPosition);
+            GameObject chosenBuilding=new GameObject();
+            string bTag= everyBuilding[i].buildingTag;
+            Debug.Log("bTag: " + bTag);
+            Debug.Log("Building Tag: " + bSpawner.gameObject.GetComponent<buildingManager>().buildings[i].tag);
+            
+            for (int j = 0; j < buildingsListLength; j++)
+            {   
+                string cTag = bSpawner.GetComponent<buildingManager>().buildings[j].tag;
+                if (bTag.Equals(cTag))
+                {
+                
+                    chosenBuilding = bSpawner.GetComponent<buildingManager>().buildings[j];
+                }
+            }
+          
+            
+            GameObject buildingToInstansiate = chosenBuilding;
+            Debug.Log("Building to Instansiate: " + buildingToInstansiate);
+            buildingToInstansiate.GetComponent<objectMovementBehavior>().enabled = false;
+            Instantiate(buildingToInstansiate,loadedObjectPosition, Quaternion.identity);
+            
+
+        }
 
 
 
