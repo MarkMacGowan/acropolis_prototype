@@ -258,6 +258,97 @@ public class saveLoadManager : MonoBehaviour
         string retrievedData = System.IO.File.ReadAllText(newPath);
         //string myGameData;
         gameData = JsonUtility.FromJson<GameSaveData>(retrievedData);
+
+
+        // load environment data
+        
+
+        int lSceneIndex = gameData.environment.sceneIndex;
+        bool lDayStatus = gameData.environment.dayStatus;
+        float[] lDayNightAngle =new float[3];
+                lDayNightAngle[0]=gameData.environment.dayNightAngle[0];
+                lDayNightAngle[1] = gameData.environment.dayNightAngle[1];
+                lDayNightAngle[2] = gameData.environment.dayNightAngle[2];
+        int lDaysPassed = gameData.environment.daysPassed;
+        //GameObject lWeather = gameData.environment.weather;
+
+        // load stats data
+        float lHealthLevel = gameData.sData.healthLevelCurrent;
+        float lOxygenLevel = gameData.sData.oxygenLevelCurrent;
+        float lEnergyLevel = gameData.sData.energyLevelCurrent;
+        float lFoodLevel = gameData.sData.foodLevelCurrent;
+        float lWaterLevel = gameData.sData.waterLevelCurrent;
+        float lSupplyLevel = gameData.sData.energyLevelCurrent;
+
+        // load building data
+        
+        
+        int allBuildingsLength= gameData.buildingStates.allBuildings.Count;
+        for (int i = 0; i < allBuildingsLength; i++)
+        {
+            GameObject lBuildingObject = gameData.buildingStates.allBuildings[i].buildingObject;
+            int lBuildingID = gameData.buildingStates.allBuildings[i].buildingId;
+            string lBuildingTag = gameData.buildingStates.allBuildings[i].buildingTag;
+            float[] lBuildingPosition = new float[3];
+              lBuildingPosition[0]=  gameData.buildingStates.allBuildings[i].buildingPosition[0];
+              lBuildingPosition[1] = gameData.buildingStates.allBuildings[i].buildingPosition[1];
+              lBuildingPosition[2] = gameData.buildingStates.allBuildings[i].buildingPosition[2];
+            float lBHealth = gameData.buildingStates.allBuildings[i].bHealth;
+            float iBEnergry = gameData.buildingStates.allBuildings[i].bEnergy;
+            float iBOxygen = gameData.buildingStates.allBuildings[i].bOxygen;
+        }
+
+        // set game data to load data
+
+        //environment
+        dayNightCycle dnScript= dNCycleObject.gameObject.GetComponent<dayNightCycle>();
+
+        dnScript.dayTime = lDayStatus;
+        dnScript.rotationalNumZ = lDayNightAngle[3];
+        dnScript.dayNumConvert = lDaysPassed;
+        
+
+
+        environment_Data.sceneIndex = lSceneIndex;
+        environment_Data.dayStatus = lDayStatus;
+        environment_Data.dayNightAngle = lDayNightAngle;
+        environment_Data.daysPassed = lDaysPassed;
+        //environment_Data.weather = lWeather;
+
+        // stats
+        healthManager hManager= mSettlement.gameObject.GetComponent<healthManager>();
+        oxygenManager oxManager = mSettlement.gameObject.GetComponent<oxygenManager>();
+        energyManager enManager = mSettlement.gameObject.GetComponent<energyManager>();
+        foodManager   fManager= mSettlement.gameObject.GetComponent<foodManager>();
+        waterManager wManager= mSettlement.gameObject.GetComponent<waterManager>();
+        suppliesManager sManager= mSettlement.gameObject.GetComponent<suppliesManager>();
+
+        hManager.healthLevel = lHealthLevel;
+        oxManager.oxygenLevel = lOxygenLevel;
+        enManager.energyLevel = lEnergyLevel;
+        fManager.foodLevel = lFoodLevel;
+        wManager.waterLevel = lWaterLevel;
+        sManager.supplyLevel = lSupplyLevel;
+        //stat_Data.healthLevelCurrent = lHealthLevel;
+
+        //stat_Data.energyLevelCurrent = mSettlement.gameObject.GetComponent<energyManager>().energyInfo();
+        //stat_Data.foodLevelCurrent = mSettlement.gameObject.GetComponent<foodManager>().foodInfo();
+        //stat_Data.waterLevelCurrent = mSettlement.gameObject.GetComponent<waterManager>().waterInfo();
+        //stat_Data.supplyLevelCurrent = ((int)mSettlement.gameObject.GetComponent<suppliesManager>().suppliesInfo());
+
+        // buildings
+        GameObject lBuilding = new GameObject();
+        for (int i = 0; i < allBuildingsLength; i++)
+        {
+            // continue from here
+            //all_Buildings[i]=
+
+        }
+
+
+
+
+
         Debug.Log(gameData.buildingStates.allBuildings[1].buildingTag);
         //foreach (string line in gameData)
         //{
@@ -356,5 +447,15 @@ public class saveLoadManager : MonoBehaviour
             
             //i++;
             //buildList=GameObject.FindGameObjectsWithTag("solarPan")).
+    }
+    private void SetToSaveValues()
+    {   
+        //environment_Data.sceneIndex=lSce
+        //mSettlement.gameObject.GetComponent<oxygenManager>().oxygenLevel=;
+        
+        mSettlement.gameObject.GetComponent<energyManager>().energyInfo();
+        mSettlement.gameObject.GetComponent<foodManager>().foodInfo();
+        mSettlement.gameObject.GetComponent<waterManager>().waterInfo();
+        //(int)mSettlement.gameObject.GetComponent<suppliesManager>().suppliesInfo();
     }
 }

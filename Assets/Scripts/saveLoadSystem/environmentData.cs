@@ -10,7 +10,7 @@ public class EnvironmentData
     public bool dayStatus;
     public float[] dayNightAngle;
     public int daysPassed;
-    public GameObject weather;
+    //public GameObject weather;
 
 
     public EnvironmentData()
