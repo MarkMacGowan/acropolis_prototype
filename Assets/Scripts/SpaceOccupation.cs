@@ -9,10 +9,12 @@ public class SpaceOccupation : MonoBehaviour
     private Collider myCollider;
     private Vector3 boxSize;
     public bool objectInterSect;
+    private LayerMask lMask;
     // Start is called before the first frame update
 
     void Awake()
     {
+        lMask = LayerMask.GetMask("building");
         //keyboard_input.enabled = true;
     }
     void Start()
@@ -20,6 +22,7 @@ public class SpaceOccupation : MonoBehaviour
         //boxSize = gameObject.transform.GetChild(0).GetComponent<BoxCollider>().size.normalized;
         boxSize = new Vector3(1f,0.24f,1f);
         keyboard_input = gameObject.GetComponent<keyboardInput>();
+        
         //keyboard_input.enabled = true;
     }
 
@@ -27,7 +30,7 @@ public class SpaceOccupation : MonoBehaviour
     void Update()
     {
         //myCollider = gameObject.GetComponent<BoxCollider>();
-        Collider[] hits = Physics.OverlapBox(transform.position,boxSize/2,transform.rotation);
+        Collider[] hits = Physics.OverlapBox(transform.position,boxSize/2,transform.rotation,lMask);
         objectInterSect = false;
         foreach (Collider hit in hits)
         {   
@@ -35,7 +38,7 @@ public class SpaceOccupation : MonoBehaviour
 
             if (hit.gameObject!=this.gameObject)
             {
-               // Debug.Log("Intersecting with: " + hit.name);
+               Debug.Log("Intersecting with: " + hit.name);
                 objectInterSect = true;
                 //keyboard_input.enabled = false;
             }

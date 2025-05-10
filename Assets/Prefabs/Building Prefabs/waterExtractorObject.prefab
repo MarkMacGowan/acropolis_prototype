@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 7693325918085673238}
   - component: {fileID: 5133948980221566699}
   - component: {fileID: -1247633694167218069}
-  m_Layer: 0
+  - component: {fileID: 2318109298912084499}
+  m_Layer: 3
   m_Name: waterExtractorObject
   m_TagString: waterExtract
   m_Icon: {fileID: 0}
@@ -67,6 +68,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   behaviorScript: {fileID: -1247633694167218069}
+  space_occupation: {fileID: 2318109298912084499}
+  bInterSect: 0
   mClick: 0
   buildPref: {fileID: 0}
   object_movement_behavior: {fileID: -1931124597078814195}
@@ -110,6 +113,20 @@ MonoBehaviour:
   waterProduce: 0.2
   maxWaterProduce: 1
   noWaterExtractors: 0
+--- !u!114 &2318109298912084499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7426085723408419178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42fe38bcb77b7ed4d82221d449d3e1d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboard_input: {fileID: 0}
+  objectInterSect: 0
 --- !u!1001 &1304356047010757865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -158,46 +175,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -32195008615071605, guid: ba13466630fddc74fab3b1fb150f1a39, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ba13466630fddc74fab3b1fb150f1a39, type: 3}
       propertyPath: m_Name
       value: waterExtractor
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ba13466630fddc74fab3b1fb150f1a39, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271967697081667900, guid: ba13466630fddc74fab3b1fb150f1a39, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7525781895024199792, guid: ba13466630fddc74fab3b1fb150f1a39, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ba13466630fddc74fab3b1fb150f1a39, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3634482763867478559}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba13466630fddc74fab3b1fb150f1a39, type: 3}
 --- !u!4 &1553945918964243202 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ba13466630fddc74fab3b1fb150f1a39, type: 3}
   m_PrefabInstance: {fileID: 1304356047010757865}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2223486530791948728 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ba13466630fddc74fab3b1fb150f1a39, type: 3}
-  m_PrefabInstance: {fileID: 1304356047010757865}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &3634482763867478559
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2223486530791948728}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.48, z: 0}

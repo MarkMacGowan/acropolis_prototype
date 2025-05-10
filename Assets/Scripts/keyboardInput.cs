@@ -7,7 +7,7 @@ public class keyboardInput : MonoBehaviour
 {
     [SerializeField] private BuildingBehavior behaviorScript;
     [SerializeField] private SpaceOccupation space_occupation;
-    private bool bInterSect;
+    public bool bInterSect;
 
     public bool mClick;
     
@@ -42,7 +42,7 @@ public class keyboardInput : MonoBehaviour
         _mainCamera = Camera.main;
         isPlaced = false;
         space_occupation = gameObject.GetComponent<SpaceOccupation>();
-        bInterSect = space_occupation.objectInterSect;
+       
         //isIntersect = object_movement_behavior.uiInter;
 
        
@@ -67,7 +67,7 @@ public class keyboardInput : MonoBehaviour
     // after they have been instaniated using the relevant button
     private void Update()
     {
-
+         bInterSect = space_occupation.objectInterSect;
         // left click
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {

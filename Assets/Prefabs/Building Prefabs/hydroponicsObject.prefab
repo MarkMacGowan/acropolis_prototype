@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4217013984251433258}
   - component: {fileID: 5788911081961725717}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6510510533672242962}
   - component: {fileID: 6094100192263958682}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Spot Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 7253647216456704870}
   - component: {fileID: 5969582944095013368}
   - component: {fileID: 977765862208067096}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: hydroponicObjectUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 54565132047934294}
   - component: {fileID: 3816601330303932311}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Spot Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 5990561340044161239}
   - component: {fileID: 1856956005738615120}
   - component: {fileID: 3168140746886869264}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: hydroponicsObject
   m_TagString: hydroPonics
   m_Icon: {fileID: 0}
@@ -433,6 +433,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   behaviorScript: {fileID: 5990561340044161239}
+  space_occupation: {fileID: 3168140746886869264}
+  bInterSect: 0
   mClick: 0
   buildPref: {fileID: 0}
   object_movement_behavior: {fileID: -3554606423834489773}
@@ -488,7 +490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42fe38bcb77b7ed4d82221d449d3e1d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyboard_input: {fileID: -3307686629788837953}
+  keyboard_input: {fileID: 0}
   objectInterSect: 0
 --- !u!1 &8760159419898373507
 GameObject:
@@ -500,7 +502,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5636454828028536971}
   - component: {fileID: 7124951676935119278}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Spot Light (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,6 +634,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5881758958426410442, guid: 27ee4c2e3cee90545911c12bf1edcf01, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -3853047545262575580, guid: 27ee4c2e3cee90545911c12bf1edcf01, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 506015996458992687, guid: 27ee4c2e3cee90545911c12bf1edcf01, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.5
@@ -661,6 +671,10 @@ PrefabInstance:
       value: hydroPhonicBuilding
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 27ee4c2e3cee90545911c12bf1edcf01, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 27ee4c2e3cee90545911c12bf1edcf01, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -687,6 +701,10 @@ PrefabInstance:
     - target: {fileID: 4001983584638107285, guid: 27ee4c2e3cee90545911c12bf1edcf01, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508677946147420666, guid: 27ee4c2e3cee90545911c12bf1edcf01, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5561703166034983444, guid: 27ee4c2e3cee90545911c12bf1edcf01, type: 3}
       propertyPath: m_LocalRotation.w

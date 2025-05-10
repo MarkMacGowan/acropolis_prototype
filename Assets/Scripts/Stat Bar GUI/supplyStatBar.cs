@@ -27,7 +27,7 @@ public class supplyStatBar : MonoBehaviour
         supplies = (int)supplies_manager.suppliesInfo();
         suppliesCon = supplies.ToString();
         supplies_txt.GetComponent<TMPro.TextMeshProUGUI>().text = suppliesCon;
-        Debug.Log("Supplies: "+ suppliesCon);
+        //Debug.Log("Supplies: "+ suppliesCon);
 
         //if (supplySlider.value!=supplies)
         //{
