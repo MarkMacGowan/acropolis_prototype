@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: -3307686629788837953}
   - component: {fileID: 5990561340044161239}
   - component: {fileID: 1856956005738615120}
-  - component: {fileID: 8001437280906037932}
+  - component: {fileID: 3168140746886869264}
   m_Layer: 0
   m_Name: hydroponicsObject
   m_TagString: hydroPonics
@@ -432,6 +432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fda447b2f48d174e9d10d97df8a83ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  behaviorScript: {fileID: 5990561340044161239}
   mClick: 0
   buildPref: {fileID: 0}
   object_movement_behavior: {fileID: -3554606423834489773}
@@ -446,7 +447,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7568134987311285139}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 382ccaab3baecc14b84eb4ca7c6fe36e, type: 3}
   m_Name: 
@@ -475,7 +476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transparencyStrength: 0.5
---- !u!114 &8001437280906037932
+--- !u!114 &3168140746886869264
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -487,6 +488,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42fe38bcb77b7ed4d82221d449d3e1d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyboard_input: {fileID: -3307686629788837953}
+  objectInterSect: 0
 --- !u!1 &8760159419898373507
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,10 +733,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 27ee4c2e3cee90545911c12bf1edcf01, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6525228267771149306}
+      addedObject: {fileID: 1271628823618970060}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 27ee4c2e3cee90545911c12bf1edcf01, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1271628823618970060}
+      addedObject: {fileID: 6525228267771149306}
   m_SourcePrefab: {fileID: 100100000, guid: 27ee4c2e3cee90545911c12bf1edcf01, type: 3}
 --- !u!4 &2666953181918360659 stripped
 Transform:
@@ -745,6 +748,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 27ee4c2e3cee90545911c12bf1edcf01, type: 3}
   m_PrefabInstance: {fileID: 2488329729559106488}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1271628823618970060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3335262305807445737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25479c7c54b9f06479190645e57094f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightGraphic: {fileID: 3181827749532674614}
 --- !u!65 &6525228267771149306
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -762,20 +778,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 0.26, z: 1}
   m_Center: {x: 0, y: 0.13, z: 0}
---- !u!114 &1271628823618970060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3335262305807445737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25479c7c54b9f06479190645e57094f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightGraphic: {fileID: 3181827749532674614}

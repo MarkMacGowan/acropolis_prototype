@@ -5,6 +5,10 @@ using UnityEngine.EventSystems;
 
 public class keyboardInput : MonoBehaviour
 {
+    [SerializeField] private BuildingBehavior behaviorScript;
+    [SerializeField] private SpaceOccupation space_occupation;
+    private bool bInterSect;
+
     public bool mClick;
     
     public GameObject buildPref;
@@ -37,6 +41,8 @@ public class keyboardInput : MonoBehaviour
     {
         _mainCamera = Camera.main;
         isPlaced = false;
+        space_occupation = gameObject.GetComponent<SpaceOccupation>();
+        bInterSect = space_occupation.objectInterSect;
         //isIntersect = object_movement_behavior.uiInter;
 
        
@@ -61,6 +67,7 @@ public class keyboardInput : MonoBehaviour
     // after they have been instaniated using the relevant button
     private void Update()
     {
+
         // left click
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -77,9 +84,14 @@ public class keyboardInput : MonoBehaviour
             else 
             {
                     Debug.Log("Button GUI not clicked but mouse clicked");
-                    //object_transparency.transparencyStrength = 1f;
-                    placeBuilding();
-                    exitMenu();
+                //object_transparency.transparencyStrength = 1f;
+                Debug.Log("InterSection: "+bInterSect);
+                    if (!bInterSect)
+                        {   
+                            placeBuilding();
+                            exitMenu();
+                        }
+                    
             }
         }
 
@@ -119,7 +131,7 @@ public class keyboardInput : MonoBehaviour
         object_movement_behavior.enabled = false;
         Debug.Log("Object Placed");
         isPlaced = true;
-        
+        behaviorScript.enabled = true;
 
         //solar_panel_behavior.enabled = true;
 
