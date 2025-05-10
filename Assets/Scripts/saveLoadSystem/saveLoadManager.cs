@@ -53,7 +53,7 @@ public class saveLoadManager : MonoBehaviour
     private DateTime localDate; 
     private string fileName;
     // the number of all buildings placed in the scene
-    
+    private List<GameObject> all_buildings;
     public void Awake()
     {
         environment_Data = new EnvironmentData();
@@ -74,7 +74,7 @@ public class saveLoadManager : MonoBehaviour
     public void SaveGame()
     {   
         Debug.Log("Save Method Acessed");
-        List<GameObject> all_buildings =RetrieveAllActiveBuildings();
+        all_buildings =RetrieveAllActiveBuildings();
         // all stats 
         //stat_Data.healthLevelCurrent = mSettlement.gameObject.GetComponent<healthManager>().healthInfo();
         stat_Data.oxygenLevelCurrent = mSettlement.gameObject.GetComponent<oxygenManager>().oxygenInfo();
@@ -281,25 +281,46 @@ public class saveLoadManager : MonoBehaviour
         float lSupplyLevel = gameData.sData.energyLevelCurrent;
 
         // load building data
-        
-        
+
+        //List<GameObject> myIBuildingObject = new List<GameObject>();
         int allBuildingsLength= gameData.buildingStates.allBuildings.Count;
         for (int i = 0; i < allBuildingsLength; i++)
-        {
-            GameObject lBuildingObject = gameData.buildingStates.allBuildings[i].buildingObject;
+        {       
+            
             int lBuildingID = gameData.buildingStates.allBuildings[i].buildingId;
             string lBuildingTag = gameData.buildingStates.allBuildings[i].buildingTag;
             float[] lBuildingPosition = new float[3];
-              lBuildingPosition[0]=  gameData.buildingStates.allBuildings[i].buildingPosition[0];
-              lBuildingPosition[1] = gameData.buildingStates.allBuildings[i].buildingPosition[1];
-              lBuildingPosition[2] = gameData.buildingStates.allBuildings[i].buildingPosition[2];
+
+            lBuildingPosition[0] = gameData.buildingStates.allBuildings[i].buildingPosition[0];
+            lBuildingPosition[1] = gameData.buildingStates.allBuildings[i].buildingPosition[1];
+            lBuildingPosition[2] = gameData.buildingStates.allBuildings[i].buildingPosition[2];
+            Vector3 mylBuildingPositon = new Vector3(lBuildingPosition[0],lBuildingPosition[1],lBuildingPosition[2]);
+            Quaternion lBuildingAngles = new Quaternion(0,0,0,0);
             float lBHealth = gameData.buildingStates.allBuildings[i].bHealth;
             float iBEnergry = gameData.buildingStates.allBuildings[i].bEnergy;
             float iBOxygen = gameData.buildingStates.allBuildings[i].bOxygen;
+
+            GameObject lBuildingObject = gameData.buildingStates.allBuildings[i].buildingObject;
+            BuildingBehavior b = lBuildingObject.GetComponent<BuildingBehavior>();
+            if (b == null) continue;
+            BuildingData lData = new BuildingData
+            {
+                buildingId = lBuildingID,
+                buildingTag = lBuildingTag,
+                buildingPosition = new float[]
+                {
+                    //lBuildingObject.transform.position.x(iBuilding);
+                    //lBuildingObject.transform.position.y=lBuildingPosition[1],
+                    //lBuildingObject.transform.position.z=lBuildingPosition[2],
+                },
+            };
+       
+
+           // myIBuildingObject.AddRange()
         }
 
-        // set game data to load data
 
+        // set game data to load data
         //environment
         dayNightCycle dnScript= dNCycleObject.gameObject.GetComponent<dayNightCycle>();
 
@@ -337,13 +358,43 @@ public class saveLoadManager : MonoBehaviour
         //stat_Data.supplyLevelCurrent = ((int)mSettlement.gameObject.GetComponent<suppliesManager>().suppliesInfo());
 
         // buildings
-        GameObject lBuilding = new GameObject();
-        for (int i = 0; i < allBuildingsLength; i++)
-        {
-            // continue from here
-            //all_Buildings[i]=
 
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //GameObject lBuilding = new GameObject();
+        //for (int i = 0; i < allBuildingsLength; i++)
+        //{
+        //    BuildingData lBuildingData = new BuildingData()
+        //    {
+
+
+
+
+
+
+        //    };
+        //    //lBuildingObject
+        //    //all_Buildings[i]=
+
+
+        //}
 
 
 
