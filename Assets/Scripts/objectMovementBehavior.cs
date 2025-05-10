@@ -42,19 +42,19 @@ public class objectMovementBehavior : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        Debug.Log("OnMouseDown");
+        //Debug.Log("OnMouseDown");
         if (EventSystem.current.IsPointerOverGameObject())
         {
 
             
             uiInter = true;
-            Debug.Log(this.name +" UI Intersect: "+ uiInter);
+           // Debug.Log(this.name +" UI Intersect: "+ uiInter);
             
         }
         else
         {
             uiInter = false;
-            Debug.Log(this.name + " UI Intersect: " + uiInter);
+            //Debug.Log(this.name + " UI Intersect: " + uiInter);
         }
 
         return;
