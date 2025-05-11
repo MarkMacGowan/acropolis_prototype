@@ -577,8 +577,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606dfb5854276ed4b8848840150757d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  incomingSupplySubtract: 0
+  finalSTotal: 0
+  incoming_supply: 0
   supplyLevel: 0
   noLandingPads: 0
+  supplyPlusMinus: 0
+  currentSupply: 1000
 --- !u!114 &368664011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -592,20 +597,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthLevel: 0
---- !u!114 &368664012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 368663980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ef9e89105a6d2248bb0c25de5954958, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  supMan: {fileID: 368664010}
-  finalSupplyLevel: 0
 --- !u!82 &368664016
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7081,9 +7072,6 @@ PrefabInstance:
       addedObject: {fileID: 368664010}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: de2847d9db729f3449fbc5a3852095d2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 368664012}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: de2847d9db729f3449fbc5a3852095d2, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 368664016}
   m_SourcePrefab: {fileID: 100100000, guid: de2847d9db729f3449fbc5a3852095d2, type: 3}
 --- !u!1 &1699573977 stripped
@@ -8146,7 +8134,7 @@ PrefabInstance:
     - target: {fileID: 1580370035376645236, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
       propertyPath: supplies_deficit
       value: 
-      objectReference: {fileID: 368664012}
+      objectReference: {fileID: 0}
     - target: {fileID: 1580370035376645236, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
       propertyPath: supplies_manager
       value: 

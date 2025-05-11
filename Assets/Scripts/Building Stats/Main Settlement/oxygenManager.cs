@@ -42,7 +42,7 @@ public class oxygenManager : MonoBehaviour
     public float oxygenInfo()
     {
         oxygen_processor = GameObject.FindWithTag("oxyGen");
-        //totOxygenAmount = oxygen_processor.GetComponent<oxygenGeneratorBehavior>().oxygenAmount;
+        totOxygenAmount = oxygen_processor.GetComponent<oxygenGeneratorBehavior>().oxygenAmount;
         totOxygenProduce = oxygen_processor.GetComponent<oxygenGeneratorBehavior>().oxygenProduce;
         noOxyGens = GameObject.FindGameObjectsWithTag("oxyGen").Length;
         oxygenProduceRate = totOxygenAmount;
