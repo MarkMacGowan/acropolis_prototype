@@ -65,7 +65,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: HYDRO PONICS
+  m_text: 'HYDRO PONICS
+
+    COST: 200'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2260,8 +2262,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mSettlement: {fileID: 0}
+  bSpawner: {fileID: 0}
   dNCycleObject: {fileID: 0}
   building_counter_object: {fileID: 0}
+  myBuildingManager: {fileID: 0}
   totAllBuildings: 0
 --- !u!1 &2343456078314576650
 GameObject:
@@ -2511,7 +2515,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: WATER EXTRACTOR
+  m_text: 'WATER EXTRACTOR
+
+    COST: 200'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7783,7 +7789,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: O2 GEN
+  m_text: 'O2 GEN
+
+    COST: 100'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8074,8 +8082,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mSettlement: {fileID: 0}
+  bSpawner: {fileID: 0}
   dNCycleObject: {fileID: 0}
   building_counter_object: {fileID: 0}
+  myBuildingManager: {fileID: 0}
   totAllBuildings: 0
 --- !u!1 &5695549443972454366
 GameObject:
@@ -10643,7 +10653,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'SOLAR PANEL
 
-'
+    COST: 500'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13514,7 +13524,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LANDING PAD
+  m_text: 'LANDING PAD
+
+    COST:100'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

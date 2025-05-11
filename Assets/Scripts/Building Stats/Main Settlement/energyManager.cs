@@ -78,6 +78,7 @@ public class energyManager : MonoBehaviour
 
         tot_solar_produce = solar_produce * noSolarPanels;
         energyProduceRate = totSolarPanelEnergy;
+
         energy_deficit = calculateDeficit();
         energyPlusMinus = tot_solar_produce - energy_deficit;
 

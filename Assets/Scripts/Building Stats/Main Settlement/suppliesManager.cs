@@ -5,6 +5,17 @@ using UnityEngine;
 public class suppliesManager : MonoBehaviour
 {   
 
+    [SerializeField] private int suppliesSpent;
+
+
+    private float suppliesDeficit;
+
+
+    private float supplies_deficit;
+
+
+    private float incomingSupplySubtract;
+
 
     public float supplyLevel = 0;
 
@@ -24,13 +35,15 @@ public class suppliesManager : MonoBehaviour
 
     private float totSuppliesAmount;
     private float totSuppliesDelivery;
+
+    public float supplyPlusMinus;
     
     
     
      // Start is called before the first frame update
     void Start()
     {
-        
+        incomingSupplySubtract = 0f;
     }
 
     // Update is called once per frame
@@ -47,10 +60,21 @@ public class suppliesManager : MonoBehaviour
         noLandingPads = GameObject.FindGameObjectsWithTag("landingPad").Length;
         supplyDeliveryRate = totSuppliesAmount;
         supplyLevel = supplyLevel + supplyDeliveryRate;
+
+
+        supplies_deficit = CalculateSuppliesDeficit();
+        supplyPlusMinus = totSuppliesDelivery - supplies_deficit;
+        supplyLevel = supplyLevel + (supplyPlusMinus);
         if (supplyLevel > maxSupplyLevel)
         {
             supplyLevel = maxSupplyLevel;
         }
         return supplyLevel;
+    }
+    private float CalculateSuppliesDeficit()
+    {
+        suppliesDeficit =incomingSupplySubtract;
+       // suppliesDeficit=
+        return suppliesDeficit;
     }
 }

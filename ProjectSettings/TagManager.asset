@@ -16,6 +16,11 @@ TagManager:
   - dayNight
   - mainSettle
   - buildSpawn
+  - oxButton
+  - solButton
+  - hyButton
+  - wButton
+  - lPadButton
   layers:
   - Default
   - TransparentFX
