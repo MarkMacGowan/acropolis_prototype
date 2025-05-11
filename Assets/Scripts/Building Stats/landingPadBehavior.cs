@@ -27,7 +27,7 @@ public class landingPadBehavior : BuildingBehavior
         dnCycle = timeObject.GetComponent<dayNightCycle>();
         
         suppliesAmount = 0f;
-        suppliesProduce = 1f/10000f;
+        suppliesProduce = 1f/100f;
     }
 
     // Update is called once per frame

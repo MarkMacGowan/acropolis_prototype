@@ -17,7 +17,7 @@ public class suppliesManager : MonoBehaviour
     public float incomingSupplySubtract;
 
 
-    public float supplyLevel = 0;
+    public float supplyLevel = 1000f;
 
     private float maxSupplyLevel=1000;
 
@@ -37,23 +37,27 @@ public class suppliesManager : MonoBehaviour
     private float totSuppliesDelivery;
 
     public float supplyPlusMinus;
-    
-    
+
+    private float finalSupplyTotal;
     
      // Start is called before the first frame update
     void Start()
     {
-        incomingSupplySubtract = 0f;
+        //incomingSupplySubtract = 0f;
+        //supplyLevel = 500f;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log("Subtract Amount: " + incomingSupplySubtract);
     }
 
     public float suppliesInfo()
     {
+        //incomingSupplySubtract=0f;
+        
         land_pad = GameObject.FindWithTag("landingPad");
         totSuppliesAmount = land_pad.GetComponent<landingPadBehavior>().suppliesAmount;
         totSuppliesDelivery = land_pad.GetComponent<landingPadBehavior>().suppliesProduce;
@@ -62,20 +66,33 @@ public class suppliesManager : MonoBehaviour
         supplyLevel = supplyLevel + supplyDeliveryRate;
 
 
-        supplies_deficit = CalculateSuppliesDeficit();
-        supplyPlusMinus = totSuppliesDelivery - supplies_deficit;
-        supplyLevel = supplyLevel + (supplyPlusMinus);
+        //supplies_deficit = CalculateSuppliesDeficit();
+        //supplyPlusMinus = totSuppliesDelivery - supplies_deficit;
+        supplyLevel = supplyLevel + totSuppliesAmount;
         if (supplyLevel > maxSupplyLevel)
         {
             supplyLevel = maxSupplyLevel;
         }
-        return supplyLevel;
+        // supplyLevel-
+        finalSupplyTotal = supplyLevel - incomingSupplySubtract;
+        if (finalSupplyTotal>maxSupplyLevel)
+        {
+            finalSupplyTotal = maxSupplyLevel;
+        }
+        if (finalSupplyTotal < 0)
+        {
+            finalSupplyTotal = 0;
+        }
+        return finalSupplyTotal;
     }
-    private float CalculateSuppliesDeficit()
-    {
-        incomingSupplySubtract = suppliesSpent;
-        suppliesDeficit =incomingSupplySubtract;
-       // suppliesDeficit=
-        return suppliesDeficit;
-    }
+    //private float CalculateSuppliesDeficit()
+    //{
+    //    //Debug.Log("Supplies Spent: " + suppliesSpent);
+    //    //incomingSupplySubtract = suppliesSpent;
+    //    //Debug.Log("Supplies Subtract: "+incomingSupplySubtract);
+    //    //suppliesDeficit =suppliesSpent;
+    //    // suppliesDeficit=
+    //    //suppliesDeficit = incomingSupplySubtract;
+    //    //return suppliesDeficit;
+    //}
 }
