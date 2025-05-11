@@ -10,18 +10,12 @@ public class energyStatBar : MonoBehaviour
     public float energy;
 
     public GameObject main_settlement;
-    public mainDomeStats main_dome_stats;
-    //[SerializeField] statManager stat_manager;
+    
+   
     [SerializeField] energyManager energy_manager;
-    // Start is called before the first frame update
-    void Start()
-    {
-        //main_settlement = GameObject.Find("mainSettlement");
-        //main_dome_stats = main_settlement.GetComponent<mainDomeStats>();
-        
-    }
+   
 
-    // Update is called once per frame
+   
     void Update()
     {
         energy = energy_manager.energyInfo();

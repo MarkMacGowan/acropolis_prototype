@@ -11,7 +11,7 @@ public class RaycastPlane : MonoBehaviour
     float distance;
     public Vector3 gamePosition;
     public bool uiIntersect;
-    // Update is called once per frame
+    
     public void Update()
     {
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);

@@ -2,23 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-// using UnityEngine.InputSystem;
+
 
 public class buildingManager : MonoBehaviour
 {
-    //public string buildingName;
+    
     public RaycastPlane raycastPlane;
     
     
-    //public addBuildingBtn addBuildingBtn;
-    // add public button variable below here
-    // public 
+    
+   
+   
     Vector3 placementCoord;
-    // bool uiIntersect;
-    //bool addBuildingMode;
-    //string prefabName;
-
-    // bool buildingSelected;
+   
 
     string buttonName;
     
@@ -35,7 +31,7 @@ public class buildingManager : MonoBehaviour
     private InputHandler refHandler;
     private bool yesNoClick;
     public int buildingsListSize;
-    //public GameObject targetObject;
+   
     
 
     private void Awake()
@@ -43,19 +39,13 @@ public class buildingManager : MonoBehaviour
         
         raycastPlane = GetComponent<RaycastPlane>();
         currentBuilding = null;
-        //buildingSelected = false;
-        //string prefabName = GameObject.Find("testBuilding").name;
-
-        //yesNoClick = refHandler.mClick;
+       
     }
 
-    // Start is called before the first frame update
+   
     void Start()
     {
-        // addBuildingMode = true;
-        // targetObject = GameObject.Find("buildingModeMenu");
-
-        // handlerObj = GameObject.Find("InputHandlerObject");
+       
         
 
       
@@ -63,18 +53,14 @@ public class buildingManager : MonoBehaviour
 
 
 
-    // Update is called once per frame
+   
     void Update()
     {
         buildingsListSize = buildings.Count;
-        //uiIntersect = raycastPlane.uiIntersect;
+       
         placementCoord = raycastPlane.gamePosition;
       
-        //var cancelButton = targetObject.GetComponent("cancelBtn");
-
-        //float x = (Input.mousePosition).x;//gets input from mouse position x coord
-        //float z = (Input.mousePosition).y;// gets input from mouse position y coord
-
+       
 
 
         // y remains constant as no zoom in or out funtio ality implemented yet
@@ -98,21 +84,7 @@ public class buildingManager : MonoBehaviour
        
         
     }
-    //public void buildingMode()
-    //{
-        
-       
-    //        if (addBuildingMode == true)
-    //        {
-    //        addBuildingMode = false;
-    //            Debug.Log("Building Mode On");
-    //        }
-    //        else if (addBuildingMode==false)
-    //        {
-    //        addBuildingMode = true;
-    //            Debug.Log("Building Mode Off");
-    //        }
-    //}
+
 
   
 
@@ -122,38 +94,18 @@ public class buildingManager : MonoBehaviour
 
     public void addBuilding()
     {
-       // Debug.Log("------------");
-       // Debug.Log("Entering Building Mode");
-        //Debug.Log("About to place: "+buildingName);
-        //buildingMode();
-       // Debug.Log("addBuilding method executed");
-
-
-
-
-        //testBuilding = buildings[1];
+  
 
         // name of button clicked is assigned to variable
         buttonName = EventSystem.current.currentSelectedGameObject.name;
         // buttonName variable used an argument in chooseBuilding method
         chooseBuilding(buttonName);
 
-        //Debug.Log(buttonName);
-       // Debug.Log(testBuilding);
-
+       
 
         // assigned current instantiated object as a variable to be accessed by deleteBuilding script if needed
         currentBuilding=Instantiate(testBuilding, placementCoord, Quaternion.identity)as GameObject;
-        //if (uiIntersect == false)
-        //{
-            
-            
-        //}
-        //else
-        //{
-            
-        //    Debug.Log("Building cannot be placed");
-        //}
+       
      
         
 
@@ -161,15 +113,13 @@ public class buildingManager : MonoBehaviour
 
     GameObject chooseBuilding(string iButtonName)
     {
-        // Debug.Log("chooseBuilding method executed");
-       // Debug.Log("iButtonName: "+iButtonName);
-        //testBuilding = null;
+        
        // method takes assigns value of iButtonName to bName
         string bName = iButtonName;
-        // Debug.Log("bName: "+bName);
+       
         // conditional statement to choose building based on button clicked
         // uses bName as variable for comparison.
-        //buildingSelected = true;
+       
         switch (bName)
         {
             case "landingPadBtn":
@@ -204,35 +154,9 @@ public class buildingManager : MonoBehaviour
         Debug.Log(testBuilding);
         return testBuilding;
     } 
-    //public void spawnIfClicked()
-    //{
-    //    if (Input.GetMouseButtonDown(0))
-    //    {
-    //        Instantiate(testBuilding, placementCoord, Quaternion.identity);
-    //        addBuildingMode = false;
-    //    }
-        
-    //}
-    public void deleteBuilding()
-    {
-        // moved this to an entriely new script
-        //Destroy(testBuilding);
-        //addBuildingMode = false;
-    }
-    //public void OnClick(InputAction.CallbackContext context)
-    //{
-    //    if (!context.started) return; 
-    //    Debug.Log("buildingManager: OnClick Method Executed");
-    //    placeBuilding();
-    //}
+  
+ 
     
-    
-    //public void placeBuilding()
-    //{   
-    //    //Debug.Log("placeBuilding Method Executed");
-    //    referenceScript=currentBuilding.GetComponent<objectMovementBehavior>();
-    //    referenceScript.enabled = false;
-    //}
 
 
 }

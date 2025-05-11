@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class costManagment : MonoBehaviour
 {
-    //[SerializeField] private List<GameObject> buttonList;
+  
     private  GameObject bClicked;
     private string buttonTag;
     public int buildingCost;
-    void Start()
-    {
 
-    }
 
-    // Update is called once per frame
     void Update()
     {
         costDeduct(bClicked);
@@ -50,7 +46,6 @@ public class costManagment : MonoBehaviour
                 break;
 
         }
-        //button_clicked.
-        //return buildingCost;
+       
     }
 }

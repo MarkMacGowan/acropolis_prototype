@@ -15,7 +15,7 @@ public class tutorialPanelHandler : MonoBehaviour
     private int maxPageNumber;
     private int minPageNumber;
 
-    // Start is called before the first frame update
+   
     void Start()
     {
         pageCounter = 0;
@@ -25,35 +25,13 @@ public class tutorialPanelHandler : MonoBehaviour
         currentPage.SetActive(true);
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         //Debug.Log("Page: "+ pageCounter);
     }
 
-    //private GameObject findCurrentPage()
-    //{
-        
-        
-    //        currentPage = tutorialPages[pageCounter];
-    //        if (pageCounter==0)
-    //        {
-    //            nextPage = tutorialPages[pageCounter + 1];
-    //            previousPage = null;
-    //        }
-
-
-    //        if (pageCounter ==tutorialPages.Count-1)
-    //        {
-    //            nextPage = null;
-    //            previousPage = tutorialPages[pageCounter - 1];
-    //        }
-
-    //        //nextPage = tutorialPages[i + 1];
-    //        //previousPage = tutorialPages[i - 1];
-        
-    //    return currentPage;
-    //}
+  
 
     public void advanceToPage()
     {   
@@ -66,12 +44,7 @@ public class tutorialPanelHandler : MonoBehaviour
         
         Debug.Log("Page: "+ pageCounter);
         pageHandler();
-        //currentPage = tutorialPages[pageCounter];
-        //nextPage = tutorialPages[pageCounter+1];
-        
-        //currentPage.SetActive(false);
-        //currentPage = nextPage;
-        //currentPage.SetActive(true);
+     
     }
     public void returnToPage()
     {   
@@ -82,13 +55,7 @@ public class tutorialPanelHandler : MonoBehaviour
         }
         Debug.Log("Page: " + pageCounter);
         pageHandler();
-        //currentPage = tutorialPages[pageCounter];
-        
-        //previousPage = tutorialPages[pageCounter-1];
-
-        //currentPage.SetActive(false);
-        //currentPage = previousPage;
-        //currentPage.SetActive(true);
+       
     }
     public void pageHandler()
     {

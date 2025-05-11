@@ -26,7 +26,7 @@ public class dayNightCycle : MonoBehaviour
         dayNum = 0.25f;
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         rotationalNumZ = timeNum * timeRate;

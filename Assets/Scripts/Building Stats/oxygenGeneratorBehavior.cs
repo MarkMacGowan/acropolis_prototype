@@ -22,9 +22,7 @@ public class oxygenGeneratorBehavior : BuildingBehavior
     
 
 
-    //public int noOxygenGens;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         main_dome = GameObject.FindGameObjectWithTag("mainSettle");
@@ -32,7 +30,7 @@ public class oxygenGeneratorBehavior : BuildingBehavior
         oxygenAmount=0f;
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         mainDomeEnergy = main_dome.gameObject.GetComponent<energyManager>().energyLevel;
@@ -49,11 +47,5 @@ public class oxygenGeneratorBehavior : BuildingBehavior
             oxygenAmount = maxOxygenAmount;
         }
     }
-    private void continueProcess()
-    {
-        //if (mainDomeEnergy <= 0)
-        //{
-            
-        //}
-    }
+
 }

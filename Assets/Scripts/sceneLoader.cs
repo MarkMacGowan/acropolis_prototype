@@ -7,17 +7,7 @@ public class sceneLoader : MonoBehaviour
 {   
     public Scene sceneToLoad;
     private int sceneindex;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void loadScene()
     {
         sceneindex = sceneToLoad.buildIndex;

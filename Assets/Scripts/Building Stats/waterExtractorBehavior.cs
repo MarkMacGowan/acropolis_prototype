@@ -15,7 +15,7 @@ public class waterExtractorBehavior :BuildingBehavior
     public float maxWaterProduce = 1f;
 
     public int noWaterExtractors;
-    // Start is called before the first frame update
+   
     void Start()
     {
         waterAmount = 0f;

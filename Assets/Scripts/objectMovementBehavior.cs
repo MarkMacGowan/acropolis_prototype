@@ -22,9 +22,7 @@ public class objectMovementBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // roundX = (Mathf.Round((Input.mousePosition.x)*moveIncrem)*0.1f);
-      //  roundY = (Mathf.Round((Input.mousePosition.y)*moveIncrem)*0.1f);
-      //  roundGamePos = new Vector3(roundX,roundY,0);
+       
 
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (plane.Raycast(ray, out distance))

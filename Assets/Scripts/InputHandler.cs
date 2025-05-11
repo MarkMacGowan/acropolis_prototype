@@ -22,27 +22,16 @@ public class InputHandler : MonoBehaviour
     public bool isIntersect;
 
 
-   // private buildingManager bManager;
-    
+  
 
     private void Awake()
     {
         _mainCamera = Camera.main;
         isIntersect = object_movement_behavior.uiInter;
         
-       // bRay = object_movement_behavior.ray;
-
-        //mClick = false;
-        //bManager = buildPref.GetComponent<buildingManager>();
-        //object_movement=GetComponent<objectMovementBehavior>();
+      
     }
-    // method to see if OnClick method can be used at all
-    // if the raycast intersects with a gui object such as a button
-    // then OnClick method should not be used
-    //public void checkInterSect()
-    //{
 
-    //}
     private void Update()
     {
     
@@ -58,14 +47,7 @@ public class InputHandler : MonoBehaviour
     {
         if (!context.started) return;
 
-        //var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
-
-
-        //var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(pos: (Vector3)Mouse.current.position.ReadValue()));
-        //if (!rayHit.collider) return;
-
-        //Debug.Log("Mouse Clicked");
-        //mClick =true;
+    
         //Debug.Log("mClick: "+mClick);
         Debug.Log("inputHandler isIntersect: "+ isIntersect);
         if (isIntersect==true)
@@ -90,14 +72,7 @@ public class InputHandler : MonoBehaviour
       
     }
 
-    //public void outOfMenu(InputAction.CallbackContext context)
-    //{
-    //    if (!context.started) return;
-      
-    //        Debug.Log("Escape Button");
-    //        exitMenu();
-        
-    //}
+
 
 
     // this method works by making the objectMovementBahavior script inactive

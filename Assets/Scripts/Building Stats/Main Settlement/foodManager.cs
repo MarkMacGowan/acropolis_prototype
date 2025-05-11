@@ -25,20 +25,6 @@ public class foodManager : MonoBehaviour
     private float totFoodAmount;
     private float totFoodProduce;
     
-    
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public float foodInfo()
     {
         hydro_ponic = GameObject.FindWithTag("hydroPonics");

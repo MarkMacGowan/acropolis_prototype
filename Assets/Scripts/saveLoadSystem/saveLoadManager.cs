@@ -14,19 +14,9 @@ public class saveLoadManager : MonoBehaviour
     [SerializeField] GameObject dNCycleObject;
     [SerializeField] GameObject building_counter_object;
     [SerializeField] buildingManager myBuildingManager;
-    //private GameObject chosenBuilding;
-
-    // [SerializeField] GameObject inbuilding_storage;
-    //private GameObject iBuilding;
-    //private GameObject aBuilding;
+  
     [SerializeField] private int totAllBuildings;
-    // list of type BuildingData
-    
-    // List of type GameObject which hold all buildings instansiated 
-    //private List<GameObject> all_buildings;
-
-      
-    //private List<GameObject> oxyGenExtractors;
+   
 
     
 
@@ -34,7 +24,7 @@ public class saveLoadManager : MonoBehaviour
     private static string path;
     private static string newPath;
 
-    //private gameData game_data;
+   
     private EnvironmentData environment_Data;
     private BuildingData building_Data;
     private StatData stat_Data;
@@ -49,9 +39,9 @@ public class saveLoadManager : MonoBehaviour
     private string allData;
 
     private string myCombinedData;
-    //private string allBuildingStates;
+    
 
-    //private string myJson;
+    
     private DateTime localDate; 
     private string fileName;
     // the number of all buildings placed in the scene
@@ -64,7 +54,7 @@ public class saveLoadManager : MonoBehaviour
         gameData = new GameSaveData();
         mSettlement = GameObject.FindGameObjectWithTag("mainSettle");
         bSpawner = GameObject.FindGameObjectWithTag("buildSpawn");
-        //game_data = new gameData();
+      
         totAllBuildings = 0;
     }
     public void NewGame()
@@ -72,14 +62,14 @@ public class saveLoadManager : MonoBehaviour
         environment_Data = new EnvironmentData();
         building_Data = new BuildingData();
         stat_Data = new StatData();
-        //game_data = new gameData();
+       
     }
     public void SaveGame()
     {   
         Debug.Log("Save Method Acessed");
         all_buildings =RetrieveAllActiveBuildings();
         // all stats 
-        //stat_Data.healthLevelCurrent = mSettlement.gameObject.GetComponent<healthManager>().healthInfo();
+      
         stat_Data.oxygenLevelCurrent = mSettlement.gameObject.GetComponent<oxygenManager>().oxygenInfo();
         stat_Data.energyLevelCurrent = mSettlement.gameObject.GetComponent<energyManager>().energyInfo();
         stat_Data.foodLevelCurrent = mSettlement.gameObject.GetComponent<foodManager>().foodInfo();
@@ -92,7 +82,7 @@ public class saveLoadManager : MonoBehaviour
         List<BuildingData> everyBuilding=new List<BuildingData>();
         Debug.Log("EveryBuilding Length: "+everyBuilding.Count);
         //building object
-        //building_Data.buildingHealth=
+      
         int count = Mathf.Min(everyBuilding.Count, all_buildings.Count);
         for (int i=0;i<all_buildings.Count; i++)
         {
@@ -117,37 +107,17 @@ public class saveLoadManager : MonoBehaviour
             
             };
             everyBuilding.Add(myData);
-            //Debug.Log("Index: " + i);
-            //Debug.Log("Instance ID: " + all_buildings[i].GetInstanceID());
-            //Debug.Log("Buildings Count: "+all_buildings.Count);
-            //int tempID;
-            //tempID= all_buildings[i].GetInstanceID();
-            //Debug.Log("TempID: " + tempID);
-            //everyBuilding[i].buildingId = all_buildings[i].GetInstanceID();
-            
-            //everyBuilding[i].buildingTag = all_buildings[i].gameObject.tag;
-            //everyBuilding[i].buildingPosition[0] = all_buildings[i].transform.position.x;
-            //everyBuilding[i].buildingPosition[1] = all_buildings[i].transform.position.y;
-            //everyBuilding[i].buildingPosition[2] = all_buildings[i].transform.position.z;
-            //everyBuilding[i].buildingH = all_buildings[i].gameObject.GetComponent<BuildingBehavior>().buildingHealth;
-            //everyBuilding[i].buildingEn = all_buildings[i].gameObject.GetComponent<BuildingBehavior>().buildingEnergy;
-            //everyBuilding[i].buildingOx = all_buildings[i].gameObject.GetComponent<BuildingBehavior>().buildingOxygen;
+          
         }
         Debug.Log("EveryBuilding List Size: "+everyBuilding.Count);
        
-        // building position
-        // x coordinate
-        //building_Data.buildingPosition[0] = 3f;
-        // y coordinate
-       // building_Data.buildingPosition[1]= 4f;
-        // z coordinate
-        //building_Data.buildingPosition[2] = 4f;
+    
         
         // index of scene set to 1
         environment_Data.sceneIndex = 1;
 
         // day status set to night time
-        // to do: to get status dynamically get solarPanelmanager script and read status boolean there 
+       
         environment_Data.dayStatus = dNCycleObject.gameObject.GetComponent<dayNightCycle>().TimeOfDay();
 
         // x angle
@@ -158,11 +128,7 @@ public class saveLoadManager : MonoBehaviour
         environment_Data.dayNightAngle[2] = dNCycleObject.gameObject.GetComponent<dayNightCycle>().rotationalNumZ;
         
         totAllBuildings = building_counter_object.gameObject.GetComponent<buildingCounter>().CountBuildings();
-        //for (int i=0;i<totAllBuildings-1;i++)
-        //{
-        //    game_data.currentBuildings[i] =inbuilding_storage.GetComponent<buildingStorage>().buildingsStored[i];
-        //}
-        // game_data.currentBuildings[0]
+     
         // instance of gameData class called game_data is added to a variable of type string called dataJson
         BuildingSaveData buildingSaveData = new BuildingSaveData();
         buildingSaveData.allBuildings = everyBuilding;
@@ -170,18 +136,13 @@ public class saveLoadManager : MonoBehaviour
         
         gameData.environment = environment_Data;
         gameData.sData = stat_Data;
-        //gameData.building = building_Data;
+     
         gameData.buildingStates = buildingSaveData;
         
         
 
         allData = JsonUtility.ToJson(gameData, true);
-        //allBuildingStates = JsonUtility.ToJson(saveData,true);
-        //myEnvironmentData = JsonUtility.ToJson(environment_Data,true);
-        //myBuildingData = JsonUtility.ToJson(allBuildingStates,true);
-        //myStatData = JsonUtility.ToJson(stat_Data,true);
-        //myJson = JsonUtility.ToJson(game_data);
-        //gameData.environment=
+      
         // date and time at present
         localDate = DateTime.Now;
         // fileName takes in localDate, turns it into a string and concatenates it with with
@@ -233,8 +194,7 @@ public class saveLoadManager : MonoBehaviour
 
 
 
-        //float angleSun;
-
+       
         foreach (string file in files)
         {
             Debug.Log("Save Files: "+Path.GetFileName(file));
@@ -259,7 +219,7 @@ public class saveLoadManager : MonoBehaviour
 
         newPath = Application.persistentDataPath + "/" + myFile;
         string retrievedData = System.IO.File.ReadAllText(newPath);
-        //string myGameData;
+     
         gameData = JsonUtility.FromJson<GameSaveData>(retrievedData);
 
 
@@ -273,7 +233,7 @@ public class saveLoadManager : MonoBehaviour
                 lDayNightAngle[1] = gameData.environment.dayNightAngle[1];
                 lDayNightAngle[2] = gameData.environment.dayNightAngle[2];
         int lDaysPassed = gameData.environment.daysPassed;
-        //GameObject lWeather = gameData.environment.weather;
+    
 
         // load stats data
         float lHealthLevel = gameData.sData.healthLevelCurrent;
@@ -285,7 +245,7 @@ public class saveLoadManager : MonoBehaviour
 
         // load building data
 
-        //List<GameObject> myIBuildingObject = new List<GameObject>();
+       
         List<BuildingData> everyBuilding = new List<BuildingData>();
         int allBuildingsLength= gameData.buildingStates.allBuildings.Count;
         for (int i = 0; i < allBuildingsLength; i++)
@@ -305,8 +265,7 @@ public class saveLoadManager : MonoBehaviour
             float lBOxygen = gameData.buildingStates.allBuildings[i].bOxygen;
 
             GameObject lBuildingObject = gameData.buildingStates.allBuildings[i].buildingObject;
-            //BuildingBehavior b = lBuildingObject.GetComponent<BuildingBehavior>();
-            //if (b == null) continue;
+          
             BuildingData lData = new BuildingData
             {
                 buildingObject = lBuildingObject,
@@ -318,9 +277,7 @@ public class saveLoadManager : MonoBehaviour
                     lBuildingPosition[1],
                     lBuildingPosition[2]
 
-                    //lBuildingObject[0]=lBuildingPosition[0];
-                    //lBuildingObject.transform.position.y=lBuildingPosition[1],
-                    //lBuildingObject.transform.position.z=lBuildingPosition[2],
+                  
                 },
                 bHealth=lBHealth,
                 bEnergy=lBEnergy,
@@ -346,7 +303,7 @@ public class saveLoadManager : MonoBehaviour
         environment_Data.dayStatus = lDayStatus;
         environment_Data.dayNightAngle = lDayNightAngle;
         environment_Data.daysPassed = lDaysPassed;
-        //environment_Data.weather = lWeather;
+     
 
         // stats
         healthManager hManager= mSettlement.gameObject.GetComponent<healthManager>();
@@ -362,13 +319,7 @@ public class saveLoadManager : MonoBehaviour
         fManager.foodLevel = lFoodLevel;
         wManager.waterLevel = lWaterLevel;
         sManager.supplyLevel = lSupplyLevel;
-        //stat_Data.healthLevelCurrent = lHealthLevel;
-
-        //stat_Data.energyLevelCurrent = mSettlement.gameObject.GetComponent<energyManager>().energyInfo();
-        //stat_Data.foodLevelCurrent = mSettlement.gameObject.GetComponent<foodManager>().foodInfo();
-        //stat_Data.waterLevelCurrent = mSettlement.gameObject.GetComponent<waterManager>().waterInfo();
-        //stat_Data.supplyLevelCurrent = ((int)mSettlement.gameObject.GetComponent<suppliesManager>().suppliesInfo());
-
+      
         // buildings (instansiate)
 
         Debug.Log("Length of everyBuildingList: "+everyBuilding.Count);

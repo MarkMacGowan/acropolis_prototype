@@ -6,19 +6,5 @@ public class panelObjectStorage : MonoBehaviour
 {
     public List<GameObject> panelList = new List<GameObject>();
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    void choosePanel()
-    {
-
-    }
+    
 }

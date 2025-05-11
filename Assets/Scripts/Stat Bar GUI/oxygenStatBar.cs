@@ -10,16 +10,11 @@ public class oxygenStatBar : MonoBehaviour
     public float oxygen;
 
     public GameObject main_settlement;
-    //public mainDomeStats main_dome_stats;
-    //[SerializeField] private statManager stat_manager;
+    
     [SerializeField] private oxygenManager oxygen_manager;
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
+   
 
-    // Update is called once per frame
+    
     void Update()
     {
         oxygen = oxygen_manager.oxygenInfo();

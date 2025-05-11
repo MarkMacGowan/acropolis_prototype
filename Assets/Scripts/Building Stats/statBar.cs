@@ -21,7 +21,7 @@ public class statBar : MonoBehaviour
     public float maxFood = 100f;
     public float food;
 
-    // Start is called before the first frame update
+   
     void Start()
     {
         oxygen = maxOxygen;
@@ -30,7 +30,7 @@ public class statBar : MonoBehaviour
         food = maxFood;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         if (oxygenSlider.value != oxygen)

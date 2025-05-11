@@ -20,11 +20,6 @@ public class loadGameButtonBehavior : MonoBehaviour
     void Start()
     {
         ShowLoadGameFiles();
-        //fileContents = (gameObject.GetInstanceID()).ToString();
-        //allFiles = ShowLoadGameFiles();
-        
-      
-        //game_load_text.GetComponent<TMPro.TextMeshProUGUI>().text = fileContents;
         
 
     }

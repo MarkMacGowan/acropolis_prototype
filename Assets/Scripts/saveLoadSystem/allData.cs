@@ -20,7 +20,7 @@ public class AllData
         public bool iDayStatus;
         public float[] iDayNightAngle;
         public int iDaysPassed;
-        //public GameObject iWeather;
+       
     }
     [System.Serializable]
     public class LvlData{

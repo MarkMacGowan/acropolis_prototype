@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 public class solarPanelBehavior : BuildingBehavior
 {
-    //public keyboardInput key_board_input;
-    //public bool is_placed;
+   
     public float maxSolarHealth = 100f;
     public float solarHealth = 100f;
 
@@ -13,8 +12,8 @@ public class solarPanelBehavior : BuildingBehavior
     public float minSolarEnergy = 0f;
     public float solarEnergy = 0f;
     // how much this object consumes energy
-    //public float energyUsage=0.00001f;
-    public float energyProduce;// = 0.00000002f;
+    
+    public float energyProduce;
     public float maxEnergyProduce;
 
 
@@ -31,29 +30,25 @@ public class solarPanelBehavior : BuildingBehavior
 
 
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         solarEnergy = 0f;
         dayNight_CycleObject = GameObject.FindGameObjectWithTag("dayNight");
     }
 
-    // Update is called once per frame
+    
     void Update()
     {          
        
 
         energyProduce=calculateEnergyProduction();
-        //Debug.Log("Energy Production: "+energyProduce);
-        //is_placed = key_board_input.isPlaced;
+        
         solarEnergy = solarEnergy + energyProduce;
-        //solarRate = solarRate + Time.deltaTime * 1;
+       
 
 
-        //if (solarRate>maxSolarRate)
-        //   {
-        //       solarRate = maxSolarRate;
-        //   }
+     
         if (energyProduce > maxEnergyProduce)
         {
             energyProduce = maxEnergyProduce;
@@ -67,17 +62,9 @@ public class solarPanelBehavior : BuildingBehavior
 
 
 
-        //Debug.Log("Hello World");
+        
     }
-    //private void checkLightLevels()
-    //{   
-    //    // takes in current position of solar panel object
-    //    Vector3 objPosition =gameObject.transform.position;
-
-    //    Renderer renderer;
-    //    SphericalHarmonicsL2 probe = new SphericalHarmonicsL2();
-    //    LightProbes.GetInterpolatedProbe(objPosition,renderer,out probe);
-    //}
+ 
 
     private float calculateEnergyProduction()
     {
@@ -85,8 +72,7 @@ public class solarPanelBehavior : BuildingBehavior
        sunAngleY= dayNight_CycleObject.transform.rotation.eulerAngles.y;
        sunAngleZ =dayNight_CycleObject.transform.rotation.eulerAngles.z;
        
-       //Debug.Log("AngleX: "+sunAngleX+" SunAngleY: "+sunAngleY+" Angle: "+sunAngleZ);
-       //Debug.Log("Is Day Time: "+checkTimeOfDay()+" Angle: "+sunAngle);
+      
        checkTimeOfDay();
        if (isDaytime==true)
         {

@@ -15,12 +15,12 @@ public class landingPadBehavior : BuildingBehavior
     public float suppliesAmount;
 
     public float suppliesProduce; 
-    //0.00000000000000000000000000001f;
+   
     public float maxSuppliesProduce = 1f;
 
     public int noLandingPads;
 
-    // Start is called before the first frame update
+   
     void Start()
     {
         timeObject= GameObject.FindGameObjectWithTag("dayNight");
@@ -30,11 +30,10 @@ public class landingPadBehavior : BuildingBehavior
         suppliesProduce = 1f/1000000f;
     }
 
-    // Update is called once per frame
+   
     void Update()
     {   
-        //sunRotateZ=dnCycle.rotationalNumZ;
-        //suppliesAmount = suppliesAmount + Time.deltaTime * 10;
+       
 
        
 

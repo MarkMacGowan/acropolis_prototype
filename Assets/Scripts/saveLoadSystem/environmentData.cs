@@ -10,7 +10,7 @@ public class EnvironmentData
     public bool dayStatus;
     public float[] dayNightAngle;
     public int daysPassed;
-    //public GameObject weather;
+    
 
 
     public EnvironmentData()
@@ -19,6 +19,6 @@ public class EnvironmentData
         this.dayStatus = true;
         this.dayNightAngle = new float[3];
         this.daysPassed = 0;
-        //this.weather = new GameObject();
+       
     }
 }
