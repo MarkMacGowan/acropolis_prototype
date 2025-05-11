@@ -311,7 +311,7 @@ GameObject:
   - component: {fileID: 137725781}
   m_Layer: 0
   m_Name: costManageObject
-  m_TagString: Untagged
+  m_TagString: costMan
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -328,6 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c33da5520fb3d8745afe7cf270dbcaae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildingCost: 0
 --- !u!4 &137725782
 Transform:
   m_ObjectHideFlags: 0
@@ -577,6 +578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   suppliesSpent: 0
+  incomingSupplySubtract: 0
   supplyLevel: 0
   noLandingPads: 0
   supplyPlusMinus: 0
@@ -5734,6 +5736,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviorScript: {fileID: 0}
   space_occupation: {fileID: 0}
+  mSettle: {fileID: 0}
+  bCost: 0
   bInterSect: 0
   mClick: 0
   buildPref: {fileID: 0}

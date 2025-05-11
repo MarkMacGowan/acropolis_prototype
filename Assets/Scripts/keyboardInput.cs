@@ -7,6 +7,12 @@ public class keyboardInput : MonoBehaviour
 {
     [SerializeField] private BuildingBehavior behaviorScript;
     [SerializeField] private SpaceOccupation space_occupation;
+    [SerializeField] private GameObject mSettle;
+
+    private GameObject cost_managment_object;
+    private suppliesManager supplies_manager;
+    private costManagment cost_managment;
+    public int bCost;
     public bool bInterSect;
 
     public bool mClick;
@@ -42,7 +48,13 @@ public class keyboardInput : MonoBehaviour
         _mainCamera = Camera.main;
         isPlaced = false;
         space_occupation = gameObject.GetComponent<SpaceOccupation>();
-       
+        cost_managment_object = GameObject.FindGameObjectWithTag("costMan");
+        mSettle = GameObject.FindGameObjectWithTag("mainSettle");
+        supplies_manager = mSettle.GetComponent<suppliesManager>();
+        //Debug.Log("Cost Object: " + cost_managment_object.name);
+        //bCost = cost_managment.buildingCost;
+        //cost_managment_object=gameObject
+        
         //isIntersect = object_movement_behavior.uiInter;
 
        
@@ -68,6 +80,7 @@ public class keyboardInput : MonoBehaviour
     private void Update()
     {
          bInterSect = space_occupation.objectInterSect;
+        
         // left click
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -90,6 +103,13 @@ public class keyboardInput : MonoBehaviour
                         {   
                             placeBuilding();
                             exitMenu();
+                            bCost = cost_managment_object.GetComponent<costManagment>().buildingCost;
+                            Debug.Log("bCost: " + bCost);
+                            supplies_manager.incomingSupplySubtract = bCost;
+                            //cost_managment=cost_managment_object.GetComponent<costManagment>();
+                            //Debug.Log("Cost Managment Object: "+cost_managment.name);
+                            
+                           // Debug.Log("bCost: " + bCost);
                         }
                     
             }

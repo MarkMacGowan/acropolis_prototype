@@ -5,7 +5,7 @@ using UnityEngine;
 public class suppliesManager : MonoBehaviour
 {   
 
-    [SerializeField] private int suppliesSpent;
+    [SerializeField] public int suppliesSpent;
 
 
     private float suppliesDeficit;
@@ -14,7 +14,7 @@ public class suppliesManager : MonoBehaviour
     private float supplies_deficit;
 
 
-    private float incomingSupplySubtract;
+    public float incomingSupplySubtract;
 
 
     public float supplyLevel = 0;
@@ -73,6 +73,7 @@ public class suppliesManager : MonoBehaviour
     }
     private float CalculateSuppliesDeficit()
     {
+        incomingSupplySubtract = suppliesSpent;
         suppliesDeficit =incomingSupplySubtract;
        // suppliesDeficit=
         return suppliesDeficit;

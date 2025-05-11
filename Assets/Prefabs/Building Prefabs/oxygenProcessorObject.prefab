@@ -182,6 +182,7 @@ GameObject:
   - component: {fileID: -3606896224432847395}
   - component: {fileID: 2520436321164527189}
   - component: {fileID: 3927213567033023033}
+  - component: {fileID: -7490727067417508802}
   m_Layer: 3
   m_Name: oxygenProcessorObject
   m_TagString: oxyGen
@@ -238,6 +239,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviorScript: {fileID: -4042748163516052827}
   space_occupation: {fileID: 3927213567033023033}
+  cost_managment_object: {fileID: 0}
+  cost_managment: {fileID: -7490727067417508802}
+  bCost: 0
   bInterSect: 0
   mClick: 0
   buildPref: {fileID: 0}
@@ -310,6 +314,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyboard_input: {fileID: 0}
   objectInterSect: 0
+--- !u!114 &-7490727067417508802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7552675154432731717}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c33da5520fb3d8745afe7cf270dbcaae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingCost: 0
 --- !u!1001 &4810074741612866893
 PrefabInstance:
   m_ObjectHideFlags: 0

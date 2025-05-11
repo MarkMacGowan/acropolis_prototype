@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -195464527015890561}
   - component: {fileID: -3244294115673790163}
   - component: {fileID: 4756347674203978428}
+  - component: {fileID: -5356248135596918408}
   m_Layer: 3
   m_Name: landingPadObject
   m_TagString: landingPad
@@ -69,6 +70,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviorScript: {fileID: -195464527015890561}
   space_occupation: {fileID: 4756347674203978428}
+  cost_managment_object: {fileID: 0}
+  cost_managment: {fileID: -5356248135596918408}
+  bCost: 0
   bInterSect: 0
   mClick: 0
   buildPref: {fileID: 0}
@@ -93,6 +97,7 @@ MonoBehaviour:
   buildingHealth: 0
   buildingEnergy: 0
   buildingOxygen: 0
+  timeObject: {fileID: 0}
   maxLandingPadHealth: 100
   landingPadHealth: 100
   maxSuppliesAmount: 100
@@ -127,6 +132,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyboard_input: {fileID: 0}
   objectInterSect: 0
+--- !u!114 &-5356248135596918408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7664846012860348054}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c33da5520fb3d8745afe7cf270dbcaae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingCost: 0
 --- !u!1001 &6269559514270087807
 PrefabInstance:
   m_ObjectHideFlags: 0

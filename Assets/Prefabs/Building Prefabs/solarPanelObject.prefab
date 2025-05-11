@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 92157055149257740}
   - component: {fileID: -2691876855146413162}
   - component: {fileID: 7867463005311042691}
+  - component: {fileID: 4992066483176204280}
   m_Layer: 3
   m_Name: solarPanelObject
   m_TagString: solarPan
@@ -68,6 +69,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviorScript: {fileID: -2691876855146413162}
   space_occupation: {fileID: 7867463005311042691}
+  cost_managment_object: {fileID: 0}
+  cost_managment: {fileID: 4992066483176204280}
+  bCost: 0
   bInterSect: 0
   mClick: 0
   buildPref: {fileID: 0}
@@ -113,6 +117,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyboard_input: {fileID: 0}
   objectInterSect: 0
+--- !u!114 &4992066483176204280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2530376025569765705}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c33da5520fb3d8745afe7cf270dbcaae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingCost: 0
 --- !u!1001 &4911682554375760250
 PrefabInstance:
   m_ObjectHideFlags: 0
