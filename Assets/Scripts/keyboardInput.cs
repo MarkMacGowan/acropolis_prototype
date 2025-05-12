@@ -19,7 +19,7 @@ public class keyboardInput : MonoBehaviour
     
     public GameObject buildPref;
     public objectMovementBehavior object_movement_behavior;
-    public objectTransparency object_transparency;
+    //public objectTransparency object_transparency;
 
     private GameObject build_spawner;
     private buildingManager building_manager;

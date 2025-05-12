@@ -49,7 +49,7 @@ public class suppliesManager : MonoBehaviour
     }
     public float suppliesInfo()
     {
-     
+        Debug.Log("Supplies Start: "+supplyLevel);
         land_pad = GameObject.FindWithTag("landingPad");
         
         totSuppliesDelivery = land_pad.GetComponent<landingPadBehavior>().suppliesProduce;
@@ -59,13 +59,14 @@ public class suppliesManager : MonoBehaviour
         totSuppliesAmount = land_pad.GetComponent<landingPadBehavior>().suppliesAmount;
 
 
+        Debug.Log("TotSupplies Delivery: "+totSuppliesDelivery);
+        Debug.Log("TotSuppliesAmount: " + totSuppliesAmount);
 
-
-        supplyLevel += supplyLevel + totSuppliesAmount;
+        supplyLevel += supplyLevel + totSuppliesDelivery;
        
 
         Debug.Log("SupplyLevel: " + supplyLevel);
-        Debug.Log("SupplyPLus: " + supplyPlusMinus);
+        //Debug.Log("SupplyPLus: " + supplyPlusMinus);
 
       
         Debug.Log("Total: " + supplyLevel);
