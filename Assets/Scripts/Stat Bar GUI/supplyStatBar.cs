@@ -20,7 +20,7 @@ public class supplyStatBar : MonoBehaviour
    
     void Update()
     {   
-        supplies = (int)supplies_manager.suppliesInfo();
+        supplies = (int)supplies_manager.SuppliesInfo();
         suppliesCon = supplies.ToString();
         supplies_txt.GetComponent<TMPro.TextMeshProUGUI>().text = suppliesCon;
       

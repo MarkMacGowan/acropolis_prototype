@@ -89,12 +89,13 @@ public class keyboardInput : MonoBehaviour
                             placeBuilding();
                             exitMenu();
                             bCost = cost_managment_object.GetComponent<costManagment>().buildingCost;
-                            Debug.Log("bCost: " + bCost);
-                            supplies_manager.incomingSupplySubtract = bCost;
+                            // Debug.Log("bCost: " + bCost);
+                            supplies_manager.SupplyDeficit(bCost);
+                            //supplies_manager.incomingSupplySubtract = bCost;
                            
                             //Debug.Log("Cost Managment Object: "+cost_managment.name);
                             
-                           // Debug.Log("bCost: " + bCost);
+                            // Debug.Log("bCost: " + bCost);
                         }
                     
             }

@@ -19,7 +19,14 @@ public class dayNightCycle : MonoBehaviour
     // bool variable that stores day or night
     public bool dayTime;
 
-    // Start is called before the first frame update
+
+    public float angleOfSun;
+    public float timeOfDay;
+    public float timeOfDayHour;
+    public float timeOfDayMinute;
+    public float timeOfDaySeconds;
+
+    private float timeOfDayHourCon;
     void Start()
     {
         
@@ -33,6 +40,7 @@ public class dayNightCycle : MonoBehaviour
         transform.Rotate(0f,0f,rotationalNumZ);
         dayNum += rotationalNumZ / 360;
         dayNumConvert = ((int)dayNum);
+        ConvertAngleToTime();
 
     }
 
@@ -51,5 +59,27 @@ public class dayNightCycle : MonoBehaviour
             dayTime = false;
         }
         return dayTime;
+    }
+    public void ConvertAngleToTime()
+    {
+        // angel of sun in terms of degrees
+        angleOfSun = gameObject.transform.rotation.eulerAngles.z;
+
+        // calculate 1 hour of time in terms of degress
+        // to make one rotation of 360 degrees, 24 hours must pass
+        // this will equal 15 degrees
+        timeOfDay = angleOfSun/ 24;
+
+        // answer to this gives us a full day in base 10
+        // 0.5 represents half a day, 0.25 a quarter etc
+        timeOfDayHour = timeOfDay / 15;
+
+        // convert number into 60 minute format.
+        timeOfDayHourCon = (timeOfDayHour / 40)*1000;
+
+
+       // timeOfDayMinute = timeOfDayHour / 0.01666666666f;
+        //timeOfDaySeconds = timeOfDayMinute / 0.00027777777f;
+        Debug.Log("Time: " +"H: "+ timeOfDayHourCon);
     }
 }
