@@ -60,7 +60,8 @@ public class suppliesManager : MonoBehaviour
         //{
 
         //}
-        fSupply = SupplyFinal();
+        //fSupply = SupplyFinal();
+        fSupply = SupplyPlus();
         return fSupply;
     }
     private float SupplyPlus()
@@ -72,13 +73,13 @@ public class suppliesManager : MonoBehaviour
         noLandingPads = GameObject.FindGameObjectsWithTag("landingPad").Length;
 
 
-        totSuppliesAmount = land_pad.GetComponent<landingPadBehavior>().suppliesAmount;
+        totSuppliesAmount = land_pad.GetComponent<landingPadBehavior>().SupplyDeliver();
 
 
         // Debug.Log("TotSupplies Delivery: "+totSuppliesDelivery);
         // Debug.Log("TotSuppliesAmount: " + totSuppliesAmount);
 
-        supplyLevel += supplyLevel + 1;
+        //supplyLevel += supplyLevel + 1;
 
 
         //Debug.Log("SupplyLevel: " + supplyLevel);
@@ -86,7 +87,7 @@ public class suppliesManager : MonoBehaviour
 
 
         //Debug.Log("Total: " + supplyLevel);
-
+        supplyLevel = supplyLevel + totSuppliesAmount;
 
 
 
@@ -109,28 +110,28 @@ public class suppliesManager : MonoBehaviour
 
 
     }
-    public float SupplyDeficit(float supplyMinus)
-    {
-        sMinus = supplyMinus;
-        return sMinus;
-    }
+    //public float SupplyDeficit(float supplyMinus)
+    //{
+    //    sMinus = supplyMinus;
+    //    return sMinus;
+    //}
     
     //private float SupplyDeficit()
     //{
     //    sMinus = 0;
     //    return sMinus;
     //}
-    private float SupplyFinal()
-    {
-        finalSupplyLevel = SupplyPlus() + sMinus;
-        return finalSupplyLevel;
-    }
-    private float CheckTimeDay()
-    {
-        dnObject = GameObject.FindGameObjectWithTag("dayNight");
-        dnCycle = dnObject.GetComponent<dayNightCycle>();
-        sunAngle = dnObject.transform.rotation.eulerAngles.z;
-       //supplyDeliveryTime
-        return supplyDeliveryTime;
-    }
+    //private float SupplyFinal()
+    //{
+    //    finalSupplyLevel = SupplyPlus() + sMinus;
+    //    return finalSupplyLevel;
+    //}
+    //private float CheckTimeDay()
+    //{
+    //    dnObject = GameObject.FindGameObjectWithTag("dayNight");
+    //    dnCycle = dnObject.GetComponent<dayNightCycle>();
+    //    sunAngle = dnObject.transform.rotation.eulerAngles.z;
+    //   //supplyDeliveryTime
+    //    return supplyDeliveryTime;
+    //}
 }
