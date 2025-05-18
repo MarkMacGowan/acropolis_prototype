@@ -31,6 +31,7 @@ public class landingPadBehavior : BuildingBehavior
         dnCycle = timeObject.GetComponent<dayNightCycle>();
         
         suppliesAmount = 0f;
+        InvokeRepeating("FinaliseValue", 2f, 2f);
         //sAmount = 0f;
         //suppliesProduce = 1f/1000000f;
     }
@@ -39,27 +40,32 @@ public class landingPadBehavior : BuildingBehavior
     void Update()
     {
         // suppliesAmount = suppliesAmount + suppliesProduce;
-        sAmount = SupplyDeliver();
-        Debug.Log("sAmount: " + sAmount);
+        
         //if (sAmount> maxSuppliesAmount)
         //{
         //    sAmount = maxSuppliesAmount;
         //}
     }
+
+    public void FinaliseValue()
+    {
+        sAmount = SupplyDeliver();
+        Debug.Log("sAmount: " + sAmount);
+    }
+
     public float SupplyDeliver()
     {
         hourTime = dnCycle.timeOfDayHourCon;
         minuteTime = dnCycle.displayMinute;
         Debug.Log("MinuteTime: "+minuteTime);
-        if (hourTime==9 )
+        if (hourTime==9 && minuteTime==0)
         {
             Debug.Log("Within Hour 9");
             suppliesAmount = 30;
-             if (minuteTime==0)
-                    {
-                        Debug.Log("Within Minute 0");
+             
+            Debug.Log("Within Minute 0");
                         //suppliesAmount = 30;
-                    }
+                    
 
         }
 

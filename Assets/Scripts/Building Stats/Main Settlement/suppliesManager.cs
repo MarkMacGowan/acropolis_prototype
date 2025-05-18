@@ -48,6 +48,7 @@ public class suppliesManager : MonoBehaviour
 
     //public static suppliesManager Instance;
     //public int currentSupply = 1000;
+  
 
     private void Update()
     {
