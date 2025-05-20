@@ -25,7 +25,7 @@ public class suppliesManager : MonoBehaviour
 
 
     private float supplyDeliveryRate;
-
+    private float startingSupply;
 
 
 
@@ -39,17 +39,20 @@ public class suppliesManager : MonoBehaviour
 
     public float supplyPlusMinus;
     private float finalSupplyLevel;
-    private float sMinus=0;
+    public float sMinus=0;
     float fSupply;
-   
 
 
-    
+
+
 
     //public static suppliesManager Instance;
     //public int currentSupply = 1000;
-  
 
+    private void Awake()
+    {
+        startingSupply = 100;
+    }
     private void Update()
     {
 
@@ -62,12 +65,23 @@ public class suppliesManager : MonoBehaviour
 
         //}
         //fSupply = SupplyFinal();
-        fSupply = SupplyPlus();
+        fSupply = startingSupply;
+        supplyPlusMinus = SupplyPlus() - SupplyDeficit();
+        Debug.Log("Starting Supply: "+fSupply);
+        Debug.Log("SupplyPlus: " + SupplyPlus());
+        Debug.Log("SupplyDeficit: " + SupplyDeficit());
+        Debug.Log("PlusMinus: "+supplyPlusMinus);
+        Debug.Log("fSupply: " + fSupply);
+        fSupply = fSupply+supplyPlusMinus;
+        if (fSupply < 0)
+        {
+            fSupply = 0;
+        }
         return fSupply;
     }
     private float SupplyPlus()
     {
-        Debug.Log("Supplies Start: " + supplyLevel);
+        //Debug.Log("Supplies Start: " + supplyLevel);
         land_pad = GameObject.FindWithTag("landingPad");
 
         totSuppliesDelivery = land_pad.GetComponent<landingPadBehavior>().suppliesProduce;
@@ -111,12 +125,18 @@ public class suppliesManager : MonoBehaviour
 
 
     }
+
+    private float SupplyDeficit()
+    {
+        
+        return sMinus;
+    }
     //public float SupplyDeficit(float supplyMinus)
     //{
     //    sMinus = supplyMinus;
     //    return sMinus;
     //}
-    
+
     //private float SupplyDeficit()
     //{
     //    sMinus = 0;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class dayNightCycle : MonoBehaviour
 {
     public float timeNum=1f;
-    public float timeRate=.01f;
+    public float timeRate=.001f;
 
     // how many degress per second the object rotates
     public float rotationalNumZ;
@@ -77,7 +77,7 @@ public class dayNightCycle : MonoBehaviour
         // take angle and offset it by 180 degrees, so the 0 degree will be at midnight
 
         //angleOfSunOffset =angleOfSun + 180;
-        Debug.Log("AngleOfSun: " + angleOfSun);
+       // Debug.Log("AngleOfSun: " + angleOfSun);
 
         // calculate 1 hour of time in terms of degress
         // to make one rotation of 360 degrees, 24 hours must pass
@@ -108,7 +108,7 @@ public class dayNightCycle : MonoBehaviour
         displayMinute = Mathf.FloorToInt(timeOfDayMinuteCon);
         displayTime = displayHour + "h " + displayMinute + "m";
         //Debug.Log("Time: " + displayHour+ "h "+displayMinute+"m");
-        Debug.Log(displayTime);
+       // Debug.Log(displayTime);
        // timeOfDayMinute = timeOfDayHour / 0.01666666666f;
         //timeOfDaySeconds = timeOfDayMinute / 0.00027777777f;
 

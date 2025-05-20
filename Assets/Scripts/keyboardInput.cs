@@ -16,7 +16,7 @@ public class keyboardInput : MonoBehaviour
     public bool bInterSect;
 
     public bool mClick;
-    
+
     public GameObject buildPref;
     public objectMovementBehavior object_movement_behavior;
     //public objectTransparency object_transparency;
@@ -32,7 +32,7 @@ public class keyboardInput : MonoBehaviour
 
     [SerializeField] private GameObject panelToClose;
 
- 
+
 
     private Camera _mainCamera;
 
@@ -50,13 +50,13 @@ public class keyboardInput : MonoBehaviour
         cost_managment_object = GameObject.FindGameObjectWithTag("costMan");
         mSettle = GameObject.FindGameObjectWithTag("mainSettle");
         supplies_manager = mSettle.GetComponent<suppliesManager>();
-     
-      
 
-       
- 
+
+
+
+
     }
-   
+
 
 
     // method to check if mouse has been clicked.
@@ -64,40 +64,41 @@ public class keyboardInput : MonoBehaviour
     // after they have been instaniated using the relevant button
     private void Update()
     {
-         bInterSect = space_occupation.objectInterSect;
-        
+        bInterSect = space_occupation.objectInterSect;
+
         // left click
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Debug.Log("Mouse Click");
-            checkGUI();        
-            
-            
+            checkGUI();
+
+
             if (checkGUI())
             {
-                    Debug.Log("Button Clicked");
-                    return;
-                   
+                Debug.Log("Button Clicked");
+                return;
+
             }
-            else 
+            else
             {
-                    Debug.Log("Button GUI not clicked but mouse clicked");
-               
-                Debug.Log("InterSection: "+bInterSect);
-                    if (!bInterSect)
-                        {   
-                            placeBuilding();
-                            exitMenu();
-                            bCost = cost_managment_object.GetComponent<costManagment>().buildingCost;
-                            // Debug.Log("bCost: " + bCost);
-                            //supplies_manager.SupplyDeficit(bCost);
-                            //supplies_manager.incomingSupplySubtract = bCost;
-                           
-                            //Debug.Log("Cost Managment Object: "+cost_managment.name);
-                            
-                            // Debug.Log("bCost: " + bCost);
-                        }
-                    
+                Debug.Log("Button GUI not clicked but mouse clicked");
+
+                Debug.Log("InterSection: " + bInterSect);
+                if (!bInterSect)
+                {
+                    placeBuilding();
+                    exitMenu();
+                    bCost = cost_managment_object.GetComponent<costManagment>().buildingCost;
+                    // Debug.Log("bCost: " + bCost);
+                    //supplies_manager.SupplyDeficit(bCost);
+                    //supplies_manager.incomingSupplySubtract = bCost;
+                    supplies_manager.sMinus = bCost;
+
+                    //Debug.Log("Cost Managment Object: "+cost_managment.name);
+
+                    // Debug.Log("bCost: " + bCost);
+                }
+
             }
         }
 
@@ -110,7 +111,7 @@ public class keyboardInput : MonoBehaviour
 
 
 
-    
+
     private bool checkGUI()
     {
         return EventSystem.current.IsPointerOverGameObject();
@@ -130,7 +131,7 @@ public class keyboardInput : MonoBehaviour
         isPlaced = true;
         behaviorScript.enabled = true;
 
-    
+
 
 
     }
@@ -148,7 +149,7 @@ public class keyboardInput : MonoBehaviour
 
         build_mode_Menu.SetActive(false);
         build_Menu.SetActive(true);
-   ;
+        ;
 
 
     }

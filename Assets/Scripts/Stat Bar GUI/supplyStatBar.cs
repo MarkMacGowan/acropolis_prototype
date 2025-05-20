@@ -16,7 +16,7 @@ public class supplyStatBar : MonoBehaviour
     [SerializeField] private GameObject supplies_txt;
    void Start()
     {
-        InvokeRepeating("SupplyCheck",2f,2f);
+        InvokeRepeating("SupplyCheck",2f,0.5f);
 
     }
 
@@ -26,7 +26,7 @@ public class supplyStatBar : MonoBehaviour
   //  {   
   private void SupplyCheck()
     {
-   supplies = (int)supplies_manager.SuppliesInfo();
+        supplies = (int)supplies_manager.SuppliesInfo();
         suppliesCon = supplies.ToString();
         supplies_txt.GetComponent<TMPro.TextMeshProUGUI>().text = suppliesCon;
 

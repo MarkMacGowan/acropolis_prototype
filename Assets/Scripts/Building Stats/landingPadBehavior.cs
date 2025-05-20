@@ -57,11 +57,12 @@ public class landingPadBehavior : BuildingBehavior
     {
         hourTime = dnCycle.timeOfDayHourCon;
         minuteTime = dnCycle.displayMinute;
-        Debug.Log("MinuteTime: "+minuteTime);
+        //Debug.Log("MinuteTime: "+minuteTime);
+        Debug.Log(hourTime + "h " + minuteTime + "m");
         if (hourTime==9 && minuteTime==0)
         {
             Debug.Log("Within Hour 9");
-            suppliesAmount = 30;
+            suppliesAmount = 10;
              
             Debug.Log("Within Minute 0");
                         //suppliesAmount = 30;
