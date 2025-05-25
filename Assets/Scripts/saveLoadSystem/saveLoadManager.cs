@@ -81,8 +81,10 @@ public class saveLoadManager : MonoBehaviour
         Debug.Log("All Buildings List Length: "+all_buildings.Count);
         List<BuildingData> everyBuilding=new List<BuildingData>();
         Debug.Log("EveryBuilding Length: "+everyBuilding.Count);
+
+
+
         //building object
-      
         int count = Mathf.Min(everyBuilding.Count, all_buildings.Count);
         for (int i=0;i<all_buildings.Count; i++)
         {
@@ -95,6 +97,9 @@ public class saveLoadManager : MonoBehaviour
 
                 buildingId = gObject.GetInstanceID(),
                 buildingTag = gObject.tag,
+
+               // buildingCost=b.buildCost,
+
                 buildingPosition = new float[]
                 {
                     gObject.transform.position.x,

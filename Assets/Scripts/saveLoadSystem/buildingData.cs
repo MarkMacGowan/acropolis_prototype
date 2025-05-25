@@ -8,6 +8,9 @@ public class BuildingData
     public GameObject buildingObject;
     public int buildingId;
     public string buildingTag;
+
+    //public int buildingCost;
+
     public float [] buildingPosition;
     public float bHealth;
     public float bEnergy;
@@ -18,6 +21,9 @@ public class BuildingData
         this.buildingObject = null;
         this.buildingId = 0;
         this.buildingTag = "";
+
+        //this.buildingCost = 0;
+
         this.buildingPosition = new float[3];
         this.bHealth = 100f;
         this.bEnergy = 100f;

@@ -8,7 +8,7 @@ public class healthManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        healthLevel = 100f;
     }
 
     // Update is called once per frame

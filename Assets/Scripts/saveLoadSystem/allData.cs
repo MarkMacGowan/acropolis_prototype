@@ -50,6 +50,9 @@ public class AllData
         public GameObject iBuildingObject;
         public int iBuildingId;
         public string iBuildingTag;
+
+        //public int iBuildingCost;
+
         public float[] iBuildingPosition;
         public float iBHealth;
         public float iBEnergy;

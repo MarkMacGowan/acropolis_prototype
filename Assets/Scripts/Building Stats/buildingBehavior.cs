@@ -5,6 +5,9 @@ using UnityEngine;
 public class BuildingBehavior : MonoBehaviour
 {
     public string buildingType;
+
+    //public int buildCost;
+
     public float buildingHealth;
     public float buildingEnergy;
     public float buildingOxygen;

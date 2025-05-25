@@ -1626,6 +1626,7 @@ GameObject:
   - component: {fileID: 359419249877620877}
   - component: {fileID: 3517868412563317813}
   - component: {fileID: 3077963160351234564}
+  - component: {fileID: 4419837293502514818}
   m_Layer: 5
   m_Name: timeTxt
   m_TagString: Untagged
@@ -1749,6 +1750,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4419837293502514818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273810935247632326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 642b14a00d55e4f48884f527ed3d7421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dnObj: {fileID: 0}
+  time_txt: {fileID: 1273810935247632326}
 --- !u!1 &1343206222507464887
 GameObject:
   m_ObjectHideFlags: 0
@@ -4143,7 +4158,7 @@ GameObject:
   - component: {fileID: 1145959769147290802}
   - component: {fileID: 3095291550803842231}
   - component: {fileID: 2638659854511184685}
-  - component: {fileID: 4627469514874858589}
+  - component: {fileID: 2233876243129566339}
   m_Layer: 5
   m_Name: heathTxt
   m_TagString: Untagged
@@ -4267,7 +4282,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &4627469514874858589
+--- !u!114 &2233876243129566339
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4276,15 +4291,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3252784985800331122}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 173f8c243db5eeb4f8bc665a93bf4955, type: 3}
+  m_Script: {fileID: 11500000, guid: 19573457929a0fc4c9ee591623cc5fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSupplies: 0
-  supplies: 0
+  maxHealth: 0
+  health: 0
   main_settlement: {fileID: 0}
-  suppliesCon: 
-  supplies_manager: {fileID: 0}
-  supplies_txt: {fileID: 0}
+  healthCon: 
+  health_manager: {fileID: 0}
+  health_txt: {fileID: 0}
 --- !u!1 &3257846965384430741
 GameObject:
   m_ObjectHideFlags: 0
@@ -7069,7 +7084,7 @@ GameObject:
   - component: {fileID: 5766979480718386381}
   - component: {fileID: 6223316173828459244}
   - component: {fileID: 8794484122762842870}
-  - component: {fileID: 6032998293432322314}
+  - component: {fileID: 6667936622027226000}
   m_Layer: 5
   m_Name: oxygenTxt
   m_TagString: Untagged
@@ -7193,7 +7208,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &6032998293432322314
+--- !u!114 &6667936622027226000
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7202,15 +7217,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 4490338921345912327}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 173f8c243db5eeb4f8bc665a93bf4955, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e63ce64e5a6b0e47829528a6cc3b4a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSupplies: 0
-  supplies: 0
+  maxOxygen: 0
+  oxygen: 0
   main_settlement: {fileID: 0}
-  suppliesCon: 
-  supplies_manager: {fileID: 0}
-  supplies_txt: {fileID: 0}
+  oxygenCon: 
+  oxygen_manager: {fileID: 0}
+  oxygen_txt: {fileID: 0}
 --- !u!1 &4553188425204224764
 GameObject:
   m_ObjectHideFlags: 0
@@ -8298,7 +8313,6 @@ GameObject:
   - component: {fileID: 5960664298393236706}
   - component: {fileID: 1282944917380235874}
   - component: {fileID: 8411918032529161072}
-  - component: {fileID: 2185910234005875964}
   m_Layer: 5
   m_Name: foodTxt
   m_TagString: Untagged
@@ -8422,24 +8436,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &2185910234005875964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4813229781927312967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 173f8c243db5eeb4f8bc665a93bf4955, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSupplies: 0
-  supplies: 0
-  main_settlement: {fileID: 0}
-  suppliesCon: 
-  supplies_manager: {fileID: 0}
-  supplies_txt: {fileID: 0}
 --- !u!1 &4903766643414953948
 GameObject:
   m_ObjectHideFlags: 0
@@ -9408,7 +9404,7 @@ MonoBehaviour:
   main_settlement: {fileID: 0}
   suppliesCon: 
   supplies_manager: {fileID: 0}
-  supplies_txt: {fileID: 0}
+  supplies_txt: {fileID: 5306858954596499608}
 --- !u!1 &5323568127061513264
 GameObject:
   m_ObjectHideFlags: 0
@@ -11358,7 +11354,7 @@ GameObject:
   - component: {fileID: 970384159988310919}
   - component: {fileID: 4364166907399686038}
   - component: {fileID: 2749790255306055730}
-  - component: {fileID: 3991726959172073864}
+  - component: {fileID: 3384688441184356760}
   m_Layer: 5
   m_Name: energyTxt
   m_TagString: Untagged
@@ -11482,7 +11478,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &3991726959172073864
+--- !u!114 &3384688441184356760
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11491,15 +11487,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6331084049461673062}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 173f8c243db5eeb4f8bc665a93bf4955, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e9a749a1b2a7e440b8fa96c618bd583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSupplies: 0
-  supplies: 0
+  maxEnergy: 0
+  energy: 0
   main_settlement: {fileID: 0}
-  suppliesCon: 
-  supplies_manager: {fileID: 0}
-  supplies_txt: {fileID: 0}
+  energyCon: 
+  energy_manager: {fileID: 0}
+  energy_txt: {fileID: 0}
 --- !u!1 &6349236032525691880
 GameObject:
   m_ObjectHideFlags: 0
@@ -16257,7 +16253,7 @@ GameObject:
   - component: {fileID: 8178089754417329247}
   - component: {fileID: 4298566439025131098}
   - component: {fileID: 5418976207558048659}
-  - component: {fileID: 6805483772068850197}
+  - component: {fileID: 3840254308945592169}
   m_Layer: 5
   m_Name: waterTxt
   m_TagString: Untagged
@@ -16381,7 +16377,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &6805483772068850197
+--- !u!114 &3840254308945592169
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16390,15 +16386,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8571925453289997733}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 173f8c243db5eeb4f8bc665a93bf4955, type: 3}
+  m_Script: {fileID: 11500000, guid: 60949968e23de64499d1fcc27d4d7836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSupplies: 0
-  supplies: 0
+  maxWater: 0
+  water: 0
   main_settlement: {fileID: 0}
-  suppliesCon: 
-  supplies_manager: {fileID: 0}
-  supplies_txt: {fileID: 0}
+  waterCon: 
+  water_manager: {fileID: 0}
+  water_txt: {fileID: 0}
 --- !u!1 &8620926479375236284
 GameObject:
   m_ObjectHideFlags: 0
