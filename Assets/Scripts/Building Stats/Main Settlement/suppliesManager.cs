@@ -52,11 +52,13 @@ public class suppliesManager : MonoBehaviour
     private void Awake()
     {
         startingSupply = 100;
+        //SupplyPlus();
+        //SupplyDeficit();
     }
     private void Update()
     {
 
-
+        //SuppliesInfo();
     }
     public float SuppliesInfo()
     {
@@ -65,7 +67,8 @@ public class suppliesManager : MonoBehaviour
 
         //}
         //fSupply = SupplyFinal();
-        fSupply = startingSupply;
+        //fSupply = startingSupply;
+        //supplyPlusMinus = 0;
         supplyPlusMinus = SupplyPlus() - SupplyDeficit();
         Debug.Log("Starting Supply: "+fSupply);
         Debug.Log("SupplyPlus: " + SupplyPlus());
@@ -102,6 +105,7 @@ public class suppliesManager : MonoBehaviour
 
 
         //Debug.Log("Total: " + supplyLevel);
+        supplyLevel = startingSupply;
         supplyLevel = supplyLevel + totSuppliesAmount;
 
 

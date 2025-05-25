@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class dayNightCycle : MonoBehaviour
 {
-    public float timeNum=1f;
+    public int timeNum=1;
     public float timeRate=.001f;
 
     // how many degress per second the object rotates
@@ -107,6 +107,7 @@ public class dayNightCycle : MonoBehaviour
         //timeOfDayMinuteCon = (timeOfDayMinute / 16.28f) * 1000;
         displayMinute = Mathf.FloorToInt(timeOfDayMinuteCon);
         displayTime = displayHour + "h " + displayMinute + "m";
+        //Debug.Log(displayHour+"h "+displayMinute+"m");
         //Debug.Log("Time: " + displayHour+ "h "+displayMinute+"m");
        // Debug.Log(displayTime);
        // timeOfDayMinute = timeOfDayHour / 0.01666666666f;
