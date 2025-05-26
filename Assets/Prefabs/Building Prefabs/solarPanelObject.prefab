@@ -76,7 +76,6 @@ MonoBehaviour:
   mClick: 0
   buildPref: {fileID: 0}
   object_movement_behavior: {fileID: 2409989166902883210}
-  object_transparency: {fileID: 0}
   panel_ref: {fileID: 0}
   panelToClose: {fileID: 0}
   isPlaced: 0
@@ -93,6 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingType: Solar Panel
+  buildCost: 40
   buildingHealth: 0
   buildingEnergy: 0
   buildingOxygen: 0
@@ -293,31 +293,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a26bec4711645ea47bbdac7d2479cf09, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8706205064341092035}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a26bec4711645ea47bbdac7d2479cf09, type: 3}
 --- !u!4 &4873867039731715729 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a26bec4711645ea47bbdac7d2479cf09, type: 3}
   m_PrefabInstance: {fileID: 4911682554375760250}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5253629918390113323 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a26bec4711645ea47bbdac7d2479cf09, type: 3}
-  m_PrefabInstance: {fileID: 4911682554375760250}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8706205064341092035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5253629918390113323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: def6c78a97f0cab468bd9548f4e7b9a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transparencyStrength: 0

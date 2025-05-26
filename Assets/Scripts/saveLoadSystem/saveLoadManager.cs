@@ -98,7 +98,7 @@ public class saveLoadManager : MonoBehaviour
                 buildingId = gObject.GetInstanceID(),
                 buildingTag = gObject.tag,
 
-               // buildingCost=b.buildCost,
+                buildingCost=b.buildCost,
 
                 buildingPosition = new float[]
                 {
@@ -258,7 +258,11 @@ public class saveLoadManager : MonoBehaviour
             
             int lBuildingID = gameData.buildingStates.allBuildings[i].buildingId;
             string lBuildingTag = gameData.buildingStates.allBuildings[i].buildingTag;
+
+            float iCost = gameData.buildingStates.allBuildings[i].buildingCost;
+
             float[] lBuildingPosition = new float[3];
+
 
             lBuildingPosition[0] = gameData.buildingStates.allBuildings[i].buildingPosition[0];
             lBuildingPosition[1] = gameData.buildingStates.allBuildings[i].buildingPosition[1];

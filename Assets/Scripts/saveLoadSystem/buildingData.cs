@@ -9,7 +9,7 @@ public class BuildingData
     public int buildingId;
     public string buildingTag;
 
-    //public int buildingCost;
+    public int buildingCost;
 
     public float [] buildingPosition;
     public float bHealth;
@@ -22,7 +22,7 @@ public class BuildingData
         this.buildingId = 0;
         this.buildingTag = "";
 
-        //this.buildingCost = 0;
+        this.buildingCost = 0;
 
         this.buildingPosition = new float[3];
         this.bHealth = 100f;

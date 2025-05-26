@@ -6,7 +6,7 @@ public class BuildingBehavior : MonoBehaviour
 {
     public string buildingType;
 
-    //public int buildCost;
+    public int buildCost;
 
     public float buildingHealth;
     public float buildingEnergy;

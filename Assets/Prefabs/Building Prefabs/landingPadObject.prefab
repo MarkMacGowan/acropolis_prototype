@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5961825629202186265}
   - component: {fileID: -2763406122769623539}
   - component: {fileID: -195464527015890561}
-  - component: {fileID: -3244294115673790163}
   - component: {fileID: 4756347674203978428}
   - component: {fileID: -5356248135596918408}
   - component: {fileID: -7621528756992195976}
@@ -77,7 +76,6 @@ MonoBehaviour:
   mClick: 0
   buildPref: {fileID: 0}
   object_movement_behavior: {fileID: 5961825629202186265}
-  object_transparency: {fileID: 0}
   panel_ref: {fileID: 0}
   panelToClose: {fileID: 0}
   isPlaced: 0
@@ -94,6 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingType: Landing Pad
+  buildCost: 50
   buildingHealth: 0
   buildingEnergy: 0
   buildingOxygen: 0
@@ -102,22 +101,10 @@ MonoBehaviour:
   landingPadHealth: 100
   maxSuppliesAmount: 100
   suppliesAmount: 0
+  sAmount: 0
   suppliesProduce: 0.2
   maxSuppliesProduce: 1
   noLandingPads: 0
---- !u!114 &-3244294115673790163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7664846012860348054}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: def6c78a97f0cab468bd9548f4e7b9a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transparencyStrength: 0.5
 --- !u!114 &4756347674203978428
 MonoBehaviour:
   m_ObjectHideFlags: 0

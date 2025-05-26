@@ -377,7 +377,6 @@ GameObject:
   - component: {fileID: -3554606423834489773}
   - component: {fileID: -3307686629788837953}
   - component: {fileID: 5990561340044161239}
-  - component: {fileID: 1856956005738615120}
   - component: {fileID: 3168140746886869264}
   - component: {fileID: 2512047683906193760}
   - component: {fileID: 9192327781600165817}
@@ -442,7 +441,6 @@ MonoBehaviour:
   mClick: 0
   buildPref: {fileID: 0}
   object_movement_behavior: {fileID: -3554606423834489773}
-  object_transparency: {fileID: 0}
   panel_ref: {fileID: 0}
   panelToClose: {fileID: 0}
   isPlaced: 1
@@ -459,6 +457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingType: HydroPonics
+  buildCost: 10
   buildingHealth: 0
   buildingEnergy: 0
   buildingOxygen: 0
@@ -469,19 +468,6 @@ MonoBehaviour:
   foodProduce: 0.2
   maxFoodProduce: 1
   noHydroPonics: 0
---- !u!114 &1856956005738615120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7568134987311285139}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: def6c78a97f0cab468bd9548f4e7b9a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transparencyStrength: 0.5
 --- !u!114 &3168140746886869264
 MonoBehaviour:
   m_ObjectHideFlags: 0

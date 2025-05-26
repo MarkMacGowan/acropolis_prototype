@@ -51,7 +51,7 @@ public class AllData
         public int iBuildingId;
         public string iBuildingTag;
 
-        //public int iBuildingCost;
+        public int iBuildingCost;
 
         public float[] iBuildingPosition;
         public float iBHealth;
