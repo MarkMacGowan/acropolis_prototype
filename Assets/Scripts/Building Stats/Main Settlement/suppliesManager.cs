@@ -25,7 +25,7 @@ public class suppliesManager : MonoBehaviour
 
 
     private float supplyDeliveryRate;
-    private float startingSupply;
+    public int startingSupply = 100;
 
 
 
@@ -51,7 +51,7 @@ public class suppliesManager : MonoBehaviour
 
     private void Awake()
     {
-        startingSupply = 100;
+        //startingSupply = 100;
         //SupplyPlus();
         //SupplyDeficit();
     }

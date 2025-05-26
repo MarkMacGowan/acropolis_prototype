@@ -532,6 +532,7 @@ MonoBehaviour:
   finalSTotal: 0
   incoming_supply: 0
   supplyLevel: 0
+  startingSupply: 100
   noLandingPads: 0
   supplyPlusMinus: 0
   sMinus: 0

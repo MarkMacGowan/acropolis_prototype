@@ -86,13 +86,15 @@ public class keyboardInput : MonoBehaviour
                 Debug.Log("InterSection: " + bInterSect);
                 if (!bInterSect)
                 {
+                    bCost = gameObject.GetComponent<BuildingBehavior>().buildCost;
+                    Debug.Log("Building Cost: "+bCost);
                     placeBuilding();
                     exitMenu();
-                    bCost = cost_managment_object.GetComponent<costManagment>().buildingCost;
+                    //bCost = cost_managment_object.GetComponent<costManagment>().buildingCost;
                     // Debug.Log("bCost: " + bCost);
                     //supplies_manager.SupplyDeficit(bCost);
                     //supplies_manager.incomingSupplySubtract = bCost;
-                    supplies_manager.sMinus = bCost;
+                    //supplies_manager.sMinus = bCost;
 
                     //Debug.Log("Cost Managment Object: "+cost_managment.name);
 
@@ -149,7 +151,7 @@ public class keyboardInput : MonoBehaviour
 
         build_mode_Menu.SetActive(false);
         build_Menu.SetActive(true);
-        ;
+        
 
 
     }
