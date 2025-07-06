@@ -26,7 +26,7 @@ public class supplyAmountTest : MonoBehaviour
     {
       // Debug.Log("Supplies Amount Test: " + currentSupply);
        // currentSupply = sManager.SuppliesInfo();
-       Debug.Log("Supplies: " + currentSupply);
+       //Debug.Log("Supplies: " + currentSupply);
 
     }
 

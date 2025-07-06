@@ -75,19 +75,20 @@ public class suppliesManager : MonoBehaviour
         //fSupply = SupplyFinal();
         //fSupply = startingSupply;
         //supplyPlusMinus = 0;
-        supplyPlusMinus = SupplyPlus() - SupplyDeficit();
+        // supplyPlusMinus = SupplyPlus() - SupplyDeficit();
 
 
         //Debug.Log("Starting Supply: "+fSupply);
-       // Debug.Log("SupplyPlus: " + SupplyPlus());
-       // Debug.Log("SupplyDeficit: " + SupplyDeficit());
-       
-       // Debug.Log("PlusMinus: "+supplyPlusMinus);
-      //  Debug.Log("fSupply: " + fSupply);
-        
-        
-        
-        fSupply = fSupply+supplyPlusMinus;
+        // Debug.Log("SupplyPlus: " + SupplyPlus());
+        // Debug.Log("SupplyDeficit: " + SupplyDeficit());
+
+        // Debug.Log("PlusMinus: "+supplyPlusMinus);
+        //  Debug.Log("fSupply: " + fSupply);
+
+
+
+        // fSupply = fSupply+supplyPlusMinus;
+        fSupply = supplyLevel;
         if (fSupply < 0)
         {
             fSupply = 0;
@@ -98,9 +99,11 @@ public class suppliesManager : MonoBehaviour
         }
         return fSupply;
     }
-    private float SupplyPlus()
+
+    public void SupplyAdjustment(float amount)
     {
-        //Debug.Log("Supplies Start: " + supplyLevel);
+
+        // supply Addition
         land_pad = GameObject.FindWithTag("landingPad");
 
         totSuppliesDelivery = land_pad.GetComponent<landingPadBehavior>().suppliesProduce;
@@ -108,19 +111,6 @@ public class suppliesManager : MonoBehaviour
 
 
         totSuppliesAmount = land_pad.GetComponent<landingPadBehavior>().SupplyDeliver();
-
-
-        // Debug.Log("TotSupplies Delivery: "+totSuppliesDelivery);
-        // Debug.Log("TotSuppliesAmount: " + totSuppliesAmount);
-
-        //supplyLevel += supplyLevel + 1;
-
-
-        //Debug.Log("SupplyLevel: " + supplyLevel);
-        //Debug.Log("SupplyPLus: " + supplyPlusMinus);
-
-
-        //Debug.Log("Total: " + supplyLevel);
         supplyLevel = startingSupply;
         supplyLevel = supplyLevel + totSuppliesAmount;
 
@@ -136,15 +126,62 @@ public class suppliesManager : MonoBehaviour
             supplyLevel = 0;
         }
 
-
-        return supplyLevel;
-
+        //supply subtraction 
 
 
 
 
 
+
+        //return supplyLevel;
     }
+   // private float SupplyPlus()
+   // {
+        //Debug.Log("Supplies Start: " + supplyLevel);
+     //   land_pad = GameObject.FindWithTag("landingPad");
+
+    //    totSuppliesDelivery = land_pad.GetComponent<landingPadBehavior>().suppliesProduce;
+      //  noLandingPads = GameObject.FindGameObjectsWithTag("landingPad").Length;
+
+
+     //   totSuppliesAmount = land_pad.GetComponent<landingPadBehavior>().SupplyDeliver();
+
+
+        // Debug.Log("TotSupplies Delivery: "+totSuppliesDelivery);
+        // Debug.Log("TotSuppliesAmount: " + totSuppliesAmount);
+
+        //supplyLevel += supplyLevel + 1;
+
+
+        //Debug.Log("SupplyLevel: " + supplyLevel);
+        //Debug.Log("SupplyPLus: " + supplyPlusMinus);
+
+
+        //Debug.Log("Total: " + supplyLevel);
+       // supplyLevel = startingSupply;
+      //  supplyLevel = supplyLevel + totSuppliesAmount;
+
+
+
+
+      //  if (supplyLevel > maxSupplyLevel)
+       // {
+       //     supplyLevel = maxSupplyLevel;
+       // }
+       // if (supplyLevel < 0)
+       // {
+       //     supplyLevel = 0;
+       // }
+
+
+       // return supplyLevel;
+
+
+
+
+
+
+    //}
 
     private float SupplyDeficit()
     {
