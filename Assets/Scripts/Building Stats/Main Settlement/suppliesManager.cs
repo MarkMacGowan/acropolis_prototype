@@ -39,8 +39,11 @@ public class suppliesManager : MonoBehaviour
 
     public float supplyPlusMinus;
     private float finalSupplyLevel;
+
+    
     public float sMinus=0;
     float fSupply;
+    float maxFSupply=100;
 
 
 
@@ -57,7 +60,10 @@ public class suppliesManager : MonoBehaviour
     }
     private void Update()
     {
+       
+        //Debug.Log("Supply Minus: " + sMinus);
 
+        SuppliesInfo();
         //SuppliesInfo();
     }
     public float SuppliesInfo()
@@ -70,15 +76,25 @@ public class suppliesManager : MonoBehaviour
         //fSupply = startingSupply;
         //supplyPlusMinus = 0;
         supplyPlusMinus = SupplyPlus() - SupplyDeficit();
-        Debug.Log("Starting Supply: "+fSupply);
-        Debug.Log("SupplyPlus: " + SupplyPlus());
-        Debug.Log("SupplyDeficit: " + SupplyDeficit());
-        Debug.Log("PlusMinus: "+supplyPlusMinus);
-        Debug.Log("fSupply: " + fSupply);
+
+
+        //Debug.Log("Starting Supply: "+fSupply);
+       // Debug.Log("SupplyPlus: " + SupplyPlus());
+       // Debug.Log("SupplyDeficit: " + SupplyDeficit());
+       
+       // Debug.Log("PlusMinus: "+supplyPlusMinus);
+      //  Debug.Log("fSupply: " + fSupply);
+        
+        
+        
         fSupply = fSupply+supplyPlusMinus;
         if (fSupply < 0)
         {
             fSupply = 0;
+        }
+        if (fSupply > maxFSupply)
+        {
+            fSupply = maxFSupply;
         }
         return fSupply;
     }

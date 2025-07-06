@@ -133,6 +133,8 @@ public class keyboardInput : MonoBehaviour
         isPlaced = true;
         behaviorScript.enabled = true;
 
+        supplies_manager.sMinus = bCost;
+        //supplies_manager.sMinus = 0;
 
 
 

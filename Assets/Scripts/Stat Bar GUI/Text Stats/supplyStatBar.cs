@@ -19,7 +19,7 @@ public class supplyStatBar : MonoBehaviour
         supplies = supplies_manager.startingSupply;
         suppliesCon = supplies.ToString();
         supplies_txt.GetComponent<TMPro.TextMeshProUGUI>().text = suppliesCon;
-        InvokeRepeating("SupplyCheck",2f,0.5f);
+        InvokeRepeating("SupplyCheck",2f,10f);
 
     }
 

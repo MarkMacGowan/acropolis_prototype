@@ -31,6 +31,6 @@ public class CostDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        info_text.GetComponent<TMPro.TextMeshProUGUI>().text = objectCostCon;
+        info_text.GetComponent<TMPro.TextMeshProUGUI>().SetText("Cost:"+objectCostCon);
     }
 }
