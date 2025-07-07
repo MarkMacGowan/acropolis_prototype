@@ -43,7 +43,7 @@ public class suppliesManager : MonoBehaviour
     
     public float sMinus=0;
     float fSupply;
-    float maxFSupply=100;
+    float maxFSupply=1000;
 
 
 
@@ -66,6 +66,7 @@ public class suppliesManager : MonoBehaviour
 
         SuppliesInfo();
         SumLandingPad();
+        SuppliesInfo();
         Debug.Log("Supplies: "+fSupply);
         //SuppliesInfo();
     }
@@ -115,16 +116,16 @@ public class suppliesManager : MonoBehaviour
         //supplyLevel = startingSupply;
         
 
-        if (totSuppliesAmount>0)
-        {
-            Debug.Log("Incoming Delivery Supply Level Above 0");
+       // if (totSuppliesAmount>0)
+      // {
+            //Debug.Log("Incoming Delivery Supply Level Above 0");
             //SupplyAdjustment(totSuppliesAmount);
-            SupplyAddition(totSuppliesAmount);
-        }
-        if (totSuppliesAmount == 0)
-        {
-            SupplyAddition(totSuppliesAmount);
-        }
+        SupplyAddition(totSuppliesAmount);
+       // }
+        //if (totSuppliesAmount == 0)
+        //{
+        //    SupplyAddition(totSuppliesAmount);
+        //}
 
         //if (supplyLevel>0)
         //{
