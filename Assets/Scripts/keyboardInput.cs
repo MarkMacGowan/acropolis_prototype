@@ -135,8 +135,8 @@ public class keyboardInput : MonoBehaviour
 
         //supplies_manager.sMinus = bCost;
         //supplies_manager.sMinus = 0;
-        supplies_manager.SupplyAdjustment(bCost);
-
+        //supplies_manager.SupplyAdjustment(bCost);
+        supplies_manager.SupplySpend(bCost);
 
     }
     public void exitMenu()
