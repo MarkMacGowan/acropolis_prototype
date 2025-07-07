@@ -66,6 +66,7 @@ public class suppliesManager : MonoBehaviour
 
         SuppliesInfo();
         SumLandingPad();
+        Debug.Log("Supplies: "+fSupply);
         //SuppliesInfo();
     }
     public float SuppliesInfo()
@@ -112,32 +113,53 @@ public class suppliesManager : MonoBehaviour
         
         totSuppliesAmount = land_pad.GetComponent<landingPadBehavior>().SupplyDeliver();
         //supplyLevel = startingSupply;
-        supplyLevel = supplyLevel + totSuppliesAmount;
+        
 
-        if (supplyLevel>0)
+        if (totSuppliesAmount>0)
         {
-            Debug.Log("Supply Level Above 0");
-            SupplyAdjustment(supplyLevel);
+            Debug.Log("Incoming Delivery Supply Level Above 0");
+            //SupplyAdjustment(totSuppliesAmount);
+            SupplyAddition(totSuppliesAmount);
         }
+        if (totSuppliesAmount == 0)
+        {
+            SupplyAddition(totSuppliesAmount);
+        }
+
+        //if (supplyLevel>0)
+        //{
+            
+        //}
 
 
     }
     //  method to check if building placed
     public void SpendSupply()
     {
-
+        
+    }
+    public void SupplyAddition(float amount)
+    {
+        supplyLevel += amount;
+    }
+    public void SupplySpend(float amount)
+    {
+        supplyLevel -= amount;
     }
     public void SupplyAdjustment(float amount)
     {
      // supply Addition
-        if (supplyLevel > maxSupplyLevel)
-        {
-            supplyLevel = maxSupplyLevel;
-        }
-        if (supplyLevel < 0)
-        {
-            supplyLevel = 0;
-        }
+
+        //supplyLevel = supplyLevel + totSuppliesAmount;
+
+        //if (supplyLevel > maxSupplyLevel)
+        //{
+        //    supplyLevel = maxSupplyLevel;
+        //}
+        //if (supplyLevel < 0)
+        //{
+        //    supplyLevel = 0;
+        //}
         
         
      //supply subtraction
