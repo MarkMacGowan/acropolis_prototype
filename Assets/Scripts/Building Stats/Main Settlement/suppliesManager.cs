@@ -25,7 +25,7 @@ public class suppliesManager : MonoBehaviour
 
 
     private float supplyDeliveryRate;
-    public int startingSupply = 100;
+    //public int startingSupply = 100;
 
 
 
@@ -63,7 +63,9 @@ public class suppliesManager : MonoBehaviour
        
         //Debug.Log("Supply Minus: " + sMinus);
 
+
         SuppliesInfo();
+        SumLandingPad();
         //SuppliesInfo();
     }
     public float SuppliesInfo()
@@ -99,24 +101,35 @@ public class suppliesManager : MonoBehaviour
         }
         return fSupply;
     }
-
-    public void SupplyAdjustment(float amount)
+    //method to gather incoming supply levels from all landing pads
+    public void SumLandingPad()
     {
-
-        // supply Addition
+        
         land_pad = GameObject.FindWithTag("landingPad");
 
         totSuppliesDelivery = land_pad.GetComponent<landingPadBehavior>().suppliesProduce;
         noLandingPads = GameObject.FindGameObjectsWithTag("landingPad").Length;
-
-
+        
         totSuppliesAmount = land_pad.GetComponent<landingPadBehavior>().SupplyDeliver();
-        supplyLevel = startingSupply;
+        //supplyLevel = startingSupply;
         supplyLevel = supplyLevel + totSuppliesAmount;
 
+        if (supplyLevel>0)
+        {
+            Debug.Log("Supply Level Above 0");
+            SupplyAdjustment(supplyLevel);
+        }
 
 
+    }
+    //  method to check if building placed
+    public void SpendSupply()
+    {
 
+    }
+    public void SupplyAdjustment(float amount)
+    {
+     // supply Addition
         if (supplyLevel > maxSupplyLevel)
         {
             supplyLevel = maxSupplyLevel;
@@ -125,8 +138,9 @@ public class suppliesManager : MonoBehaviour
         {
             supplyLevel = 0;
         }
-
-        //supply subtraction 
+        
+        
+     //supply subtraction
 
 
 
@@ -183,11 +197,11 @@ public class suppliesManager : MonoBehaviour
 
     //}
 
-    private float SupplyDeficit()
-    {
+    //private float SupplyDeficit()
+    //{
         
-        return sMinus;
-    }
+    //    return sMinus;
+    //}
     //public float SupplyDeficit(float supplyMinus)
     //{
     //    sMinus = supplyMinus;
