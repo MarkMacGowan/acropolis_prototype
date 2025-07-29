@@ -376,6 +376,7 @@ GameObject:
   - component: {fileID: 2269330267176229078}
   - component: {fileID: 938193725179534450}
   - component: {fileID: 792167091998293028}
+  - component: {fileID: 1508281590370778729}
   m_Layer: 5
   m_Name: hydroPonicsHealthTxt
   m_TagString: Untagged
@@ -499,6 +500,23 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1508281590370778729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6684049347659156329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03330d490c49bb84cb47a82e9499feb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealthStat: 100
+  health: 0
+  hydroponic_behavior: {fileID: 5990561340044161239}
+  health_txt: {fileID: 6684049347659156329}
+  healthCon: 
 --- !u!1 &7568134987311285139
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,11 +616,14 @@ MonoBehaviour:
   buildingOxygen: 0
   maxHydroponicHealth: 100
   hydroponicHealth: 100
+  healthDecreaseRate: 0.001
   maxFoodAmount: 100
   foodAmount: 0
   foodProduce: 0.2
   maxFoodProduce: 1
   noHydroPonics: 0
+  isSandStorm: 0
+  sand_storm: {fileID: 0}
 --- !u!114 &3168140746886869264
 MonoBehaviour:
   m_ObjectHideFlags: 0

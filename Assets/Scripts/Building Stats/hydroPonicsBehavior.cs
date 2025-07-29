@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class hydroPonicsBehavior : BuildingBehavior
 {
+
+
     public float maxHydroponicHealth = 100f;
     public float hydroponicHealth = 100f;
+    public float healthDecreaseRate = 0.01f;
+
 
     public float maxFoodAmount = 100f;
     public float foodAmount;
@@ -19,6 +23,14 @@ public class hydroPonicsBehavior : BuildingBehavior
 
 
     public int noHydroPonics;
+
+
+
+    // environmental concerns
+    public bool isSandStorm = false;
+    [SerializeField] public GameObject sand_storm;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +42,13 @@ public class hydroPonicsBehavior : BuildingBehavior
     {
         foodAmount = foodAmount + foodProduce;
 
+        sand_storm = GameObject.FindWithTag("sandstorm2");
+
+        isSandStorm = sand_storm.activeInHierarchy;
+       // Debug.Log("Sandstorm Present: " + isSandStorm);
+     //   Debug.Log("Oxygen Processor Health: " + hydroponicHealth);
+        HealthDecrease(isSandStorm);
+
         if (foodProduce > maxFoodProduce)
         {
             foodProduce = maxFoodProduce;
@@ -39,6 +58,17 @@ public class hydroPonicsBehavior : BuildingBehavior
         if (foodAmount > maxFoodAmount)
         {
             foodAmount = maxFoodAmount;
+        }
+    }
+
+    public void HealthDecrease(bool sStorm)
+    {
+
+
+        if (sStorm == true)
+        {
+
+            hydroponicHealth -= healthDecreaseRate;
         }
     }
 }

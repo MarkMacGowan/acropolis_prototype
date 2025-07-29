@@ -527,6 +527,7 @@ GameObject:
   - component: {fileID: 6283926914869858963}
   - component: {fileID: 8488991772455035095}
   - component: {fileID: 6611467755643421442}
+  - component: {fileID: 4775079843670659130}
   m_Layer: 5
   m_Name: oxygenProcessorHealthTxt
   m_TagString: Untagged
@@ -657,14 +658,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8718931900706571098}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71aeaaea6547044449818e51925b29a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealthStat: 100
   health: 0
-  ox_generator: {fileID: 7552675154432731717}
+  oxygen_gen_behaviour: {fileID: -4042748163516052827}
+  health_txt: {fileID: 8718931900706571098}
+  healthCon: 
+--- !u!114 &4775079843670659130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8718931900706571098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd7636dce6a9bf45ad724b219bd00c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealthStat: 100
+  health: 0
   oxygen_gen_behaviour: {fileID: -4042748163516052827}
   health_txt: {fileID: 8718931900706571098}
   healthCon: 

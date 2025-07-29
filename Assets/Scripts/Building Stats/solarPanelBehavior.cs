@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 public class solarPanelBehavior : BuildingBehavior
 {
-   
+
     public float maxSolarHealth = 100f;
     public float solarHealth = 100f;
 
@@ -12,12 +12,12 @@ public class solarPanelBehavior : BuildingBehavior
     public float minSolarEnergy = 0f;
     public float solarEnergy = 0f;
     // how much this object consumes energy
-    
+
     public float energyProduce;
     public float maxEnergyProduce;
 
 
-    
+
     private GameObject dayNight_CycleObject;
 
     private float sunAngleX;
@@ -25,30 +25,36 @@ public class solarPanelBehavior : BuildingBehavior
     private float sunAngleZ;
     private bool isDaytime;
 
- 
 
+    [SerializeField] public GameObject sand_storm;
+    public float healthDecreaseRate = 0.01f;
 
+    // environmental concerns
+    public bool isSandStorm = false;
 
-
-    
     void Start()
     {
         solarEnergy = 0f;
         dayNight_CycleObject = GameObject.FindGameObjectWithTag("dayNight");
     }
 
-    
+
     void Update()
-    {          
-       
+    {
 
-        energyProduce=calculateEnergyProduction();
-        
+
+        energyProduce = calculateEnergyProduction();
+
         solarEnergy = solarEnergy + energyProduce;
-       
+
+        sand_storm = GameObject.FindWithTag("sandstorm2");
+
+        isSandStorm = sand_storm.activeInHierarchy;
+        Debug.Log("Sandstorm Present: " + isSandStorm);
+        Debug.Log("Oxygen Processor Health: " + solarHealth);
+        HealthDecrease(isSandStorm);
 
 
-     
         if (energyProduce > maxEnergyProduce)
         {
             energyProduce = maxEnergyProduce;
@@ -62,39 +68,39 @@ public class solarPanelBehavior : BuildingBehavior
 
 
 
-        
+
     }
- 
+
 
     private float calculateEnergyProduction()
     {
-       sunAngleX= dayNight_CycleObject.transform.rotation.eulerAngles.x;
-       sunAngleY= dayNight_CycleObject.transform.rotation.eulerAngles.y;
-       sunAngleZ =dayNight_CycleObject.transform.rotation.eulerAngles.z;
-       
-      
-       checkTimeOfDay();
-       if (isDaytime==true)
+        sunAngleX = dayNight_CycleObject.transform.rotation.eulerAngles.x;
+        sunAngleY = dayNight_CycleObject.transform.rotation.eulerAngles.y;
+        sunAngleZ = dayNight_CycleObject.transform.rotation.eulerAngles.z;
+
+
+        checkTimeOfDay();
+        if (isDaytime == true)
         {
             energyProduce = 2f;
             //Debug.Log("Producing Energy!");
         }
-        else if(isDaytime==false)
-        {   
+        else if (isDaytime == false)
+        {
             energyProduce = 0;
             //Debug.Log("No Energy To Be Found");
         }
         return energyProduce;
     }
     private bool checkTimeOfDay()
-    {   
-        
-       
-       if (sunAngleZ <= 90)
+    {
+
+
+        if (sunAngleZ <= 90)
         {
             isDaytime = true;
         }
-        else if (sunAngleZ>=270)
+        else if (sunAngleZ >= 270)
         {
             isDaytime = true;
         }
@@ -107,5 +113,15 @@ public class solarPanelBehavior : BuildingBehavior
     private void checkCloudCover()
     {
 
+    }
+    public void HealthDecrease(bool sStorm)
+    {
+
+
+        if (sStorm == true)
+        {
+
+            solarHealth -= healthDecreaseRate;
+        }
     }
 }

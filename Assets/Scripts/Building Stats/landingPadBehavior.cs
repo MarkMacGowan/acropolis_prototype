@@ -13,6 +13,8 @@ public class landingPadBehavior : BuildingBehavior
    // private float sunRotateZ;
     public float maxLandingPadHealth = 100f;
     public float landingPadHealth = 100f;
+    public float healthDecreaseRate = 0.01f;
+
 
     public float maxSuppliesAmount = 100f;
     public float suppliesAmount;
@@ -24,7 +26,11 @@ public class landingPadBehavior : BuildingBehavior
 
     public int noLandingPads;
 
-   
+    // environmental concerns
+    public bool isSandStorm = false;
+    [SerializeField] public GameObject sand_storm;
+
+
     void Start()
     {
         timeObject= GameObject.FindGameObjectWithTag("dayNight");
@@ -39,8 +45,15 @@ public class landingPadBehavior : BuildingBehavior
    
     void Update()
     {
+
+        sand_storm = GameObject.FindWithTag("sandstorm2");
+
+        isSandStorm = sand_storm.activeInHierarchy;
+        //Debug.Log("Sandstorm Present: " + isSandStorm);
+       // Debug.Log("Oxygen Processor Health: " + landingPadHealth);
+        HealthDecrease(isSandStorm);
         // suppliesAmount = suppliesAmount + suppliesProduce;
-        
+
         //if (sAmount> maxSuppliesAmount)
         //{
         //    sAmount = maxSuppliesAmount;
@@ -81,6 +94,17 @@ public class landingPadBehavior : BuildingBehavior
         }
        // Debug.Log("SuppliesAmount: "+suppliesAmount);
         return suppliesAmount;
+    }
+
+    public void HealthDecrease(bool sStorm)
+    {
+
+
+        if (sStorm == true)
+        {
+
+            landingPadHealth -= healthDecreaseRate;
+        }
     }
 
 }

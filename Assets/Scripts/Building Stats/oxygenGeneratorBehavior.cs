@@ -50,8 +50,8 @@ public class oxygenGeneratorBehavior : BuildingBehavior
         sand_storm = GameObject.FindWithTag("sandstorm2");
 
         isSandStorm = sand_storm.activeInHierarchy;
-        Debug.Log("Sandstorm Present: " + isSandStorm);
-        Debug.Log("Oxygen Processor Health: " + oxygenGenHealth);
+     //   Debug.Log("Sandstorm Present: " + isSandStorm);
+     //   Debug.Log("Oxygen Processor Health: " + oxygenGenHealth);
         HealthDecrease(isSandStorm);
         if (oxygenProduce > maxOxygenProduce)
         {
