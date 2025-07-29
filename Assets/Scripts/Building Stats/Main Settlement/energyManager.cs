@@ -106,16 +106,16 @@ public class energyManager : MonoBehaviour
     {
         acropolisEnergyDeficit = 0.06f;
 
-        Debug.Log("No Oxygen Processor: "+ noOxyGen);
+       // Debug.Log("No Oxygen Processor: "+ noOxyGen);
         oxygenEnergyDeficit = 1.5f * noOxyGen;
 
-        Debug.Log("No Hydro ponic: " + noHydro);
+      //  Debug.Log("No Hydro ponic: " + noHydro);
         hydroponicsEnergyDeficit = 1.5f * noHydro;
 
-        Debug.Log("No Water Extractor: " + noWaterExractor);
+      //  Debug.Log("No Water Extractor: " + noWaterExractor);
         waterExtractorEnergyDeficit = 1.5f * noWaterExractor;
 
-        Debug.Log("No Landing Pads: " + noLandPad);
+      //  Debug.Log("No Landing Pads: " + noLandPad);
         landingpadEnergyDeficit = 1.5f * noLandPad;
 
         energyDeficit = acropolisEnergyDeficit + oxygenEnergyDeficit + hydroponicsEnergyDeficit + waterExtractorEnergyDeficit + landingpadEnergyDeficit;

@@ -54,20 +54,31 @@ public class suppliesManager : MonoBehaviour
 
     private void Awake()
     {
+        
         //startingSupply = 100;
         //SupplyPlus();
         //SupplyDeficit();
     }
+    private void Start()
+    {
+        fSupply = 200f;
+    }
     private void Update()
     {
-       
+        
         //Debug.Log("Supply Minus: " + sMinus);
 
 
         SuppliesInfo();
+       // Debug.Log("Supplies Manager Update Function");
+       // Debug.Log("Supplies: "+fSupply);
+
+
         SumLandingPad();
         SuppliesInfo();
-        Debug.Log("Supplies: "+fSupply);
+
+
+        
         //SuppliesInfo();
     }
     public float SuppliesInfo()
@@ -92,15 +103,22 @@ public class suppliesManager : MonoBehaviour
 
 
         // fSupply = fSupply+supplyPlusMinus;
-        fSupply = supplyLevel;
-        if (fSupply < 0)
+        if (fSupply>0)
         {
-            fSupply = 0;
+           // Debug.Log("fSupply bigger than 0");
+            fSupply +=supplyLevel;
+            if (fSupply < 0)
+               {
+                  fSupply = 0;
+               }
+            if (fSupply > maxFSupply)
+               {
+                  fSupply = maxFSupply;
+               }
+
         }
-        if (fSupply > maxFSupply)
-        {
-            fSupply = maxFSupply;
-        }
+        //fSupply = supplyLevel;
+     
         return fSupply;
     }
     //method to gather incoming supply levels from all landing pads
@@ -135,17 +153,19 @@ public class suppliesManager : MonoBehaviour
 
     }
     //  method to check if building placed
-    public void SpendSupply()
-    {
-        
-    }
+
     public void SupplyAddition(float amount)
     {
         supplyLevel += amount;
     }
     public void SupplySpend(float amount)
     {
-        supplyLevel -= amount;
+        //Debug.Log("Not Enough Supplies");
+        //if (supplyLevel >= amount)
+        //{
+           supplyLevel -= amount;
+        //}
+       
     }
     public void SupplyAdjustment(float amount)
     {

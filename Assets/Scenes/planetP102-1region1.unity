@@ -183,7 +183,7 @@ Camera:
   far clip plane: 1000.07
   field of view: 60
   orthographic: 1
-  orthographic size: 2.09
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -532,7 +532,6 @@ MonoBehaviour:
   finalSTotal: 0
   incoming_supply: 0
   supplyLevel: 0
-  startingSupply: 100
   noLandingPads: 0
   supplyPlusMinus: 0
   sMinus: 0
@@ -6613,7 +6612,7 @@ Transform:
   m_GameObject: {fileID: 1398601138}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45.905678, y: -34.5064, z: 12.296518}
+  m_LocalPosition: {x: 45.905678, y: -26.86, z: 4.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7129,6 +7128,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1865402728
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 371017801534060442, guid: efdac2396fa55554facb850bb6f12a38, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.013978958
+      objectReference: {fileID: 0}
+    - target: {fileID: 371017801534060442, guid: efdac2396fa55554facb850bb6f12a38, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 371017801534060442, guid: efdac2396fa55554facb850bb6f12a38, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.6703625
+      objectReference: {fileID: 0}
+    - target: {fileID: 371017801534060442, guid: efdac2396fa55554facb850bb6f12a38, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 371017801534060442, guid: efdac2396fa55554facb850bb6f12a38, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 371017801534060442, guid: efdac2396fa55554facb850bb6f12a38, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 371017801534060442, guid: efdac2396fa55554facb850bb6f12a38, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 371017801534060442, guid: efdac2396fa55554facb850bb6f12a38, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 371017801534060442, guid: efdac2396fa55554facb850bb6f12a38, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 371017801534060442, guid: efdac2396fa55554facb850bb6f12a38, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154713054464703145, guid: efdac2396fa55554facb850bb6f12a38, type: 3}
+      propertyPath: m_Name
+      value: Sandstorm Variant 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154713054464703145, guid: efdac2396fa55554facb850bb6f12a38, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154713054464703145, guid: efdac2396fa55554facb850bb6f12a38, type: 3}
+      propertyPath: m_TagString
+      value: sandstorm2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: efdac2396fa55554facb850bb6f12a38, type: 3}
 --- !u!1 &1878082325
 GameObject:
   m_ObjectHideFlags: 0
@@ -9710,3 +9774,4 @@ SceneRoots:
   - {fileID: 1799991597}
   - {fileID: 2125381458}
   - {fileID: 652294981}
+  - {fileID: 1865402728}

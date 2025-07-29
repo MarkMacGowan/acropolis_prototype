@@ -23,6 +23,7 @@ TagManager:
   - lPadButton
   - costMan
   - overCast
+  - sandstorm2
   layers:
   - Default
   - TransparentFX
