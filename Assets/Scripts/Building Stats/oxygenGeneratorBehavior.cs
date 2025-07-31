@@ -8,7 +8,11 @@ public class oxygenGeneratorBehavior : BuildingBehavior
     private float mainDomeEnergy;
 
     [SerializeField] public GameObject sand_storm;
+
+    [SerializeField] private GameObject currentBuilding;
+    [SerializeField] private GameObject parentBuildingObject;
     [SerializeField] private deleteBuilding delete_building;
+    [SerializeField] private GameObject health_text;
     // health stat of oxygenGenerator 
     public float maxOxygenGenHealth=100f;
     public float oxygenGenHealth = 100f;
@@ -40,6 +44,7 @@ public class oxygenGeneratorBehavior : BuildingBehavior
         main_dome = GameObject.FindGameObjectWithTag("mainSettle");
         
         oxygenAmount=0f;
+        
        // StartExplosion();
     }
 
@@ -87,15 +92,17 @@ public class oxygenGeneratorBehavior : BuildingBehavior
     public void StartExplosion()
     {
         explosion_fx.SetActive(true);
-        if (explosion_fx.GetComponent<explosiveShockwaveBehavior>().shockWaveDestroy == true)
-        {
-
-            ObjectRemove();
-        }
+     //   if (explosion_fx.GetComponent<explosiveShockwaveBehavior>().shockWaveDestroy.Equals(true))
+     //   {
+           // Debug.Log("OxyBehavior: Explosion Has Occured");
+            BuildingRemove();
+        health_text.SetActive(false);
+      //  }
       
     }
-    private void ObjectRemove()
+    private void BuildingRemove()
     {
-        Object.Destroy(gameObject);
+        Object.Destroy(currentBuilding);
+        Object.Destroy(parentBuildingObject,3);
     }
 }

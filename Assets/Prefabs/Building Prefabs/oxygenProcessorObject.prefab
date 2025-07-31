@@ -222,6 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shock_wave: {fileID: 2664821252715131143}
   scaleRate: 0
+  shockWaveDestroy: 0
 --- !u!1 &4687819576848133389
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,6 +725,10 @@ MonoBehaviour:
   buildingOxygen: 0
   main_dome: {fileID: 0}
   sand_storm: {fileID: 0}
+  currentBuilding: {fileID: 5620976875869622300}
+  parentBuildingObject: {fileID: 7552675154432731717}
+  delete_building: {fileID: 0}
+  health_text: {fileID: 2323207210363730636}
   maxOxygenGenHealth: 100
   oxygenGenHealth: 100
   healthDecreaseRate: 0.01
