@@ -12,7 +12,7 @@ public class oxygenGeneratorBehavior : BuildingBehavior
     // health stat of oxygenGenerator 
     public float maxOxygenGenHealth=100f;
     public float oxygenGenHealth = 100f;
-    public float healthDecreaseRate = 0.001f;
+    public float healthDecreaseRate = 0.01f;
 
 
     // oxygen produced
@@ -32,13 +32,15 @@ public class oxygenGeneratorBehavior : BuildingBehavior
     // environmental concerns
     public bool isSandStorm = false;
 
+    // particle concerns
+    [SerializeField] private GameObject explosion_fx;
 
-    
     void Start()
     {
         main_dome = GameObject.FindGameObjectWithTag("mainSettle");
         
         oxygenAmount=0f;
+       // StartExplosion();
     }
 
    
@@ -72,9 +74,22 @@ public class oxygenGeneratorBehavior : BuildingBehavior
         
         if (sStorm==true)
         {
-
+            Debug.Log("Sandstorm!");
             oxygenGenHealth -= healthDecreaseRate;
+            if (oxygenGenHealth == 0)
+            {
+                Debug.Log("Health is 0");
+                BuildingDestroy();
+            }
         }
+    }
+    public void BuildingDestroy()
+    {
+        StartExplosion();
+    }
+    public void StartExplosion()
+    {
+        explosion_fx.SetActive(true);
     }
 
 }

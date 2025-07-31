@@ -42,7 +42,7 @@ public class suppliesManager : MonoBehaviour
 
     
     public float sMinus=0;
-    float fSupply;
+    float fSupply=0;
     float maxFSupply=1000;
 
 
@@ -54,14 +54,14 @@ public class suppliesManager : MonoBehaviour
 
     private void Awake()
     {
-        
+        //fSupply = 200f;
         //startingSupply = 100;
         //SupplyPlus();
         //SupplyDeficit();
     }
     private void Start()
     {
-        fSupply = 200f;
+       // fSupply = 200f;
     }
     private void Update()
     {
@@ -71,7 +71,7 @@ public class suppliesManager : MonoBehaviour
 
         SuppliesInfo();
        // Debug.Log("Supplies Manager Update Function");
-       // Debug.Log("Supplies: "+fSupply);
+       Debug.Log("Supplies: "+fSupply);
 
 
         SumLandingPad();
@@ -103,21 +103,21 @@ public class suppliesManager : MonoBehaviour
 
 
         // fSupply = fSupply+supplyPlusMinus;
-        if (fSupply>0)
-        {
-           // Debug.Log("fSupply bigger than 0");
-            fSupply +=supplyLevel;
-            if (fSupply < 0)
-               {
-                  fSupply = 0;
-               }
-            if (fSupply > maxFSupply)
-               {
-                  fSupply = maxFSupply;
-               }
+        //if (fSupply>0)
+        //{
+        //   // Debug.Log("fSupply bigger than 0");
+        //    fSupply +=supplyLevel;
+        //    if (fSupply < 0)
+        //       {
+        //          fSupply = 0;
+        //       }
+        //    if (fSupply > maxFSupply)
+        //       {
+        //          fSupply = maxFSupply;
+        //       }
 
-        }
-        //fSupply = supplyLevel;
+        //}
+        fSupply = supplyLevel;
      
         return fSupply;
     }
