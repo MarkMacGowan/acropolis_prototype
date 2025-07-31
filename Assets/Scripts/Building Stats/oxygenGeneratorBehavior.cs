@@ -8,7 +8,7 @@ public class oxygenGeneratorBehavior : BuildingBehavior
     private float mainDomeEnergy;
 
     [SerializeField] public GameObject sand_storm;
-
+    [SerializeField] private deleteBuilding delete_building;
     // health stat of oxygenGenerator 
     public float maxOxygenGenHealth=100f;
     public float oxygenGenHealth = 100f;
@@ -76,20 +76,26 @@ public class oxygenGeneratorBehavior : BuildingBehavior
         {
             Debug.Log("Sandstorm!");
             oxygenGenHealth -= healthDecreaseRate;
-            if (oxygenGenHealth == 0)
+            if (oxygenGenHealth <= 0)
             {
                 Debug.Log("Health is 0");
-                BuildingDestroy();
+                StartExplosion();
             }
         }
     }
-    public void BuildingDestroy()
-    {
-        StartExplosion();
-    }
+
     public void StartExplosion()
     {
         explosion_fx.SetActive(true);
-    }
+        if (explosion_fx.GetComponent<explosiveShockwaveBehavior>().shockWaveDestroy == true)
+        {
 
+            ObjectRemove();
+        }
+      
+    }
+    private void ObjectRemove()
+    {
+        Object.Destroy(gameObject);
+    }
 }

@@ -10,6 +10,7 @@ public class explosiveShockwaveBehavior : MonoBehaviour
     //public float scaleLimit;
     private float scaleLimitNumber;
     private Vector3 scaleLimit;
+    public bool shockWaveDestroy = false;
     // Start is called before the first frame update
     
     void Awake()
@@ -28,6 +29,7 @@ public class explosiveShockwaveBehavior : MonoBehaviour
         {
             Debug.Log("Kaboom!");
             Destroy(shock_wave);
+            shockWaveDestroy = true;
         }
     }
 }
