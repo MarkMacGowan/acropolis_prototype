@@ -19,12 +19,18 @@ public class waterExtractorBehavior :BuildingBehavior
     public int noWaterExtractors;
 
 
+
+    [SerializeField] private GameObject currentBuilding;
+    [SerializeField] private GameObject parentBuildingObject;
+    [SerializeField] private deleteBuilding delete_building;
+    [SerializeField] private GameObject health_text;
+
     // environmental concerns
     public bool isSandStorm = false;
     [SerializeField] public GameObject sand_storm;
 
-
-
+    // particle concerns
+    [SerializeField] private GameObject explosion_fx;
 
     void Start()
     {
@@ -62,8 +68,33 @@ public class waterExtractorBehavior :BuildingBehavior
 
         if (sStorm == true)
         {
-
+            Debug.Log("Sandstorm!");
             waterExtractorHealth -= healthDecreaseRate;
+            if (waterExtractorHealth <= 0)
+            {
+                Debug.Log("Health is 0");
+                StartExplosion();
+            }
+
+
         }
+    }
+
+
+    public void StartExplosion()
+    {
+        explosion_fx.SetActive(true);
+        //   if (explosion_fx.GetComponent<explosiveShockwaveBehavior>().shockWaveDestroy.Equals(true))
+        //   {
+        // Debug.Log("OxyBehavior: Explosion Has Occured");
+        BuildingRemove();
+        health_text.SetActive(false);
+        //  }
+
+    }
+    private void BuildingRemove()
+    {
+        Object.Destroy(currentBuilding);
+        Object.Destroy(parentBuildingObject, 3);
     }
 }

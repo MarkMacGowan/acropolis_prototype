@@ -29,8 +29,18 @@ public class solarPanelBehavior : BuildingBehavior
     [SerializeField] public GameObject sand_storm;
     public float healthDecreaseRate = 0.01f;
 
+    [SerializeField] private GameObject currentBuilding;
+    [SerializeField] private GameObject parentBuildingObject;
+    [SerializeField] private deleteBuilding delete_building;
+    [SerializeField] private GameObject health_text;
+
+
     // environmental concerns
     public bool isSandStorm = false;
+
+    // particle concerns
+    [SerializeField] private GameObject explosion_fx;
+
 
     void Start()
     {
@@ -51,7 +61,7 @@ public class solarPanelBehavior : BuildingBehavior
 
         isSandStorm = sand_storm.activeInHierarchy;
         Debug.Log("Sandstorm Present: " + isSandStorm);
-        Debug.Log("Oxygen Processor Health: " + solarHealth);
+        Debug.Log("Solar Panel Health: " + solarHealth);
         HealthDecrease(isSandStorm);
 
 
@@ -120,8 +130,36 @@ public class solarPanelBehavior : BuildingBehavior
 
         if (sStorm == true)
         {
-
+            Debug.Log("Sandstorm!");
             solarHealth -= healthDecreaseRate;
+            if (solarHealth <= 0)
+            {
+                Debug.Log("Health is 0");
+                StartExplosion();
+            }
+
+
         }
     }
+
+
+    public void StartExplosion()
+    {
+        explosion_fx.SetActive(true);
+     //   if (explosion_fx.GetComponent<explosiveShockwaveBehavior>().shockWaveDestroy.Equals(true))
+     //   {
+           // Debug.Log("OxyBehavior: Explosion Has Occured");
+            BuildingRemove();
+        health_text.SetActive(false);
+      //  }
+      
+    }
+    private void BuildingRemove()
+    {
+        Object.Destroy(currentBuilding);
+        Object.Destroy(parentBuildingObject,3);
+    }
+
+
+
 }
