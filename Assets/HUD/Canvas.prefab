@@ -1348,7 +1348,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 6804369547210488051}
   m_OnClick:
     m_PersistentCalls:
@@ -3476,7 +3476,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 4205994908690061845}
   m_OnClick:
     m_PersistentCalls:
@@ -5466,6 +5466,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c779d5c70df3a54290c9dfa1204a6c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonList:
+  - {fileID: 1259342150683797312}
+  - {fileID: 8816347710939201028}
+  - {fileID: 4460166609041383209}
+  - {fileID: 2647198699926525170}
+  - {fileID: 4553188425204224764}
   buildingInfo:
   - {fileID: 7552675154432731717, guid: 830f11cef18d8c64c8d256a5d1a00d7a, type: 3}
   - {fileID: 2530376025569765705, guid: de10308aa1523f7458c2121385f2e677, type: 3}
@@ -5473,6 +5479,10 @@ MonoBehaviour:
   - {fileID: 7426085723408419178, guid: a29f75b8cc2f3a340948620128547811, type: 3}
   - {fileID: 7664846012860348054, guid: 394d3d1ccd9b75443b19e06f21c67c0f, type: 3}
   price: 0
+  mSet: {fileID: 0}
+  supply_m: {fileID: 0}
+  priceButton: 0
+  button_component: {fileID: 0}
 --- !u!1 &3810438715164962262
 GameObject:
   m_ObjectHideFlags: 0
@@ -7340,7 +7350,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 3277503050844676775}
   m_OnClick:
     m_PersistentCalls:
@@ -17799,7 +17809,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1320082864446890422}
   m_OnClick:
     m_PersistentCalls:

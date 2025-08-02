@@ -8393,6 +8393,30 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 18.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3128980534324155779, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
+      propertyPath: buttonList.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128980534324155779, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
+      propertyPath: buttonList.Array.data[0]
+      value: 
+      objectReference: {fileID: 1762294743}
+    - target: {fileID: 3128980534324155779, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
+      propertyPath: buttonList.Array.data[1]
+      value: 
+      objectReference: {fileID: 191782503716639575}
+    - target: {fileID: 3128980534324155779, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
+      propertyPath: buttonList.Array.data[2]
+      value: 
+      objectReference: {fileID: 515467502}
+    - target: {fileID: 3128980534324155779, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
+      propertyPath: buttonList.Array.data[3]
+      value: 
+      objectReference: {fileID: 936872947}
+    - target: {fileID: 3128980534324155779, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
+      propertyPath: buttonList.Array.data[4]
+      value: 
+      objectReference: {fileID: 1120925633}
     - target: {fileID: 3193772127914010889, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
       propertyPath: mSettlement
       value: 

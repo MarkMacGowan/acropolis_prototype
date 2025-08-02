@@ -38,7 +38,7 @@ public class CostDisplay : MonoBehaviour
 
         //buildCost = build_avail.GetPrice(bIndex);
         buildCost = parentObject.GetComponent<ButtonInfo>().buttonCost;
-        Debug.Log("Building: "+buttonName +"Cost: "+buildCost);
+        //Debug.Log("Building: "+buttonName +"Cost: "+buildCost);
         //info_text.GetComponent<TMPro.TextMeshProUGUI>().text= info_text.GetComponent<TMPro.TextMeshProUGUI>().text+= buildCost.ToString(); ;
         //textBody.text = textBody += buildCost.ToString();
         

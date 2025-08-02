@@ -69,25 +69,25 @@ public class keyboardInput : MonoBehaviour
         // left click
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Debug.Log("Mouse Click");
+         //  Debug.Log("Mouse Click");
             checkGUI();
 
 
             if (checkGUI())
             {
-                Debug.Log("Button Clicked");
+             //   Debug.Log("Button Clicked");
                 return;
 
             }
             else
             {
-                Debug.Log("Button GUI not clicked but mouse clicked");
+               // Debug.Log("Button GUI not clicked but mouse clicked");
 
-                Debug.Log("InterSection: " + bInterSect);
+               // Debug.Log("InterSection: " + bInterSect);
                 if (!bInterSect)
                 {
                     bCost = gameObject.GetComponent<BuildingBehavior>().buildCost;
-                    Debug.Log("Building Cost: "+bCost);
+                //    Debug.Log("Building Cost: "+bCost);
                     placeBuilding();
                     exitMenu();
                     //bCost = cost_managment_object.GetComponent<costManagment>().buildingCost;
@@ -126,17 +126,17 @@ public class keyboardInput : MonoBehaviour
     public void placeBuilding()
     {
 
-        Debug.Log("placeBuilding method executed");
+       // Debug.Log("placeBuilding method executed");
         object_movement_behavior = GetComponent<objectMovementBehavior>();
         object_movement_behavior.enabled = false;
-        Debug.Log("Object Placed");
+       // Debug.Log("Object Placed");
         isPlaced = true;
         behaviorScript.enabled = true;
 
         //supplies_manager.sMinus = bCost;
         //supplies_manager.sMinus = 0;
         //supplies_manager.SupplyAdjustment(bCost);
-        Debug.Log("Supply Cost: "+bCost);
+       // Debug.Log("Supply Cost: "+bCost);
         supplies_manager.SupplySpend(bCost);
 
     }
