@@ -25,9 +25,9 @@ public class CostDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        buttonName = parentObject.name;
+        buttonName=parentObject.name;
         build_avail = build_list.GetComponent<BuildingAvailability>();
-        
+        bIndex = parentObject.GetComponent<ButtonInfo>().buttonIndex;
         //currentObj = this.gameObject;
         //parentObject = currentObj.transform.parent.gameObject;
         //objectCost = parentObject.GetComponent<BuildingBehavior>().buildCost;
@@ -35,22 +35,26 @@ public class CostDisplay : MonoBehaviour
         //Debug.Log("Object Cost Info: " + objectCost);
 
         //objectCostCon = objectCost.ToString();
-        
-        
-        Debug.Log("Building: "+buttonName +" Cost: "+buildCost);
-        info_text.GetComponent<TMPro.TextMeshProUGUI>().text= info_text.GetComponent<TMPro.TextMeshProUGUI>().text+= buildCost.ToString(); 
-        //textBody.text = textBody += buildCost.ToString();
-        //textBody = info_text.GetComponent<TMPro.TextMeshProUGUI>().text;
 
-        textBody = textBody += buildCost.ToString();
+        //buildCost = build_avail.GetPrice(bIndex);
+        buildCost = parentObject.GetComponent<ButtonInfo>().buttonCost;
+        Debug.Log("Building: "+buttonName +"Cost: "+buildCost);
+        //info_text.GetComponent<TMPro.TextMeshProUGUI>().text= info_text.GetComponent<TMPro.TextMeshProUGUI>().text+= buildCost.ToString(); ;
+        //textBody.text = textBody += buildCost.ToString();
+        
+        textBody = info_text.GetComponent<TMPro.TextMeshProUGUI>().text;
+       // Debug.Log("TextBody: " +textBody);
+        textBody += buildCost.ToString();
+        info_text.GetComponent<TMPro.TextMeshProUGUI>().text = textBody;
+        //Debug.Log("Appended TextBody: " + textBody);
         
     }
 
     // Update is called once per frame
     void Update()
     { 
-        bIndex = parentObject.GetComponent<ButtonInfo>().buttonIndex;
-       buildCost = build_avail.GetPrice(bIndex);
+        
+       
        //info_text.GetComponent<TMPro.TextMeshProUGUI>().SetText("Cost:"+objectCostCon);
     
     }

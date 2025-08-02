@@ -1473,6 +1473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonIndex: 0
+  buttonCost: 25
 --- !u!1 &1260215377992849812
 GameObject:
   m_ObjectHideFlags: 0
@@ -3529,6 +3530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonIndex: 3
+  buttonCost: 10
 --- !u!1 &2774890887082965527
 GameObject:
   m_ObjectHideFlags: 0
@@ -6740,6 +6742,7 @@ GameObject:
   - component: {fileID: 6989350344418331889}
   - component: {fileID: 294343034075070727}
   - component: {fileID: 975457480793434285}
+  - component: {fileID: 1860874664554375051}
   m_Layer: 5
   m_Name: waterInfoTxt
   m_TagString: Untagged
@@ -6796,7 +6799,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Extracts water from air.
 
-    Cost: 10'
+    Cost: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6865,6 +6868,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1860874664554375051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4357858979616369855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96e814c900913924da310d7dc3524edc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentObject: {fileID: 2647198699926525170}
+  build_list: {fileID: 3776924165061104185}
+  build_avail: {fileID: 3128980534324155779}
+  info_text: {fileID: 4357858979616369855}
 --- !u!1 &4369618201255792101
 GameObject:
   m_ObjectHideFlags: 0
@@ -7375,6 +7394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonIndex: 2
+  buttonCost: 25
 --- !u!1 &4490338921345912327
 GameObject:
   m_ObjectHideFlags: 0
@@ -7834,6 +7854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonIndex: 4
+  buttonCost: 50
 --- !u!1 &4612567266010218091
 GameObject:
   m_ObjectHideFlags: 0
@@ -8931,6 +8952,7 @@ GameObject:
   - component: {fileID: 5876608280290261485}
   - component: {fileID: 210547401028448461}
   - component: {fileID: 6367325885152550239}
+  - component: {fileID: 8878356179667117907}
   m_Layer: 5
   m_Name: landingPadInfoTxt
   m_TagString: Untagged
@@ -8988,7 +9010,7 @@ MonoBehaviour:
   m_text: 'Supplies are delivered here from offworld. Supplies cannot come though
     during a storm.
 
-    Cost: 50'
+    Cost: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9057,6 +9079,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8878356179667117907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4910084292552154539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96e814c900913924da310d7dc3524edc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentObject: {fileID: 4553188425204224764}
+  build_list: {fileID: 3776924165061104185}
+  build_avail: {fileID: 3128980534324155779}
+  info_text: {fileID: 4910084292552154539}
 --- !u!1 &4954272981429662689
 GameObject:
   m_ObjectHideFlags: 0
@@ -13349,6 +13387,7 @@ GameObject:
   - component: {fileID: 35647415625823039}
   - component: {fileID: 9168638431716788320}
   - component: {fileID: 674314508293898023}
+  - component: {fileID: 1732693469826716904}
   m_Layer: 5
   m_Name: hydroInfoTxt
   m_TagString: Untagged
@@ -13405,7 +13444,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Grows Food for Colony.
 
-    Cost: 25'
+    Cost: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13474,6 +13513,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1732693469826716904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7054012263264640136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96e814c900913924da310d7dc3524edc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentObject: {fileID: 4460166609041383209}
+  build_list: {fileID: 3776924165061104185}
+  build_avail: {fileID: 3128980534324155779}
+  info_text: {fileID: 7054012263264640136}
 --- !u!1 &7111967195082004384
 GameObject:
   m_ObjectHideFlags: 0
@@ -14126,7 +14181,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Takes in planet atmosphere and converts into oxygen.
 
-    Cost: 25'
+    Cost:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14202,7 +14257,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7257689885726541679}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96e814c900913924da310d7dc3524edc, type: 3}
   m_Name: 
@@ -17539,7 +17594,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'Collects solar energy during the day. Works at 50% capcity during storms.
-    Cost: 40'
+    Cost: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17615,7 +17670,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8683720658746456940}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96e814c900913924da310d7dc3524edc, type: 3}
   m_Name: 
@@ -17857,6 +17912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonIndex: 1
+  buttonCost: 40
 --- !u!1 &8945876836801234290
 GameObject:
   m_ObjectHideFlags: 0
