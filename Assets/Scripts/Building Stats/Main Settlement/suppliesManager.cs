@@ -71,7 +71,7 @@ public class suppliesManager : MonoBehaviour
 
         SuppliesInfo();
        // Debug.Log("Supplies Manager Update Function");
-       Debug.Log("Supplies: "+fSupply);
+       //Debug.Log("Supplies: "+fSupply);
 
 
         SumLandingPad();

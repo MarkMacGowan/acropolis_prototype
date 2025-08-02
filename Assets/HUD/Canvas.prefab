@@ -964,6 +964,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4290000351522376417}
   - {fileID: 8328579777368473389}
   - {fileID: 2779596676939463552}
   - {fileID: 6334440480480788394}
@@ -1241,6 +1242,7 @@ GameObject:
   - component: {fileID: 139632998789702803}
   - component: {fileID: 7765888719392890365}
   - component: {fileID: 1909642527277179109}
+  - component: {fileID: 1250590259532077072}
   m_Layer: 5
   m_Name: oxygenGenBtn
   m_TagString: Untagged
@@ -1458,6 +1460,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1250590259532077072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259342150683797312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80f5c59ce592e0449831e65ef283d40e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonIndex: 0
 --- !u!1 &1260215377992849812
 GameObject:
   m_ObjectHideFlags: 0
@@ -1705,7 +1720,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 273.70004, y: 30.1}
-  m_SizeDelta: {x: 66.6, y: 35}
+  m_SizeDelta: {x: 88.6, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3517868412563317813
 CanvasRenderer:
@@ -3354,6 +3369,7 @@ GameObject:
   - component: {fileID: 7998304087021026969}
   - component: {fileID: 4205994908690061845}
   - component: {fileID: 6379114093876417095}
+  - component: {fileID: 8537495137280323762}
   m_Layer: 5
   m_Name: waterExtractorBtn
   m_TagString: Untagged
@@ -3500,6 +3516,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8537495137280323762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2647198699926525170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80f5c59ce592e0449831e65ef283d40e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonIndex: 3
 --- !u!1 &2774890887082965527
 GameObject:
   m_ObjectHideFlags: 0
@@ -3519,7 +3548,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &758506211466831454
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3535,10 +3564,10 @@ RectTransform:
   - {fileID: 7823592766929675459}
   m_Father: {fileID: 8328579777368473389}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 998.25006, y: -42.7}
+  m_SizeDelta: {x: 133.1, y: 85.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6628121076533281962
 CanvasRenderer:
@@ -5387,6 +5416,61 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &3776924165061104185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4290000351522376417}
+  - component: {fileID: 3128980534324155779}
+  m_Layer: 5
+  m_Name: buildingList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4290000351522376417
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3776924165061104185}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6965607330292695716}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3128980534324155779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3776924165061104185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c779d5c70df3a54290c9dfa1204a6c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingInfo:
+  - {fileID: 7552675154432731717, guid: 830f11cef18d8c64c8d256a5d1a00d7a, type: 3}
+  - {fileID: 2530376025569765705, guid: de10308aa1523f7458c2121385f2e677, type: 3}
+  - {fileID: 7568134987311285139, guid: 763ea085a4b8407488e7286a8055e471, type: 3}
+  - {fileID: 7426085723408419178, guid: a29f75b8cc2f3a340948620128547811, type: 3}
+  - {fileID: 7664846012860348054, guid: 394d3d1ccd9b75443b19e06f21c67c0f, type: 3}
+  price: 0
 --- !u!1 &3810438715164962262
 GameObject:
   m_ObjectHideFlags: 0
@@ -6293,7 +6377,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 125}
-  m_SizeDelta: {x: 200, y: 86}
+  m_SizeDelta: {x: 133.1, y: 76.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4016940953125418893
 CanvasRenderer:
@@ -6710,7 +6794,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Extracts water from air.
+  m_text: 'Extracts water from air.
+
+    Cost: 10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7129,6 +7215,7 @@ GameObject:
   - component: {fileID: 7727281351633521195}
   - component: {fileID: 3277503050844676775}
   - component: {fileID: 7701657218173148042}
+  - component: {fileID: 1802448956270115210}
   m_Layer: 5
   m_Name: hydroBtn
   m_TagString: Untagged
@@ -7275,6 +7362,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1802448956270115210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4460166609041383209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80f5c59ce592e0449831e65ef283d40e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonIndex: 2
 --- !u!1 &4490338921345912327
 GameObject:
   m_ObjectHideFlags: 0
@@ -7574,6 +7674,7 @@ GameObject:
   - component: {fileID: 7551305022787719231}
   - component: {fileID: 8181947684196232779}
   - component: {fileID: 1429982594535938235}
+  - component: {fileID: 5869466209688764733}
   m_Layer: 5
   m_Name: landingPadBtn
   m_TagString: Untagged
@@ -7720,6 +7821,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5869466209688764733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4553188425204224764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80f5c59ce592e0449831e65ef283d40e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonIndex: 4
 --- !u!1 &4612567266010218091
 GameObject:
   m_ObjectHideFlags: 0
@@ -8871,8 +8985,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Supplies are delivered here from offworld. Supplies cannot come though
-    during a storm
+  m_text: 'Supplies are delivered here from offworld. Supplies cannot come though
+    during a storm.
+
+    Cost: 50'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10419,7 +10535,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4224793131248464776
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10435,10 +10551,10 @@ RectTransform:
   - {fileID: 818084325750826581}
   m_Father: {fileID: 8328579777368473389}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 998.25006, y: -42.7}
+  m_SizeDelta: {x: 133.1, y: 85.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8085833955136317321
 CanvasRenderer:
@@ -10818,7 +10934,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 120}
-  m_SizeDelta: {x: 200, y: 76.8}
+  m_SizeDelta: {x: 133.1, y: 76.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5806992354452136780
 CanvasRenderer:
@@ -13287,7 +13403,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Grows Food for Colony
+  m_text: 'Grows Food for Colony.
+
+    Cost: 25'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13975,8 +14093,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 4.4, y: 0}
+  m_SizeDelta: {x: 133.1, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3298684658731037840
 CanvasRenderer:
@@ -14006,9 +14124,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'When Placed, produces oxygen from the carbon dioxide in the air.
+  m_text: 'Takes in planet atmosphere and converts into oxygen.
 
-    Cost: '
+    Cost: 25'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14035,14 +14153,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17
-  m_fontSizeBase: 17
+  m_fontSize: 12.6
+  m_fontSizeBase: 12.6
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -14084,12 +14202,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7257689885726541679}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96e814c900913924da310d7dc3524edc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parentObject: {fileID: 1259342150683797312}
+  build_list: {fileID: 3776924165061104185}
+  build_avail: {fileID: 3128980534324155779}
   info_text: {fileID: 7257689885726541679}
 --- !u!1 &7303813608666858652
 GameObject:
@@ -17363,6 +17483,7 @@ GameObject:
   - component: {fileID: 2888096341737636281}
   - component: {fileID: 4621709367829449117}
   - component: {fileID: 7542235634034560700}
+  - component: {fileID: 6487759123036852960}
   m_Layer: 5
   m_Name: solarInfoTxt
   m_TagString: Untagged
@@ -17386,8 +17507,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 4.4, y: 0}
+  m_SizeDelta: {x: 133.1, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4621709367829449117
 CanvasRenderer:
@@ -17417,7 +17538,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Collects solar energy during the day. Works at 50% capcity during storms.
+  m_text: 'Collects solar energy during the day. Works at 50% capcity during storms.
+    Cost: 40'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17444,14 +17566,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17
-  m_fontSizeBase: 17
+  m_fontSize: 12.8
+  m_fontSizeBase: 12.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -17486,6 +17608,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6487759123036852960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8683720658746456940}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96e814c900913924da310d7dc3524edc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentObject: {fileID: 8816347710939201028}
+  build_list: {fileID: 3776924165061104185}
+  build_avail: {fileID: 3128980534324155779}
+  info_text: {fileID: 8683720658746456940}
 --- !u!1 &8816347710939201028
 GameObject:
   m_ObjectHideFlags: 0
@@ -17498,6 +17636,9 @@ GameObject:
   - component: {fileID: 7843332743325545938}
   - component: {fileID: 1320082864446890422}
   - component: {fileID: 2701686496780453269}
+  - component: {fileID: 7055474170498690555}
+  - component: {fileID: 5132305046409594755}
+  - component: {fileID: 2947319410920982400}
   m_Layer: 5
   m_Name: solarPanelBtn
   m_TagString: Untagged
@@ -17644,6 +17785,78 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7055474170498690555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8816347710939201028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50aab778d90685643bd656ba664f43ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentButton: {fileID: 2701686496780453269}
+  currentPanel: {fileID: 4137696086426108778}
+--- !u!114 &5132305046409594755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8816347710939201028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7055474170498690555}
+          m_TargetAssemblyTypeName: infoHover, Assembly-CSharp
+          m_MethodName: overButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7055474170498690555}
+          m_TargetAssemblyTypeName: infoHover, Assembly-CSharp
+          m_MethodName: exitOverButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &2947319410920982400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8816347710939201028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80f5c59ce592e0449831e65ef283d40e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonIndex: 1
 --- !u!1 &8945876836801234290
 GameObject:
   m_ObjectHideFlags: 0
