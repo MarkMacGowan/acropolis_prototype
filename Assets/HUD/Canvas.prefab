@@ -1243,6 +1243,7 @@ GameObject:
   - component: {fileID: 7765888719392890365}
   - component: {fileID: 1909642527277179109}
   - component: {fileID: 1250590259532077072}
+  - component: {fileID: 3805767097680832251}
   m_Layer: 5
   m_Name: oxygenGenBtn
   m_TagString: Untagged
@@ -1474,6 +1475,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonIndex: 0
   buttonCost: 25
+--- !u!114 &3805767097680832251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259342150683797312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3883c42b62f7bc4facb54141c004ca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main_settle: {fileID: 0}
+  supply_manager: {fileID: 0}
+  button_info: {fileID: 1250590259532077072}
+  button_component: {fileID: 0}
+  currentSupply: 0
+  bPrice: 0
+  isAvailable: 0
 --- !u!1 &1260215377992849812
 GameObject:
   m_ObjectHideFlags: 0
@@ -3371,6 +3391,7 @@ GameObject:
   - component: {fileID: 4205994908690061845}
   - component: {fileID: 6379114093876417095}
   - component: {fileID: 8537495137280323762}
+  - component: {fileID: 2567687742788787642}
   m_Layer: 5
   m_Name: waterExtractorBtn
   m_TagString: Untagged
@@ -3531,6 +3552,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonIndex: 3
   buttonCost: 10
+--- !u!114 &2567687742788787642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2647198699926525170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3883c42b62f7bc4facb54141c004ca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main_settle: {fileID: 0}
+  supply_manager: {fileID: 0}
+  button_info: {fileID: 8537495137280323762}
+  button_component: {fileID: 6379114093876417095}
+  currentSupply: 0
+  bPrice: 0
+  isAvailable: 0
 --- !u!1 &2774890887082965527
 GameObject:
   m_ObjectHideFlags: 0
@@ -7245,6 +7285,7 @@ GameObject:
   - component: {fileID: 3277503050844676775}
   - component: {fileID: 7701657218173148042}
   - component: {fileID: 1802448956270115210}
+  - component: {fileID: 7938140981987168034}
   m_Layer: 5
   m_Name: hydroBtn
   m_TagString: Untagged
@@ -7405,6 +7446,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonIndex: 2
   buttonCost: 25
+--- !u!114 &7938140981987168034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4460166609041383209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3883c42b62f7bc4facb54141c004ca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main_settle: {fileID: 0}
+  supply_manager: {fileID: 0}
+  button_info: {fileID: 1802448956270115210}
+  button_component: {fileID: 7701657218173148042}
+  currentSupply: 0
+  bPrice: 0
+  isAvailable: 0
 --- !u!1 &4490338921345912327
 GameObject:
   m_ObjectHideFlags: 0
@@ -7705,6 +7765,7 @@ GameObject:
   - component: {fileID: 8181947684196232779}
   - component: {fileID: 1429982594535938235}
   - component: {fileID: 5869466209688764733}
+  - component: {fileID: 8794904796904701676}
   m_Layer: 5
   m_Name: landingPadBtn
   m_TagString: Untagged
@@ -7865,6 +7926,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonIndex: 4
   buttonCost: 50
+--- !u!114 &8794904796904701676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4553188425204224764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3883c42b62f7bc4facb54141c004ca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main_settle: {fileID: 0}
+  supply_manager: {fileID: 0}
+  button_info: {fileID: 5869466209688764733}
+  button_component: {fileID: 1429982594535938235}
+  currentSupply: 0
+  bPrice: 0
+  isAvailable: 0
 --- !u!1 &4612567266010218091
 GameObject:
   m_ObjectHideFlags: 0
@@ -17704,6 +17784,7 @@ GameObject:
   - component: {fileID: 7055474170498690555}
   - component: {fileID: 5132305046409594755}
   - component: {fileID: 2947319410920982400}
+  - component: {fileID: 9039811152271244646}
   m_Layer: 5
   m_Name: solarPanelBtn
   m_TagString: Untagged
@@ -17923,6 +18004,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonIndex: 1
   buttonCost: 40
+--- !u!114 &9039811152271244646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8816347710939201028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3883c42b62f7bc4facb54141c004ca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main_settle: {fileID: 0}
+  supply_manager: {fileID: 0}
+  button_info: {fileID: 2947319410920982400}
+  button_component: {fileID: 2701686496780453269}
+  currentSupply: 0
+  bPrice: 0
+  isAvailable: 0
 --- !u!1 &8945876836801234290
 GameObject:
   m_ObjectHideFlags: 0

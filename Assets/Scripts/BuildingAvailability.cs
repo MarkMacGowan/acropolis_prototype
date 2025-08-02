@@ -35,7 +35,11 @@ public class BuildingAvailability : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CompareSupplyPrice();
+        for (int i = 0; i < buttonList.Count; i++)
+        {
+            CompareSupplyPrice(i);
+        }
+        
     }
     public int GetPrice(int indBuild)
     {
@@ -53,13 +57,13 @@ public class BuildingAvailability : MonoBehaviour
     }
 
 
-    private float ReadButton(int i)
-    {
+   // private float ReadButton(int i)
+   // {
 
-        priceButton = buttonList[i].GetComponent < ButtonInfo > ().buttonCost;
-        return priceButton;
-    }
-    private bool CompareSupplyPrice()
+    //    priceButton = buttonList[i].GetComponent < ButtonInfo > ().buttonCost;
+    //    return priceButton;
+    //}
+    private bool CompareSupplyPrice(int count)
     {
         // call method to check supply levels
         float cSupply = CheckCurrentSupply();
@@ -67,13 +71,16 @@ public class BuildingAvailability : MonoBehaviour
         // cycle through each button and retrieve price 
         // compare price to current supply levels
         //Debug.Log("buttonListSize: "+buttonList.Count);
-        for (int counter=0; counter < buttonList.Count; counter++)
-        {
-           button_component = buttonList[counter].GetComponent<Button>();
-            // get price of current button/ building
-           iPriceButton= ReadButton(counter); 
-           Debug.Log("Counter: "+counter);
+       // for (int counter=0; counter < buttonList.Count; counter++)
+       // {
+            button_component = buttonList[count].GetComponent<Button>();
+            iPriceButton= buttonList[count].GetComponent<ButtonInfo>().buttonCost;
+        // get price of current button/ building
+        //iPriceButton= ReadButton(0); 
+        //Debug.Log("Counter: "+counter);
             // compare the price against current supply levels
+         //   Debug.Log("Supply: " + cSupply);
+           // Debug.Log("Cost: " + iPriceButton);
 
             // if the supplyLevel is more than or equal to building cost
            if (  cSupply >=iPriceButton)
@@ -94,7 +101,7 @@ public class BuildingAvailability : MonoBehaviour
                 button_component.interactable.Equals(false);
             }
             
-        }
+        //}
         
         return canAfford;
         
