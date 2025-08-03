@@ -405,17 +405,20 @@ MonoBehaviour:
   buildingOxygen: 0
   maxSolarHealth: 100
   solarHealth: 100
+  healthDecreaseRate: 0.1
+  healthRegenRate: 0.1
   maxSolarEnergy: 2
   minSolarEnergy: 0
   solarEnergy: 0
   energyProduce: 0.19999999
   maxEnergyProduce: 5
   sand_storm: {fileID: 0}
-  healthDecreaseRate: 0.01
   currentBuilding: {fileID: 5253629918390113323}
   parentBuildingObject: {fileID: 2530376025569765705}
   delete_building: {fileID: 0}
   health_text: {fileID: 1411797416523175}
+  weather_spawner: {fileID: 0}
+  world_ref: {fileID: 0}
   isSandStorm: 0
   explosion_fx: {fileID: 765095575743153337}
 --- !u!114 &7867463005311042691

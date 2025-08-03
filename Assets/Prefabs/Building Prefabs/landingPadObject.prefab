@@ -5419,18 +5419,21 @@ MonoBehaviour:
   timeObject: {fileID: 0}
   maxLandingPadHealth: 100
   landingPadHealth: 100
-  healthDecreaseRate: 0.01
+  healthDecreaseRate: 0.1
+  healthRegenRate: 0.1
   maxSuppliesAmount: 100
   suppliesAmount: 0
   sAmount: 0
   suppliesProduce: 0.2
   maxSuppliesProduce: 1
   noLandingPads: 0
-  sand_storm: {fileID: 0}
   currentBuilding: {fileID: 6611454646247491374}
   parentBuildingObject: {fileID: 7664846012860348054}
   delete_building: {fileID: 0}
   health_text: {fileID: 2898954706942450671}
+  weather_spawner: {fileID: 0}
+  world_ref: {fileID: 0}
+  sand_storm: {fileID: 0}
   isSandStorm: 0
   explosion_fx: {fileID: 7269099070404716767}
 --- !u!114 &4756347674203978428

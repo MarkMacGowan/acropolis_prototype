@@ -24,6 +24,7 @@ TagManager:
   - costMan
   - overCast
   - sandstorm2
+  - weatherSpawn
   layers:
   - Default
   - TransparentFX

@@ -9,7 +9,7 @@ public class hydroPonicsBehavior : BuildingBehavior
     public float maxHydroponicHealth = 100f;
     public float hydroponicHealth = 100f;
     public float healthDecreaseRate = 0.01f;
-
+    public float healthRegenRate = 0.1f;
 
     public float maxFoodAmount = 100f;
     public float foodAmount;
@@ -30,7 +30,10 @@ public class hydroPonicsBehavior : BuildingBehavior
     [SerializeField] private GameObject health_text;
 
     // environmental concerns
-    public bool isSandStorm = false;
+    //public bool isSandStorm = false;
+
+    [SerializeField] private GameObject weather_spawner;
+    [SerializeField] private WorldReferences world_ref;
     [SerializeField] public GameObject sand_storm;
 
     // particle concerns
@@ -47,12 +50,15 @@ public class hydroPonicsBehavior : BuildingBehavior
     {
         foodAmount = foodAmount + foodProduce;
 
-        sand_storm = GameObject.FindWithTag("sandstorm2");
+        weather_spawner = GameObject.FindWithTag("weatherSpawn");
 
-        isSandStorm = sand_storm.activeInHierarchy;
-       // Debug.Log("Sandstorm Present: " + isSandStorm);
-     //   Debug.Log("Oxygen Processor Health: " + hydroponicHealth);
-        HealthDecrease(isSandStorm);
+        world_ref = weather_spawner.GetComponent<WorldReferences>();
+        //sand_storm = GameObject.FindWithTag("sandstorm2");
+
+        //isSandStorm = sand_storm.activeInHierarchy;
+        // Debug.Log("Sandstorm Present: " + isSandStorm);
+        //   Debug.Log("Oxygen Processor Health: " + hydroponicHealth);
+        HealthCalculate();
 
         if (foodProduce > maxFoodProduce)
         {
@@ -66,11 +72,11 @@ public class hydroPonicsBehavior : BuildingBehavior
         }
     }
 
-    public void HealthDecrease(bool sStorm)
+    public void HealthCalculate()
     {
 
 
-        if (sStorm == true)
+        if (world_ref.sStorm.activeInHierarchy)
         {
             Debug.Log("Sandstorm!");
             hydroponicHealth -= healthDecreaseRate;
@@ -80,6 +86,16 @@ public class hydroPonicsBehavior : BuildingBehavior
                 StartExplosion();
             }
 
+
+        }
+        else
+
+        {
+            //  Debug.Log("Clear Skies");
+            if (hydroponicHealth < maxHydroponicHealth)
+            {
+                hydroponicHealth += healthRegenRate;
+            }
 
         }
     }

@@ -39,18 +39,18 @@ public class MainSettlementBehavior : MonoBehaviour
 
         if (sStorm)
         {
-            Debug.Log("Sandstorm!");
+            //Debug.Log("Sandstorm!");
             settlementHealth -= healthDecreaseRate;
             if (settlementHealth <= 0)
             {
-                Debug.Log("Health is 0");
+               // Debug.Log("Health is 0");
                 StartExplosion();
             }
         }else  
 
         {
-            Debug.Log("Clear Skies");
-            if (settlementHealth<maxSettlementHealth)
+           // Debug.Log("Clear Skies");
+            if (settlementHealth < maxSettlementHealth)
             {
                 settlementHealth += healthRegenRate;
             }

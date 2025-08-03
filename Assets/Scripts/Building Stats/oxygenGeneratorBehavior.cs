@@ -7,7 +7,7 @@ public class oxygenGeneratorBehavior : BuildingBehavior
     [SerializeField] public GameObject main_dome;
     private float mainDomeEnergy;
 
-    [SerializeField] public GameObject sand_storm;
+    
 
     [SerializeField] private GameObject currentBuilding;
     [SerializeField] private GameObject parentBuildingObject;
@@ -16,7 +16,8 @@ public class oxygenGeneratorBehavior : BuildingBehavior
     // health stat of oxygenGenerator 
     public float maxOxygenGenHealth=100f;
     public float oxygenGenHealth = 100f;
-    public float healthDecreaseRate = 0.01f;
+    public float healthDecreaseRate = 0.1f;
+    public float healthRegenRate = 0.1f;
 
 
     // oxygen produced
@@ -34,7 +35,11 @@ public class oxygenGeneratorBehavior : BuildingBehavior
     public bool isMainDomeEnergy = true;
 
     // environmental concerns
-    public bool isSandStorm = false;
+
+    [SerializeField] private GameObject weather_spawner;
+    [SerializeField] private WorldReferences world_ref;
+    [SerializeField] public GameObject sand_storm;
+    //public bool isSandStorm = false;
 
     // particle concerns
     [SerializeField] private GameObject explosion_fx;
@@ -54,12 +59,14 @@ public class oxygenGeneratorBehavior : BuildingBehavior
         mainDomeEnergy = main_dome.gameObject.GetComponent<energyManager>().energyLevel;
         oxygenAmount = oxygenAmount + oxygenProduce;
 
-        sand_storm = GameObject.FindWithTag("sandstorm2");
+        //sand_storm = GameObject.FindWithTag("sandstorm2");
+        weather_spawner = GameObject.FindWithTag("weatherSpawn");
 
-        isSandStorm = sand_storm.activeInHierarchy;
-     //   Debug.Log("Sandstorm Present: " + isSandStorm);
-     //   Debug.Log("Oxygen Processor Health: " + oxygenGenHealth);
-        HealthDecrease(isSandStorm);
+        world_ref = weather_spawner.GetComponent<WorldReferences>();
+        //isSandStorm = sand_storm.activeInHierarchy;
+        //   Debug.Log("Sandstorm Present: " + isSandStorm);
+        //   Debug.Log("Oxygen Processor Health: " + oxygenGenHealth);
+        HealthCalculate();
         if (oxygenProduce > maxOxygenProduce)
         {
             oxygenProduce = maxOxygenProduce;
@@ -73,11 +80,11 @@ public class oxygenGeneratorBehavior : BuildingBehavior
         
     }
 
-    public void HealthDecrease(bool sStorm)
+    public void HealthCalculate()
     {
         
         
-        if (sStorm==true)
+        if (world_ref.sStorm.activeInHierarchy)
         {
             Debug.Log("Sandstorm!");
             oxygenGenHealth -= healthDecreaseRate;
@@ -86,6 +93,16 @@ public class oxygenGeneratorBehavior : BuildingBehavior
                 Debug.Log("Health is 0");
                 StartExplosion();
             }
+        }
+        else
+
+        {
+            //  Debug.Log("Clear Skies");
+            if (oxygenGenHealth < maxOxygenGenHealth)
+            {
+                oxygenGenHealth += healthRegenRate;
+            }
+
         }
     }
 

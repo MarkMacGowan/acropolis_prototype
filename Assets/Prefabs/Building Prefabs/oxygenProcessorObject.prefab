@@ -724,20 +724,22 @@ MonoBehaviour:
   buildingEnergy: 0
   buildingOxygen: 0
   main_dome: {fileID: 0}
-  sand_storm: {fileID: 0}
   currentBuilding: {fileID: 5620976875869622300}
   parentBuildingObject: {fileID: 7552675154432731717}
   delete_building: {fileID: 0}
   health_text: {fileID: 2323207210363730636}
   maxOxygenGenHealth: 100
   oxygenGenHealth: 100
-  healthDecreaseRate: 0.01
+  healthDecreaseRate: 0.1
+  healthRegenRate: 0.1
   maxOxygenAmount: 100
   oxygenAmount: 0
   oxygenProduce: 0.2
   maxOxygenProduce: 1
   isMainDomeEnergy: 1
-  isSandStorm: 0
+  weather_spawner: {fileID: 0}
+  world_ref: {fileID: 0}
+  sand_storm: {fileID: 0}
   explosion_fx: {fileID: 6748551676637809850}
 --- !u!114 &2520436321164527189
 MonoBehaviour:

@@ -555,9 +555,10 @@ GameObject:
   m_Component:
   - component: {fileID: 332212592}
   - component: {fileID: 332212593}
+  - component: {fileID: 332212594}
   m_Layer: 0
   m_Name: weatherSpawner
-  m_TagString: Untagged
+  m_TagString: weatherSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -595,6 +596,19 @@ MonoBehaviour:
   timePassed: 0
   intervalTime: 10
   weatherDuration: 10
+--- !u!114 &332212594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332212591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d50931f1b4ffa034eb7e3a9abd4694b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sStorm: {fileID: 1561418948}
 --- !u!1 &368663980 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: de2847d9db729f3449fbc5a3852095d2, type: 3}
@@ -828,17 +842,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368663980}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ccef70a3ad1f7a742ae996e4114369ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sand_storm: {fileID: 0}
+  sand_storm: {fileID: 1561418948}
   currentBuilding: {fileID: 368663980}
   maxSettlementHealth: 100
   settlementHealth: 100
   healthDecreaseRate: 0.1
-  isSandStorm: 0
+  healthRegenRate: 0.1
   explosion_fx: {fileID: 2147414000}
   destroyTiming: 0.5
 --- !u!114 &368664021

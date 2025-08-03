@@ -13,8 +13,8 @@ public class landingPadBehavior : BuildingBehavior
    // private float sunRotateZ;
     public float maxLandingPadHealth = 100f;
     public float landingPadHealth = 100f;
-    public float healthDecreaseRate = 0.01f;
-
+    public float healthDecreaseRate = 0.1f;
+    public float healthRegenRate = 0.1f;
 
     public float maxSuppliesAmount = 100f;
     public float suppliesAmount;
@@ -27,7 +27,6 @@ public class landingPadBehavior : BuildingBehavior
     public int noLandingPads;
 
 
-    [SerializeField] public GameObject sand_storm;
     
 
     [SerializeField] private GameObject currentBuilding;
@@ -37,6 +36,12 @@ public class landingPadBehavior : BuildingBehavior
 
 
     // environmental concerns
+    [SerializeField] private GameObject weather_spawner;
+    [SerializeField] private WorldReferences world_ref;
+    [SerializeField] public GameObject sand_storm;
+
+
+
     public bool isSandStorm = false;
 
     // particle concerns
@@ -56,13 +61,15 @@ public class landingPadBehavior : BuildingBehavior
    
     void Update()
     {
+        weather_spawner = GameObject.FindWithTag("weatherSpawn");
 
-        sand_storm = GameObject.FindWithTag("sandstorm2");
+        world_ref = weather_spawner.GetComponent<WorldReferences>();
+        //sand_storm = GameObject.FindWithTag("sandstorm2");
 
-        isSandStorm = sand_storm.activeInHierarchy;
+        // isSandStorm = sand_storm.activeInHierarchy;
         //Debug.Log("Sandstorm Present: " + isSandStorm);
-       // Debug.Log("Oxygen Processor Health: " + landingPadHealth);
-        HealthDecrease(isSandStorm);
+        // Debug.Log("Oxygen Processor Health: " + landingPadHealth);
+        HealthCalculate();
         // suppliesAmount = suppliesAmount + suppliesProduce;
 
         //if (sAmount> maxSuppliesAmount)
@@ -107,11 +114,11 @@ public class landingPadBehavior : BuildingBehavior
         return suppliesAmount;
     }
 
-    public void HealthDecrease(bool sStorm)
+    public void HealthCalculate()
     {
 
 
-        if (sStorm == true)
+        if (world_ref.sStorm.activeInHierarchy)
         {
             Debug.Log("Sandstorm!");
             landingPadHealth -= healthDecreaseRate;
@@ -123,6 +130,21 @@ public class landingPadBehavior : BuildingBehavior
 
 
         }
+        else
+
+        {
+            //  Debug.Log("Clear Skies");
+            if (landingPadHealth < maxLandingPadHealth)
+            {
+                landingPadHealth += healthRegenRate;
+            }
+
+        }
+
+
+
+
+
     }
 
 
