@@ -11,9 +11,9 @@ public class MainSettlementBehavior : MonoBehaviour
     public float maxSettlementHealth = 100f;
     public float settlementHealth = 100f;
     public float healthDecreaseRate = 0.01f;
+    public float healthRegenRate =0.1f;
 
-    // environmental concerns
-    public bool isSandStorm = false;
+ 
 
     // particle concerns
     [SerializeField] private GameObject explosion_fx;
@@ -27,16 +27,17 @@ public class MainSettlementBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        sand_storm = GameObject.FindWithTag("sandstorm2");
-        isSandStorm = sand_storm.activeInHierarchy;
-        HealthDecrease(isSandStorm);
+        //sand_storm = GameObject.FindWithTag("sandstorm2");
+        bool isSandStorm = sand_storm.activeInHierarchy;
+        HealthCalculate(isSandStorm);
+        //HealthRegen(isSandStorm);
     }
 
-    public void HealthDecrease(bool sStorm)
+    public void HealthCalculate(bool sStorm)
     {
 
 
-        if (sStorm == true)
+        if (sStorm)
         {
             Debug.Log("Sandstorm!");
             settlementHealth -= healthDecreaseRate;
@@ -45,6 +46,15 @@ public class MainSettlementBehavior : MonoBehaviour
                 Debug.Log("Health is 0");
                 StartExplosion();
             }
+        }else  
+
+        {
+            Debug.Log("Clear Skies");
+            if (settlementHealth<maxSettlementHealth)
+            {
+                settlementHealth += healthRegenRate;
+            }
+            
         }
     }
 
@@ -64,4 +74,17 @@ public class MainSettlementBehavior : MonoBehaviour
         Object.Destroy(currentBuilding,destroyTiming);
         //Object.Destroy(parentBuildingObject, 3);
     }
+
+    //private void HealthRegen(bool sStorm)
+    //{
+    //    //Debug.Log("HealthRegen");
+    //    if (sStorm == false)
+    //    {
+    //        Debug.Log("No Storm");
+    //        Debug.Log("Sandstorm ended!");
+            
+            
+       
+    //    }
+    //}
 }
