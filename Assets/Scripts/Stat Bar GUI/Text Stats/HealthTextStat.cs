@@ -11,6 +11,7 @@ public class HealthTextStat : MonoBehaviour
     public string healthCon;
 
     [SerializeField] private healthManager health_manager;
+    [SerializeField] private MainSettlementBehavior settlement_behavior;
     [SerializeField] private GameObject health_txt;
     
     void Start()
@@ -21,7 +22,8 @@ public class HealthTextStat : MonoBehaviour
     
     private void HealthCheck()
     {
-        health = (int)health_manager.healthInfo();
+        //health = (int)health_manager.healthInfo();
+        health = (int)settlement_behavior.settlementHealth;
         healthCon = health.ToString();
         health_txt.GetComponent<TMPro.TextMeshProUGUI>().text = healthCon;
     }
