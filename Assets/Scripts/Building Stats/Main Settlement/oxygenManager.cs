@@ -86,7 +86,7 @@ public class oxygenManager : MonoBehaviour
 
     private float CalculateOxygenConsumption()
     {
-        acropolisOxygenConsumption = 0.07f;
+        acropolisOxygenConsumption = 0.01f;
 
         oxygenConsumption = acropolisOxygenConsumption;
         return oxygenConsumption;

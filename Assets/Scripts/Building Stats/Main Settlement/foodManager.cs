@@ -88,7 +88,7 @@ public class foodManager : MonoBehaviour
 
     private float CalculateFoodConsumption()
     {
-        acropolisFoodConsumption = 0.1f;
+        acropolisFoodConsumption = 0.01f;
 
         foodConsumption = acropolisFoodConsumption;
         return foodConsumption;
