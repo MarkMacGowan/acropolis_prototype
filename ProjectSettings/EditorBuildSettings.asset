@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/planetP102-1region1.unity
     guid: 36626cac45af4ac48893cc7f6aea6324
+  - enabled: 1
+    path: Assets/Scenes/gameOverScreen.unity
+    guid: 9d1909dda02ea3d49a71169cc1b2e60f
   m_configObjects: {}

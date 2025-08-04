@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StatsMonitor : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class StatsMonitor : MonoBehaviour
     [SerializeField] private waterManager water_manager;
     [SerializeField] private oxygenManager oxygen_manager;
     [SerializeField] private energyManager energy_manager;
+
+    [SerializeField] private Scene game_over_screen;
+    [SerializeField] private sceneLoader scene_loader;
 
 
     public float foodLevel;
@@ -102,20 +106,38 @@ public class StatsMonitor : MonoBehaviour
         // check food levels
         if (foodLevel==0)
         {
-           // Debug.Log("Water levels are 0");
-            specificPanel = game_overStorage.panelList[0];
-           // GameOver(specificPanel,heads_up_display,game_info_panel);
+            // Debug.Log("Water levels are 0");
+            //  specificPanel = game_overStorage.panelList[0];
+            //GameOver(specificPanel,heads_up_display,game_info_panel);
+            GameOver();
         }
-
+        if (waterLevel == 0)
+        {
+            // Debug.Log("Water levels are 0");
+            // specificPanel = game_overStorage.panelList[0];
+            // GameOver(specificPanel, heads_up_display, game_info_panel);
+            GameOver();
+        }
+        if (oxygenLevel == 0)
+        {
+            // Debug.Log("Water levels are 0");
+            // specificPanel = game_overStorage.panelList[0];
+            // GameOver(specificPanel, heads_up_display, game_info_panel);
+            GameOver();
+        }
 
     }
-    private void GameOver(GameObject chosenPanel,GameObject hDisplay,GameObject gInfo)
+    private void GameOver()
     {
-        hDisplay.SetActive(false);
-        chosenPanel.SetActive(true);
-        if (game_info_panel.activeInHierarchy)
-        {
-            game_info_panel.SetActive(false);
-        }
+        SceneManager.LoadScene(2);
+       // hDisplay.SetActive(false);
+        //chosenPanel.SetActive(true);
+        //Time.timeScale = (Time.timeScale == 0f) ? 1f : 0f;
+       // Debug.Log("Time Scale: " + Time.timeScale);
+        //if (game_info_panel.activeInHierarchy)
+        //{
+        //    game_info_panel.SetActive(false);
+            
+        //}
     }
 }
