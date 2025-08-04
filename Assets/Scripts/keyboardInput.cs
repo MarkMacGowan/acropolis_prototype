@@ -87,7 +87,7 @@ public class keyboardInput : MonoBehaviour
                 if (!bInterSect)
                 {
                     bCost = gameObject.GetComponent<BuildingBehavior>().buildCost;
-                //    Debug.Log("Building Cost: "+bCost);
+                    Debug.Log("Building Cost: "+bCost);
                     placeBuilding();
                     exitMenu();
                     //bCost = cost_managment_object.GetComponent<costManagment>().buildingCost;

@@ -76,7 +76,7 @@ public class foodManager : MonoBehaviour
         //    foodLevel = 0;
         //}
         //foodLevel-=f
-        Debug.Log("FoodLevel: " + foodLevel);
+        //Debug.Log("FoodLevel: " + foodLevel);
         return foodLevel;
     }
 

@@ -60,7 +60,7 @@ public class waterManager : MonoBehaviour
 
 
 
-        Debug.Log("WaterLevel: "+waterLevel);
+        //Debug.Log("WaterLevel: "+waterLevel);
         return waterLevel;
     }
     private float CalculateWaterConsumption()
