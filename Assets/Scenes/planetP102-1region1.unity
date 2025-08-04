@@ -739,8 +739,8 @@ MonoBehaviour:
   weather:
   - {fileID: 1561418948}
   timePassed: 0
-  intervalTime: 60
-  weatherDuration: 10
+  intervalTime: 20
+  weatherDuration: 17
 --- !u!114 &332212594
 MonoBehaviour:
   m_ObjectHideFlags: 0

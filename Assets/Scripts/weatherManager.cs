@@ -13,10 +13,10 @@ public class weatherManager : MonoBehaviour
     void Start()
     {
         //startTime = 10f;
-        intervalTime = 10f;
+        intervalTime = 20f;
 
 
-        weatherDuration = 10f;
+        weatherDuration = 17f;
 
 
         InvokeRepeating("TimeMeasure",0f,1f);
