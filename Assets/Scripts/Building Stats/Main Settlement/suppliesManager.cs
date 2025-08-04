@@ -54,7 +54,8 @@ public class suppliesManager : MonoBehaviour
 
     private void Start()
     {
-       // fSupply = 200f;
+        // fSupply = 200f;
+        supplyLevel = 200f;
     }
     private void Update()
     {

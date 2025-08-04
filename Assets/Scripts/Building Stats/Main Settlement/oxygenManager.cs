@@ -6,7 +6,7 @@ public class oxygenManager : MonoBehaviour
 {
     // OXYGEN
     // oxygen level of mainDome
-    public float oxygenLevel = 0;
+    public float oxygenLevel;
     // maximum oxygen level of mainDome
     private float maxOxygenLevel = 100f;
     // minimum oxygen level of mainDome
@@ -36,7 +36,7 @@ public class oxygenManager : MonoBehaviour
 
     void Start()
     {
-
+        oxygenLevel = 100f;
     }
 
     // Update is called once per frame

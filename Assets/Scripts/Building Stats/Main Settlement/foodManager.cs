@@ -6,7 +6,7 @@ public class foodManager : MonoBehaviour
 {
     // FOOD
     // food level of mainDome
-    public float foodLevel=0;
+    public float foodLevel;
     // maximum food level of mainDome
     private float maxFoodLevel=100f;
     // minimum food level of mainDome
@@ -32,7 +32,7 @@ public class foodManager : MonoBehaviour
     private float foodDeficit;
     void Start()
     {
-
+        foodLevel = 50f;
     }
 
     // Update is called once per frame

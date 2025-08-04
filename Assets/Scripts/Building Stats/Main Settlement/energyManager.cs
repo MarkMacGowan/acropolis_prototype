@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class energyManager : MonoBehaviour
 {
-    public float energyLevel = 0;
+    public float energyLevel;
     public float finalEnergyLevel;
     // maximum energy level of mainDome
     private float maxEnergyLevel = 100f;
@@ -50,7 +50,7 @@ public class energyManager : MonoBehaviour
 
     void Start()
     {
-
+        energyLevel = 100f;
     }
 
     // Update is called once per frame

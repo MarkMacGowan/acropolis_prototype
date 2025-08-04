@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class waterManager : MonoBehaviour
 {
-    public float waterLevel = 0;
+    public float waterLevel;
     private float maxWaterLevel = 100f;
     //private float minWaterLevel = 0f;
     private float waterProductRate;
@@ -24,7 +24,7 @@ public class waterManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        waterLevel = 100f;
     }
 
     // Update is called once per frame
