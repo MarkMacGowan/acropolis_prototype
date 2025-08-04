@@ -25,6 +25,10 @@ TagManager:
   - overCast
   - sandstorm2
   - weatherSpawn
+  - gameOverFood
+  - gameOverWater
+  - gameOverOxygen
+  - gameOverEnergy
   layers:
   - Default
   - TransparentFX

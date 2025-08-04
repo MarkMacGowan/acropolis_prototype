@@ -78,11 +78,11 @@ public class hydroPonicsBehavior : BuildingBehavior
 
         if (world_ref.sStorm.activeInHierarchy)
         {
-            Debug.Log("Sandstorm!");
+          //  Debug.Log("Sandstorm!");
             hydroponicHealth -= healthDecreaseRate;
             if (hydroponicHealth <= 0)
             {
-                Debug.Log("Health is 0");
+           //     Debug.Log("Health is 0");
                 StartExplosion();
             }
 

@@ -86,11 +86,11 @@ public class oxygenGeneratorBehavior : BuildingBehavior
         
         if (world_ref.sStorm.activeInHierarchy)
         {
-            Debug.Log("Sandstorm!");
+            //Debug.Log("Sandstorm!");
             oxygenGenHealth -= healthDecreaseRate;
             if (oxygenGenHealth <= 0)
             {
-                Debug.Log("Health is 0");
+            //    Debug.Log("Health is 0");
                 StartExplosion();
             }
         }

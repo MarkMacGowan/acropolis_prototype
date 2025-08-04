@@ -120,11 +120,11 @@ public class landingPadBehavior : BuildingBehavior
 
         if (world_ref.sStorm.activeInHierarchy)
         {
-            Debug.Log("Sandstorm!");
+           // Debug.Log("Sandstorm!");
             landingPadHealth -= healthDecreaseRate;
             if (landingPadHealth <= 0)
             {
-                Debug.Log("Health is 0");
+               // Debug.Log("Health is 0");
                 StartExplosion();
             }
 

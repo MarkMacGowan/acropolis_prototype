@@ -867,7 +867,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aea8240dc73acf24a9ede3ae001fa0b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heads_up_display: {fileID: 1066748089}
   game_over_object: {fileID: 191782503716639574}
+  game_overStorage: {fileID: 191782503716639577}
   food_manager: {fileID: 368664002}
   water_manager: {fileID: 368664006}
   oxygen_manager: {fileID: 368664000}
@@ -6459,6 +6461,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8571925453289997733, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
   m_PrefabInstance: {fileID: 191782503716639573}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1066748089 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 879516394734147115, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
+  m_PrefabInstance: {fileID: 191782503716639573}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1120925633 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4553188425204224764, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
@@ -8410,6 +8417,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 942200115364942769, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
+      propertyPath: m_TagString
+      value: gameOverOxygen
+      objectReference: {fileID: 0}
     - target: {fileID: 1006668828038137183, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
       propertyPath: mSettlement
       value: 
@@ -9046,6 +9057,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3293850237657589531, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293850237657589531, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
+      propertyPath: m_TagString
+      value: gameOverEnergy
+      objectReference: {fileID: 0}
     - target: {fileID: 3384688441184356760, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
       propertyPath: energy_txt
       value: 
@@ -9206,9 +9225,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4659211181022528523, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
+      propertyPath: m_TagString
+      value: gameOverWater
+      objectReference: {fileID: 0}
     - target: {fileID: 4805160458874221072, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901295979893967116, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
+      propertyPath: m_TagString
+      value: gameOverFood
       objectReference: {fileID: 0}
     - target: {fileID: 4986745558238059815, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
       propertyPath: m_SizeDelta.x
@@ -10215,6 +10242,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8816347710939201028, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
   m_PrefabInstance: {fileID: 191782503716639573}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &191782503716639577 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4354583223077873989, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
+  m_PrefabInstance: {fileID: 191782503716639573}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191782503716639574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cbdb3b3e49e27641bf3a50f3f0c102f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3983522934064895861
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class oxygenManager : MonoBehaviour
     // oxygen level of mainDome
     public float oxygenLevel = 0;
     // maximum oxygen level of mainDome
-    private float maxOxygenLevel = 1000f;
+    private float maxOxygenLevel = 100f;
     // minimum oxygen level of mainDome
     // private float minOxygenLevel = 0f;
     // rate at which oxygenLevel regenerates
