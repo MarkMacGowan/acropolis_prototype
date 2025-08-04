@@ -48,7 +48,16 @@ public class energyManager : MonoBehaviour
     public float energyPlusMinus;
     public float solar_produce;
 
+    void Start()
+    {
 
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
     public float energyInfo()
     {   
         solar_pan = GameObject.FindWithTag("solarPan");

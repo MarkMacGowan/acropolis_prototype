@@ -788,7 +788,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: e355847f4fc79a14fa5192c4bdcb8aad, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -972,6 +972,7 @@ MonoBehaviour:
   maxHydroponicHealth: 100
   hydroponicHealth: 100
   healthDecreaseRate: 0.1
+  healthRegenRate: 0.1
   maxFoodAmount: 100
   foodAmount: 0
   foodProduce: 0.2
@@ -981,7 +982,8 @@ MonoBehaviour:
   parentBuildingObject: {fileID: 7568134987311285139}
   delete_building: {fileID: 0}
   health_text: {fileID: 8765018784801060145}
-  isSandStorm: 0
+  weather_spawner: {fileID: 0}
+  world_ref: {fileID: 0}
   sand_storm: {fileID: 0}
   explosion_fx: {fileID: 6154744163087610116}
 --- !u!114 &3168140746886869264

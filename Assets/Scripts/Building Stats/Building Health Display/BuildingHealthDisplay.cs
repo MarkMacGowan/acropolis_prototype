@@ -26,7 +26,7 @@ public class BuildingHealthDisplay : MonoBehaviour
     {
         health = oxygen_gen_behaviour.oxygenGenHealth;       
         healthCon = health.ToString();
-        health_txt.GetComponent<TMPro.TextMeshProUGUI>().text = healthCon;
+        health_txt.GetComponent<TMPro.TextMeshProUGUI>().text = healthCon+"%";
  
     }
 }

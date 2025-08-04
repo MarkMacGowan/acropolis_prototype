@@ -18,7 +18,7 @@ public class waterStatBar : MonoBehaviour
 
     void Update()
     {
-        water = water_manager.waterInfo();
+        water = water_manager.waterLevel;
         if (waterSlider.value != water)
         {
             waterSlider.value = water;

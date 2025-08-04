@@ -23,9 +23,9 @@ public class landingPadHealthDisplay : MonoBehaviour
 
     private void HealthCheck()
     {
-        health = landingpad_behaviour.landingPadHealth;
+        health = Mathf.Round(landingpad_behaviour.landingPadHealth*100f)*0.01f;
         healthCon = health.ToString();
-        health_txt.GetComponent<TMPro.TextMeshProUGUI>().text = healthCon;
+        health_txt.GetComponent<TMPro.TextMeshProUGUI>().text = healthCon+"%";
 
     }
 }

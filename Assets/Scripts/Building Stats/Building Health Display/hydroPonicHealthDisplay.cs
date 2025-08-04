@@ -25,9 +25,9 @@ public class hydroPonicHealthDisplay : MonoBehaviour
 
     private void HealthCheck()
     {
-        health = hydroponic_behavior.hydroponicHealth;
+        health = Mathf.Round( hydroponic_behavior.hydroponicHealth*100f)*0.01f;
         healthCon = health.ToString();
-        health_txt.GetComponent<TMPro.TextMeshProUGUI>().text = healthCon;
+        health_txt.GetComponent<TMPro.TextMeshProUGUI>().text = healthCon+"%";
 
     }
 

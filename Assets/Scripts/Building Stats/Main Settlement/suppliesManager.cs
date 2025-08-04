@@ -118,7 +118,7 @@ public class suppliesManager : MonoBehaviour
 
         //}
         fSupply = supplyLevel;
-     
+        fSupply = Mathf.Clamp(fSupply,0,maxFSupply);
         return fSupply;
     }
     //method to gather incoming supply levels from all landing pads

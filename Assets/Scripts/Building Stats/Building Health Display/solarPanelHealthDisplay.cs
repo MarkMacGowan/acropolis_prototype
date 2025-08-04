@@ -23,8 +23,8 @@ public class solarPanelHealthDisplay : MonoBehaviour
 
     private void HealthCheck()
     {
-        health = solar_panel_behavior.solarHealth;
+        health = Mathf.Round(solar_panel_behavior.solarHealth*100f)*0.01f;
         healthCon = health.ToString();
-        health_txt.GetComponent<TMPro.TextMeshProUGUI>().text = healthCon;
+        health_txt.GetComponent<TMPro.TextMeshProUGUI>().text = healthCon+"%";
     }
 }

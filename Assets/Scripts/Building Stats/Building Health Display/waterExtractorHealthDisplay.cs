@@ -23,9 +23,9 @@ public class waterExtractorHealthDisplay : MonoBehaviour
 
     private void HealthCheck()
     {
-        health = waterextractor_behavior.waterExtractorHealth;
+        health = Mathf.Round(waterextractor_behavior.waterExtractorHealth*100f)*0.01f;
         healthCon = health.ToString();
-        health_txt.GetComponent<TMPro.TextMeshProUGUI>().text = healthCon;
+        health_txt.GetComponent<TMPro.TextMeshProUGUI>().text = healthCon+"%";
 
     }
 }

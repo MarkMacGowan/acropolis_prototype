@@ -2147,8 +2147,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8564,7 +8564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3281795255983667207
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8580,10 +8580,10 @@ RectTransform:
   - {fileID: 69634851069449883}
   m_Father: {fileID: 2779596676939463552}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 142.98502, y: -40.195}
+  m_SizeDelta: {x: 265.7, y: 70.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1712261062818766401
 CanvasRenderer:
@@ -9032,7 +9032,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 265.7, y: 70.6}
+  m_CellSize: {x: 334.43, y: 70.6}
   m_Spacing: {x: 5.1, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 5
@@ -9640,7 +9640,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6384165825466602567
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9657,10 +9657,10 @@ RectTransform:
   - {fileID: 1277324448103070504}
   m_Father: {fileID: 8328579777368473389}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 863.2, y: -42.7}
+  m_SizeDelta: {x: 189.3, y: 82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7551305022787719231
 CanvasRenderer:
@@ -20394,10 +20394,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2624952637553135803}
-  - {fileID: 7250364833237386893}
   - {fileID: 3808439600415126909}
   - {fileID: 8115018635588389577}
+  - {fileID: 2624952637553135803}
+  - {fileID: 7250364833237386893}
   - {fileID: 6384165825466602567}
   - {fileID: 2291659810704426885}
   - {fileID: 4410906295214658095}
@@ -20469,7 +20469,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 189.3, y: 82}
+  m_CellSize: {x: 218.8, y: 82}
   m_Spacing: {x: 2.9, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 9

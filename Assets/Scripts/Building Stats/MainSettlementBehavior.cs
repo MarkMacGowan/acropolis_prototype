@@ -29,7 +29,7 @@ public class MainSettlementBehavior : MonoBehaviour
     {
         //sand_storm = GameObject.FindWithTag("sandstorm2");
         bool isSandStorm = sand_storm.activeInHierarchy;
-        HealthCalculate(isSandStorm);
+       // HealthCalculate(isSandStorm);
         //HealthRegen(isSandStorm);
     }
 

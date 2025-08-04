@@ -24,9 +24,9 @@ public class oxygenProcessorHealthDisplay : MonoBehaviour
 
     private void HealthCheck()
     {
-        health = oxygen_gen_behaviour.oxygenGenHealth;
+        health = Mathf.Round(oxygen_gen_behaviour.oxygenGenHealth*100f)*0.01f;
         healthCon = health.ToString();
-        health_txt.GetComponent<TMPro.TextMeshProUGUI>().text = healthCon;
+        health_txt.GetComponent<TMPro.TextMeshProUGUI>().text = healthCon+"%";
 
     }
 

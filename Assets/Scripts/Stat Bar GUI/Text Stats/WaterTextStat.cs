@@ -21,7 +21,7 @@ public class WaterTextStat : MonoBehaviour
 
     private void WaterCheck()
     {
-        water = (int)water_manager.waterInfo();
+        water = (int)water_manager.waterLevel;
         waterCon = water.ToString();
         water_txt.GetComponent<TMPro.TextMeshProUGUI>().text = waterCon;
     }

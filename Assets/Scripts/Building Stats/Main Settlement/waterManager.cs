@@ -14,7 +14,13 @@ public class waterManager : MonoBehaviour
     private GameObject water_extractor;
 
     private float totWaterAmount;
-    
+
+
+    private float acropolisWaterConsumption;
+    private float waterConsumption;
+    private float tot_water_produce;
+    private float waterDeficit;
+    private float waterPlusMinus;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,15 +35,39 @@ public class waterManager : MonoBehaviour
 
     public float waterInfo()
     {
-        water_extractor = GameObject.FindWithTag("waterExtract");
-        totWaterAmount = water_extractor.GetComponent<waterExtractorBehavior>().waterAmount;
-        noWaterExtractors = GameObject.FindGameObjectsWithTag("waterExtract").Length;
-        waterProductRate = totWaterAmount;
-        waterLevel = waterLevel + waterProductRate;
-        if (waterLevel>maxWaterLevel)
+        GameObject[] waterExtractorList = GameObject.FindGameObjectsWithTag("waterExtract");
+        //water_extractor = GameObject.FindWithTag("waterExtract");
+
+        tot_water_produce = 0f;
+        foreach (GameObject waterEx in waterExtractorList)
         {
-            waterLevel = maxWaterLevel;
+            if (waterEx!=null)
+            {
+                waterExtractorBehavior wBehavior = waterEx.GetComponent<waterExtractorBehavior>();
+                if (wBehavior != null)
+                {
+                    tot_water_produce += wBehavior.waterProduce;
+                }
+            }
         }
+        noWaterExtractors = waterExtractorList.Length;
+
+        waterDeficit = CalculateWaterConsumption();
+        waterPlusMinus = tot_water_produce - waterDeficit;
+
+        waterLevel += waterPlusMinus;
+        waterLevel = Mathf.Clamp(waterLevel, 0, maxWaterLevel);
+
+
+
+        Debug.Log("WaterLevel: "+waterLevel);
         return waterLevel;
+    }
+    private float CalculateWaterConsumption()
+    {
+        acropolisWaterConsumption = 0.1f;
+
+        waterConsumption = acropolisWaterConsumption;
+        return waterConsumption;
     }
 }

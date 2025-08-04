@@ -868,6 +868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heads_up_display: {fileID: 1066748089}
+  game_info_panel: {fileID: 0}
   game_over_object: {fileID: 191782503716639574}
   game_overStorage: {fileID: 191782503716639577}
   food_manager: {fileID: 368664002}
@@ -8329,6 +8330,14 @@ PrefabInstance:
       propertyPath: main_settlement
       value: 
       objectReference: {fileID: 368663980}
+    - target: {fileID: 359419249877620877, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 89.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 359419249877620877, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 280
+      objectReference: {fileID: 0}
     - target: {fileID: 459934583858902519, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -8955,11 +8964,11 @@ PrefabInstance:
       objectReference: {fileID: 635884206}
     - target: {fileID: 3077963160351234564, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
       propertyPath: m_fontSize
-      value: 18.5
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3077963160351234564, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
       propertyPath: m_fontSizeBase
-      value: 18.5
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3128980534324155779, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
       propertyPath: buttonList.Array.size
@@ -9410,6 +9419,14 @@ PrefabInstance:
     - target: {fileID: 5973083314787984982, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6216735599447140092, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
+      propertyPath: m_fontSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6216735599447140092, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6223943365371610578, guid: c2b986b2a24193f43b4d71db6984cb50, type: 3}
       propertyPath: m_Value

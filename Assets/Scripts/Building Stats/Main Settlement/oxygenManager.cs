@@ -27,20 +27,68 @@ public class oxygenManager : MonoBehaviour
     public int noOxygenGens;
 
 
- 
+
+
+    private float acropolisOxygenConsumption;
+    private float oxygenConsumption;
+    private float oxygenDeficit;
+    private float oxygenPlusMinus;
+
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
 
     public float oxygenInfo()
     {
-        oxygen_processor = GameObject.FindWithTag("oxyGen");
-        totOxygenAmount = oxygen_processor.GetComponent<oxygenGeneratorBehavior>().oxygenAmount;
-        totOxygenProduce = oxygen_processor.GetComponent<oxygenGeneratorBehavior>().oxygenProduce;
-        noOxyGens = GameObject.FindGameObjectsWithTag("oxyGen").Length;
-        oxygenProduceRate = totOxygenAmount;
-        oxygenLevel = oxygenLevel + oxygenProduceRate;
-        if (oxygenLevel > maxOxygenLevel)
+        GameObject[] oxygenProcessorList = GameObject.FindGameObjectsWithTag("oxyGen");
+        totOxygenProduce = 0f;
+
+        foreach (GameObject oxygenPro in oxygenProcessorList)
         {
-            oxygenLevel = maxOxygenLevel;
+            if (oxygenPro!=null)
+            {
+                oxygenGeneratorBehavior oxBehviour = oxygenPro.GetComponent<oxygenGeneratorBehavior>();
+                if (oxBehviour!=null)
+                {
+                    totOxygenProduce += oxBehviour.oxygenProduce;
+                }
+            }
         }
+
+        // oxygen_processor = GameObject.FindWithTag("oxyGen");
+        //  totOxygenAmount = oxygen_processor.GetComponent<oxygenGeneratorBehavior>().oxygenAmount;
+        //totOxygenProduce = oxygen_processor.GetComponent<oxygenGeneratorBehavior>().oxygenProduce;
+        // noOxyGens = GameObject.FindGameObjectsWithTag("oxyGen").Length;
+        //  oxygenProduceRate = totOxygenAmount;
+        //  oxygenLevel = oxygenLevel + oxygenProduceRate;
+        noOxyGens = oxygenProcessorList.Length;
+        oxygenDeficit = CalculateOxygenConsumption();
+        oxygenPlusMinus = totOxygenProduce - oxygenDeficit;
+
+        oxygenLevel += oxygenPlusMinus;
+        oxygenLevel = Mathf.Clamp(oxygenLevel,0,maxOxygenLevel);
+
+
+        //if (oxygenLevel > maxOxygenLevel)
+        //{
+        //    oxygenLevel = maxOxygenLevel;
+        //}
         return oxygenLevel;
+    }
+
+    private float CalculateOxygenConsumption()
+    {
+        acropolisOxygenConsumption = 0.1f;
+
+        oxygenConsumption = acropolisOxygenConsumption;
+        return oxygenConsumption;
     }
 }

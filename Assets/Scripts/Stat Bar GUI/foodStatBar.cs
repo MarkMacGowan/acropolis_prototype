@@ -17,7 +17,7 @@ public class foodStatBar : MonoBehaviour
     
     void Update()
     {
-        food = food_manager.foodInfo();
+        food = food_manager.foodLevel;
         if (foodSlider.value != food)
         {
             foodSlider.value = food;
